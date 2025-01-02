@@ -18,7 +18,7 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: normal;  /* Remove the bold style */
   font-size: 1.2rem;
 }
 
