@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - PokeGems Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+
+  <div class="admin-container">
+    <h1>Admin Page</h1>
+    
+    <!-- Newsfeed Form -->
+    <form id="newsfeed-form">
+      <label for="news-title">News Title</label>
+      <input type="text" id="news-title" name="news-title" required>
+
+      <label for="news-content">News Content</label>
+      <textarea id="news-content" name="news-content" rows="4" required></textarea>
+
+      <button type="submit">Post News</button>
+    </form>
+
+    <div id="newsfeed">
+      <!-- Generated newsfeed will be displayed here -->
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 PokéGems. All rights reserved.</p>
+  </footer>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
