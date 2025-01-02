@@ -13,22 +13,30 @@ document.getElementById("newsfeed-form").addEventListener("submit", function(e) 
 
   const title = document.getElementById("news-title").value;
   const content = document.getElementById("news-content").value;
+  const media = document.getElementById("news-media").value;
+  const mediaType = document.getElementById("media-type").value;
 
-  const newsItem = document.createElement("div");
-  newsItem.classList.add("news-item");
+  const newsItem = {
+    title: title,
+    content: content,
+    media: media || null,  // Optional media URL
+    mediaType: mediaType
+  };
 
-  const newsTitle = document.createElement("h3");
-  newsTitle.textContent = title;
+  // Fetch current news from localStorage
+  const savedNews = JSON.parse(localStorage.getItem("newsfeed")) || [];
 
-  const newsContent = document.createElement("p");
-  newsContent.textContent = content;
+  // Add new news item
+  savedNews.push(newsItem);
 
-  newsItem.appendChild(newsTitle);
-  newsItem.appendChild(newsContent);
-
-  document.getElementById("newsfeed").appendChild(newsItem);
+  // Save updated news to localStorage
+  localStorage.setItem("newsfeed", JSON.stringify(savedNews));
 
   // Clear the form
   document.getElementById("news-title").value = "";
   document.getElementById("news-content").value = "";
+  document.getElementById("news-media").value = "";
+
+  // Optionally redirect to homepage after posting
+  window.location.href = "/";
 });

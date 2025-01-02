@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin - PokeGems Wiki</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/pg1.svg" type="image/x-icon">
 </head>
 <body>
 
@@ -19,6 +20,15 @@
 
       <label for="news-content">News Content</label>
       <textarea id="news-content" name="news-content" rows="4" required></textarea>
+
+      <label for="news-media">Optional Media (Image/Video URL)</label>
+      <input type="text" id="news-media" name="news-media" placeholder="Enter URL">
+
+      <label for="media-type">Media Type</label>
+      <select id="media-type" name="media-type">
+        <option value="image">Image</option>
+        <option value="video">Video</option>
+      </select>
 
       <button type="submit">Post News</button>
     </form>
