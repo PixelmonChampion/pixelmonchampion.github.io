@@ -1,147 +1,58 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Streamlit default font */
-  }
-  
-  body {
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* White text */
-    line-height: 1.6;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
-    background-color: royalblue; /* Royal blue background */
-    display: flex;
-    justify-content: center; /* Center the content */
-    align-items: center;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar .logo {
-    margin-right: 2rem;
-    display: inline-block;
-  }
-  
-  .navbar .logo img {
-    height: 128px; /* Adjust the logo size */
-    width: auto;
-  }
-  
-  .navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .navbar li {
-    margin: 0 1rem;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-  }
-  
-  .navbar a:hover {
-    background-color: #1e2a7e; /* Darker blue for hover effect */
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Main Content Area */
-  .main-content {
-    padding: 2rem;
-  }
-  
-  /* Section Header */
-  h1, h2, h3 {
-    color: #ffffff; /* White text for headings */
-    font-weight: 700;
-  }
-  
-  /* Pokémon and Trainer Profile Cards */
-  .card {
-    background-color: #1f1f1f; /* Darker card background */
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .card h3 {
-    color: royalblue;
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .card .details {
-    color: #e0e0e0; /* Lighter text for details */
-    margin-top: 1rem;
-  }
-  
-  /* Table Styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-  }
-  
-  th, td {
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  th {
-    background-color: #2c2c2c;
-    color: royalblue;
-    text-transform: uppercase;
-  }
-  
-  td {
-    background-color: #1f1f1f;
-    color: #ffffff;
-  }
-  
-  tr:hover {
-    background-color: #333333;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  
-  footer a {
-    color: royalblue;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
+/* Navbar Styles */
+.navbar {
+  background-color: transparent; /* Transparent background initially */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem; /* Adjust padding to your preference */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.navbar.scrolled {
+  background-color: royalblue; /* Royal blue background when scrolled */
+}
+
+.navbar .logo {
+  display: inline-block;
+  height: 60px; /* Larger fixed height for the logo */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.navbar .logo img {
+  height: 100%; /* Make the logo fill the available height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar Links */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar a:hover {
+  background-color: royalblue; /* Royal blue background for hover */
+  color: white;
+  transition: background-color 0.3s ease;
+}
