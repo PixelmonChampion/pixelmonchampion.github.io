@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0rem;
   height: 2.875rem;
 }
 
