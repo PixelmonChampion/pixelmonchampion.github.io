@@ -9,31 +9,51 @@ body {
 
 /* Header styling */
 header {
-    background-color: #1e1e2e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 30, 46, 0.8); /* Transparent background */
     color: #f5f5f5;
-    padding: 1rem 2rem;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Navigation bar styling */
-nav {
+    padding: 0.5rem 2rem;
     display: flex;
-    justify-content: center;
-    background-color: #202035;
-    padding: 0.5rem 0;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
-nav a {
+header a {
     color: royalblue;
     text-decoration: none;
     margin: 0 1rem;
     font-weight: bold;
 }
 
-nav a:hover {
+header a:hover {
     text-decoration: underline;
     color: #87ceeb;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: royalblue;
+}
+
+header .logo:hover {
+    color: #87ceeb;
+}
+
+/* Padding for content to avoid overlap */
+body > .container {
+    margin-top: 4rem; /* Adjust based on header height */
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    align-items: center;
 }
 
 /* Main container styling */
