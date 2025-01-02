@@ -8,12 +8,13 @@ body {
 
 .navbar {
   background-color: royalblue;
-  color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0rem;
-  height: 2.875rem;
+  /* padding: 1rem; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar a {
