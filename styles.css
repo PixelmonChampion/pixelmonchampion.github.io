@@ -12,7 +12,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 2rem 2rem;
+  height: 2.875rem;
 }
 
 .navbar a {
