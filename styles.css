@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 1rem; */
+  padding: 0rem; 
   position: sticky;
   top: 0;
   z-index: 1000;
