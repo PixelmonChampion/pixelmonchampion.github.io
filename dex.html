@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeGems Wiki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .pokedex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .pokemon-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .pokemon-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .pokemon-card h3 {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PokeGems Wiki</h1>
+        <p>Your comprehensive guide to the Cento region and its unique PokeGems!</p>
+    </header>
+    <nav>
+        <a href="#pokedex">Pokedex</a>
+        <a href="#characters">Characters</a>
+        <a href="#misc">Miscellaneous</a>
+    </nav>
+    <div class="container" id="pokedex">
+        <h2>Pokedex</h2>
+        <p>Discover the unique PokeGems of the Cento region!</p>
+        <div class="pokedex">
+            <!-- Sample Pokemon Card -->
+            <div class="pokemon-card">
+                <img src="https://via.placeholder.com/200" alt="Rollaslash">
+                <h3>Rollaslash</h3>
+                <p><strong>Type:</strong> Steel</p>
+                <p><strong>Description:</strong> A nimble, blade-spinning Pokemon known for its sharp, precise strikes.</p>
+            </div>
+            <!-- Add more Pokemon cards here -->
+        </div>
+    </div>
+    <div class="container" id="characters">
+        <h2>Characters</h2>
+        <p>Meet the trainers, gym leaders, and other key figures in the Cento region.</p>
+    </div>
+    <div class="container" id="misc">
+        <h2>Miscellaneous</h2>
+        <p>Explore additional facts, lore, and trivia about the PokeGems world.</p>
+    </div>
+</body>
+</html>
