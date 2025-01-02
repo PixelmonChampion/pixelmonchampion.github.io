@@ -20,7 +20,7 @@
 
 .navbar .logo {
   display: inline-block;
-  height: 60px; /* Larger fixed height for the logo */
+  height: 100%; /* Larger fixed height for the logo */
   width: auto; /* Maintain aspect ratio */
 }
 
