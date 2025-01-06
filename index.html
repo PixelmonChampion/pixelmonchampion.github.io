@@ -26,7 +26,13 @@
 
   <!-- Main Content -->
   <div class="main-content">
-    <h1>Welcome to PokéGems Wiki</h1>
+    <h1>PokéGems Wiki</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search the wiki..." />
+      <button id="searchButton">Search</button>
+    </div>
 
     <!-- Action Buttons -->
     <div class="button-container">
@@ -64,5 +70,23 @@
 
   <!-- Font Awesome for Icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+  <!-- Search Functionality -->
+  <script>
+    document.getElementById("searchButton").addEventListener("click", function () {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const allLinks = [...document.querySelectorAll("a[href$='.html']")];
+
+      const matches = allLinks.filter((link) =>
+        link.textContent.toLowerCase().includes(query)
+      );
+
+      if (matches.length > 0) {
+        matches[0].click();
+      } else {
+        alert("No results found!");
+      }
+    });
+  </script>
 </body>
 </html>
