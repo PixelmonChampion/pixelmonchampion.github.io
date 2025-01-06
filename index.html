@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The PokéGems Wiki</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/pg1.svg" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/pg1.svg" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <title>PokéGems Wiki</title>
 </head>
 <body>
-
   <!-- Navbar -->
   <nav class="navbar">
-    <a href="/" class="logo">
-      <img src="images/logo.png" alt="PokeGems Logo">
-    </a>
-    <ul>
-      <li><a href="/pokemon">Pokémon</a></li>
-      <li><a href="/characters">Characters</a></li>
-      <li><a href="/misc">Misc.</a></li>
+    <div class="logo">
+      <a href="/">
+        <img src="images/logo.png" alt="PokeGems Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#pokemon">Pokémon</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#misc">Misc</a></li>
     </ul>
   </nav>
 
   <!-- Main Content -->
   <div class="main-content">
-    <i><h1>PokéGems News</h1></i>
-    <h1> </h1>
-    <hr>
-    <!-- Newsfeed Section -->
+    <h1>Welcome to PokéGems Wiki</h1>
     <div class="newsfeed-container">
-      <h1> </h1>
       <h2>Latest News</h2>
-      <div id="newsfeed"></div> <!-- Display newsfeed here -->
+      <div id="newsfeed">
+        <div class="news-item">
+          <h3>The PokéGems Wiki Lives!!?!</h3>
+          <p>
+            That's right, the PokéGems Wiki is back and has been entirely reworked! We are back! PokéGems is now in its open Beta state and is ready to rumble!<br /><br />
+            To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
+          </p>
+          <p><strong>Author:</strong> Ozzy</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -39,8 +47,5 @@
   <footer>
     <p>&copy; 2025 PokéGems. All rights reserved.</p>
   </footer>
-
-  <script src="homepage.js"></script>
 </body>
 </html>
-
