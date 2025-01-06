@@ -30,7 +30,7 @@ body {
 }
 
 .navbar .logo img {
-  height: 60%; /* Adjust the logo size */
+  height: 60px; /* Adjust the logo size */
   width: auto;
 }
 
