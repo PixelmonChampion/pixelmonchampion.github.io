@@ -47,13 +47,7 @@
     <!-- Newsfeed Section -->
     <div class="newsfeed-container">
       <h2>Latest News</h2>
-      <div id="latest-news" class="latest-news-box">
-        <h3>The PokéGems Wiki Lives!!?!</h3>
-        <p>
-          That's right, the PokéGems Wiki is back and has been entirely reworked! To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
-        </p>
-        <p><strong>Author:</strong> Ozzy</p>
-      </div>
+      <div id="newsfeed"></div>
     </div>
   </div>
 
@@ -65,56 +59,19 @@
   <!-- Font Awesome for Icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
-  <!-- Search Functionality -->
+  <!-- Fetch Newsfeed -->
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const searchResults = document.getElementById("searchResults");
-
-    // Simulated page list
-    const pages = [
-      { name: "Pokémon", url: "pokemon.html" },
-      { name: "Characters", url: "characters.html" },
-      { name: "Misc.", url: "misc.html" },
-    ];
-
-    // Handle dynamic search
-    searchInput.addEventListener("input", function () {
-      const query = searchInput.value.toLowerCase().trim();
-      searchResults.innerHTML = ""; // Clear previous results
-
-      if (query === "") {
-        searchResults.style.display = "none"; // Hide results if input is empty
-        return;
+    async function fetchNewsfeed() {
+      try {
+        const response = await fetch("newsfeed.html");
+        const newsHTML = await response.text();
+        document.getElementById("newsfeed").innerHTML = newsHTML;
+      } catch (error) {
+        console.error("Error fetching newsfeed:", error);
       }
+    }
 
-      const matches = pages.filter((page) =>
-        page.name.toLowerCase().includes(query)
-      );
-
-      if (matches.length > 0) {
-        matches.forEach((match) => {
-          const resultItem = document.createElement("div");
-          resultItem.textContent = match.name;
-          resultItem.classList.add("search-result-item");
-          resultItem.onclick = () => (window.location.href = match.url);
-          searchResults.appendChild(resultItem);
-        });
-      } else {
-        const noResultItem = document.createElement("div");
-        noResultItem.textContent = "No results found!";
-        noResultItem.classList.add("search-result-item");
-        searchResults.appendChild(noResultItem);
-      }
-
-      searchResults.style.display = "block"; // Show results
-    });
-
-    // Hide results when clicking outside the search bar
-    document.addEventListener("click", function (event) {
-      if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
-        searchResults.style.display = "none";
-      }
-    });
+    fetchNewsfeed(); // Load newsfeed on page load
   </script>
 </body>
 </html>

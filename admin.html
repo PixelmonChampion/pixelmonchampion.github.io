@@ -33,89 +33,57 @@
 
   <script>
     const form = document.getElementById("newsfeed-form");
-    const previewContainer = document.getElementById("preview-content");
-
-    // Fetch stored posts
-    let newsfeed = JSON.parse(localStorage.getItem("newsfeed")) || [];
-
-    // Render the preview
-    function renderPreview() {
-      previewContainer.innerHTML = ""; // Clear previous preview
-      newsfeed.forEach((post) => {
-        const postContainer = document.createElement("div");
-        postContainer.classList.add("news-item");
-
-        const title = document.createElement("h3");
-        title.textContent = post.title;
-
-        const content = document.createElement("p");
-        content.textContent = post.content;
-
-        postContainer.appendChild(title);
-        postContainer.appendChild(content);
-
-        // Add media (image or video)
-        if (post.media) {
-          const mediaContainer = document.createElement("div");
-          if (post.mediaType === "image") {
-            const img = document.createElement("img");
-            img.src = post.media;
-            img.alt = "News Image";
-            img.style.maxWidth = "100%";
-            mediaContainer.appendChild(img);
-          } else if (post.mediaType === "video") {
-            const video = document.createElement("video");
-            video.src = post.media;
-            video.controls = true;
-            video.style.maxWidth = "100%";
-            mediaContainer.appendChild(video);
-          }
-          postContainer.appendChild(mediaContainer);
-        }
-
-        previewContainer.appendChild(postContainer);
-      });
-    }
 
     // Handle form submission
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const title = document.getElementById("news-title").value;
       const content = document.getElementById("news-content").value;
       const mediaInput = document.getElementById("news-media");
-      let media = null;
-      let mediaType = null;
+      let mediaHTML = "";
 
       // Handle media upload
       if (mediaInput.files.length > 0) {
         const file = mediaInput.files[0];
-        mediaType = file.type.startsWith("image") ? "image" : "video";
+        const mediaURL = URL.createObjectURL(file);
 
-        // Convert media file to base64
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          media = e.target.result;
-
-          // Save to newsfeed
-          newsfeed.push({ title, content, media, mediaType });
-          localStorage.setItem("newsfeed", JSON.stringify(newsfeed));
-          renderPreview();
-        };
-        reader.readAsDataURL(file);
-      } else {
-        // Save text-only post
-        newsfeed.push({ title, content });
-        localStorage.setItem("newsfeed", JSON.stringify(newsfeed));
-        renderPreview();
+        if (file.type.startsWith("image")) {
+          mediaHTML = `<img src="${mediaURL}" alt="News Image" style="max-width: 100%;">`;
+        } else if (file.type.startsWith("video")) {
+          mediaHTML = `<video controls style="max-width: 100%;"><source src="${mediaURL}" type="${file.type}"></video>`;
+        }
       }
 
-      // Clear form
-      form.reset();
-    });
+      // Create news block HTML
+      const newsHTML = `
+        <div class="news-item">
+          <h3>${title}</h3>
+          <p>${content}</p>
+          ${mediaHTML}
+        </div>
+      `;
 
-    // Render preview on page load
-    renderPreview();
+      // Send the post to the server
+      try {
+        const response = await fetch("/update-newsfeed", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ newsHTML }),
+        });
+
+        if (response.ok) {
+          alert("Newsfeed updated successfully!");
+        } else {
+          throw new Error("Failed to update newsfeed");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error updating newsfeed");
+      }
+
+      form.reset(); // Clear form
+    });
   </script>
 </body>
 </html>
