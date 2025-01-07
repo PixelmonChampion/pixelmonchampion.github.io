@@ -1,70 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Cards</title>
-  <style>
-    /* Character Table Styles */
-    .character-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      table-layout: fixed; /* Ensures that columns have equal width */
-    }
-
-    .character-table th,
-    .character-table td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-
-    .character-table th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
-
-    .character-table td img {
-      max-width: 100%;
-      height: auto;
-      object-fit: cover; /* Ensures images fit nicely inside their container */
-    }
-
-    /* Responsive Design for Scaling */
-    @media screen and (max-width: 768px) {
-      .character-table th,
-      .character-table td {
-        padding: 8px;
-      }
-
-      .character-table td img {
-        max-width: 80px; /* Adjust image size for smaller screens */
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .character-table th,
-      .character-table td {
-        padding: 5px;
-      }
-
-      .character-table td img {
-        max-width: 60px; /* Further adjustment for very small screens */
-      }
-    }
-
-    .character-table tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    .character-table tr:hover {
-      background-color: #e6e6e6;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéGems Wiki - Characters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Character List</h1>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="images/logo.png" alt="PokeGems Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="pokemon">Pokémon</a></li>
+      <li><a href="characters">Characters</a></li>
+      <li><a href="misc">Misc.</a></li>
+    </ul>
+  </nav>
+<body>
+  <h1>Characters</h1>
   <table class="character-table">
     <thead>
       <tr>
