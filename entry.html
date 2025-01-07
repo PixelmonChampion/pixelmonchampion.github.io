@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PokéGems Wiki - ???</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+          <div class="logo">
+            <a href="/">
+              <img src="images/logo.png" alt="PokeGems Logo" />
+            </a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="pokemon">Pokémon</a></li>
+            <li><a href="characters">Characters</a></li>
+            <li><a href="misc">Misc.</a></li>
+          </ul>
+        </nav>
+    <div class="pokemon-entry">
+        <!-- Pokémon Name and Artwork -->
+        <h1 class="pokemon-name">Pokémon Name</h1>
+        <div class="pokemon-artwork">
+            <img id="pokemon-artwork" src="image_path.jpg" alt="Pokémon Artwork">
+            <button id="gif-toggle">Show GIF</button>
+        </div>
+
+        <!-- Type -->
+        <div class="pokemon-types">
+            <span class="type">Fire</span> <span class="type">Flying</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="pokemon-stats">
+            <h2>Base Stats</h2>
+            <div class="stat">
+                <span>HP: </span><div class="stat-bar" id="hp-stat">0</div>
+            </div>
+            <div class="stat">
+                <span>Attack: </span><div class="stat-bar" id="attack-stat">0</div>
+            </div>
+            <div class="stat">
+                <span>Defense: </span><div class="stat-bar" id="defense-stat">0</div>
+            </div>
+            <div class="stat">
+                <span>Speed: </span><div class="stat-bar" id="speed-stat">0</div>
+            </div>
+        </div>
+
+        <!-- Move List Dropdown -->
+        <div class="move-list">
+            <button class="move-toggle">Moves</button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Level Up Moves</h3>
+                    <ul id="level-up-list">
+                        <li>Move 1</li>
+                        <li>Move 2</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>TM Moves</h3>
+                    <ul id="tm-list">
+                        <li>Move A</li>
+                        <li>Move B</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>Tutor Moves</h3>
+                    <ul id="tutor-list">
+                        <li>Move X</li>
+                        <li>Move Y</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>Egg Moves</h3>
+                    <ul id="egg-moves-list">
+                        <li>Egg Move 1</li>
+                        <li>Egg Move 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
