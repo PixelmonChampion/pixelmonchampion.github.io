@@ -26,7 +26,7 @@
   <div class="main-content">
     <!-- Search Bar -->
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search the wiki..." />
+      <input type="text" id="searchInput" placeholder="Search the wiki or newsfeed..." />
       <button id="searchButton">Search</button>
       <div id="searchResults" class="search-results"></div>
     </div>
@@ -61,15 +61,116 @@
 
   <!-- Fetch Newsfeed -->
   <script>
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const searchResults = document.getElementById("searchResults");
+
+    // Simulated list of pages
+    const pages = [
+      { name: "Pokémon", url: "pokemon.html" },
+      { name: "Characters", url: "characters.html" },
+      { name: "Misc.", url: "misc.html" },
+    ];
+
+    // Fetch the newsfeed from the server
     async function fetchNewsfeed() {
       try {
-        const response = await fetch("newsfeed.html");
-        const newsHTML = await response.text();
-        document.getElementById("newsfeed").innerHTML = newsHTML;
+        const response = await fetch("/api/newsfeed");
+        const posts = await response.json();
+        const newsfeed = document.getElementById("newsfeed");
+
+        newsfeed.innerHTML = ""; // Clear existing content
+        posts.forEach((post) => {
+          const newsItem = document.createElement("div");
+          newsItem.classList.add("news-item");
+
+          const title = document.createElement("h3");
+          title.textContent = post.title;
+
+          const content = document.createElement("p");
+          content.textContent = post.content;
+
+          newsItem.appendChild(title);
+          newsItem.appendChild(content);
+
+          if (post.media) {
+            if (post.mediaType === "image") {
+              const img = document.createElement("img");
+              img.src = post.media;
+              img.alt = "News Image";
+              img.style.maxWidth = "100%";
+              newsItem.appendChild(img);
+            } else if (post.mediaType === "video") {
+              const video = document.createElement("video");
+              video.src = post.media;
+              video.controls = true;
+              video.style.maxWidth = "100%";
+              newsItem.appendChild(video);
+            }
+          }
+
+          newsfeed.appendChild(newsItem);
+        });
       } catch (error) {
         console.error("Error fetching newsfeed:", error);
       }
     }
+
+    // Dynamic search functionality
+    searchInput.addEventListener("input", function () {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = ""; // Clear previous results
+
+      if (query === "") {
+        searchResults.style.display = "none"; // Hide results if input is empty
+        return;
+      }
+
+      // Combine pages and newsfeed items
+      const results = [...pages];
+
+      fetch("/api/newsfeed")
+        .then((res) => res.json())
+        .then((newsfeed) => {
+          newsfeed.forEach((post) => {
+            results.push({ name: post.title, url: "#" }); // Add news titles
+          });
+
+          const matches = results.filter((item) =>
+            item.name.toLowerCase().includes(query)
+          );
+
+          if (matches.length > 0) {
+            matches.forEach((match) => {
+              const resultItem = document.createElement("div");
+              resultItem.textContent = match.name;
+              resultItem.classList.add("search-result-item");
+              resultItem.onclick = () => {
+                if (match.url !== "#") {
+                  window.location.href = match.url;
+                } else {
+                  alert("Redirecting to news section is under development.");
+                }
+              };
+              searchResults.appendChild(resultItem);
+            });
+          } else {
+            const noResultItem = document.createElement("div");
+            noResultItem.textContent = "No results found!";
+            noResultItem.classList.add("search-result-item");
+            searchResults.appendChild(noResultItem);
+          }
+
+          searchResults.style.display = "block"; // Show results
+        });
+    });
+
+    // Hide results when clicking outside the search bar
+    document.addEventListener("click", function (event) {
+      if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+        searchResults.style.display = "none";
+      }
+    });
 
     fetchNewsfeed(); // Load newsfeed on page load
   </script>

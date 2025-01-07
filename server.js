@@ -1,26 +1,58 @@
 const express = require("express");
-const fs = require("fs");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const PORT = 5000;
 
+const newsfeedPath = "./data/newsfeed.json"; // JSON file to store posts
+
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use("/uploads", express.static("uploads"));
 
-// Update the newsfeed
-app.post("/update-newsfeed", (req, res) => {
-  const { newsHTML } = req.body;
+// Multer configuration for file uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname)),
+});
+const upload = multer({ storage });
 
-  // Append the new post to the newsfeed.html file
-  fs.appendFile("public/newsfeed.html", newsHTML, (err) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send("Failed to update newsfeed");
-    }
-    res.status(200).send("Newsfeed updated successfully");
-  });
+// Load newsfeed from file
+function loadNewsfeed() {
+  if (!fs.existsSync(newsfeedPath)) return [];
+  return JSON.parse(fs.readFileSync(newsfeedPath, "utf-8"));
+}
+
+// Save newsfeed to file
+function saveNewsfeed(posts) {
+  fs.writeFileSync(newsfeedPath, JSON.stringify(posts, null, 2));
+}
+
+// Get all newsfeed posts
+app.get("/api/newsfeed", (req, res) => {
+  const posts = loadNewsfeed();
+  res.json(posts);
 });
 
-// Serve the app
+// Add a new post
+app.post("/api/newsfeed", upload.single("media"), (req, res) => {
+  const { title, content } = req.body;
+  const media = req.file ? `/uploads/${req.file.filename}` : null;
+  const mediaType = req.file ? req.file.mimetype.split("/")[0] : null;
+
+  const newPost = { title, content, media, mediaType };
+  const posts = loadNewsfeed();
+
+  posts.unshift(newPost); // Add new post to the top
+  saveNewsfeed(posts);
+
+  res.status(201).json(newPost);
+});
+
+// Start server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
