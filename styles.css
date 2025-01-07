@@ -40,8 +40,8 @@ body {
 }
 
 .nav-links a:hover {
-  color: white;
-  transform: scale(0.95);
+  color: rgb(255, 255, 255);
+  transition: transform 0.2s ease;
 }
 
 /* Main Content */
