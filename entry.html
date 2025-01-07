@@ -32,23 +32,29 @@
 
             <!-- Type -->
             <div class="pokemon-types">
-                <span class="type">Fire</span> <span class="type">Flying</span>
+                <div class="type fire"></div> <div class="type water"></div>
             </div>
 
             <!-- Stats -->
             <div class="pokemon-stats">
                 <h2>Base Stats</h2>
                 <div class="stat">
-                    <span>HP: </span><div class="stat-bar" id="hp-stat">0</div>
+                    <span>HP: </span><div class="stat-bar" id="hp-stat">75</div>
                 </div>
                 <div class="stat">
-                    <span>Attack: </span><div class="stat-bar" id="attack-stat">0</div>
+                    <span>Attack: </span><div class="stat-bar" id="attack-stat">50</div>
                 </div>
                 <div class="stat">
-                    <span>Defense: </span><div class="stat-bar" id="defense-stat">0</div>
+                    <span>Defense: </span><div class="stat-bar" id="defense-stat">60</div>
                 </div>
                 <div class="stat">
-                    <span>Speed: </span><div class="stat-bar" id="speed-stat">0</div>
+                    <span>Sp. Attack: </span><div class="stat-bar" id="attack-stat">50</div>
+                </div>
+                <div class="stat">
+                    <span>Sp. Defense: </span><div class="stat-bar" id="defense-stat">60</div>
+                </div>                
+                <div class="stat">
+                    <span>Speed: </span><div class="stat-bar" id="speed-stat">40</div>
                 </div>
             </div>
 
@@ -93,7 +99,7 @@
             document.getElementById('gif-toggle').addEventListener('click', function () {
                 const artwork = document.getElementById('pokemon-artwork');
                 if (artwork.src.includes('images/pokesHD/001cubear.png')) {
-                    artwork.src = 'images/pokesHD/001cubear.gif';  // Set to GIF path
+                    artwork.src = 'images/render/cubear.gif';  // Set to GIF path
                     this.innerText = 'Show Static Image';
                 } else {
                     artwork.src = 'images/pokesHD/001cubear.png';  // Set to static image path
@@ -106,6 +112,8 @@
                 hp: document.getElementById('hp-stat'),
                 attack: document.getElementById('attack-stat'),
                 defense: document.getElementById('defense-stat'),
+                spattack: document.getElementById('spattack-stat'),
+                spdefense: document.getElementById('spdefense-stat'),                
                 speed: document.getElementById('speed-stat')
             };
 
@@ -121,6 +129,8 @@
             animateStat(statBars.hp, 75);  // Example for HP stat
             animateStat(statBars.attack, 50);  // Example for Attack stat
             animateStat(statBars.defense, 60);  // Example for Defense stat
+            animateStat(statBars.spattack, 50);  // Example for Attack stat
+            animateStat(statBars.spdefense, 60);  // Example for Defense stat            
             animateStat(statBars.speed, 40);  // Example for Speed stat
         </script>
     </body>

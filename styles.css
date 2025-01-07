@@ -381,7 +381,9 @@ footer {
 .pokemon-entry #gif-toggle {
   background-color: royalblue; /* Royalblue for toggle */
   color: white;
-  padding: 5px 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
   border: none;
   cursor: pointer;
   font-size: 1.2rem; /* FontAwesome size */
@@ -390,10 +392,12 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  position: relative;
 }
 
 .pokemon-entry #gif-toggle i {
   font-size: 1rem; /* FontAwesome icon size */
+  display: none;
 }
 
 .pokemon-entry .pokemon-types {
@@ -405,12 +409,92 @@ footer {
   display: inline-block;
   padding: 5px 15px;
   margin: 0 10px;
-  background-color: #f0f0f0;
+  background-color: transparent;
   border-radius: 20px;
   font-weight: bold;
   color: #121212; /* Darker text for better contrast */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
 }
 
+/* Type Background Images */
+.pokemon-entry .type.fire {
+  background-image: url('images/types/fire.png');
+}
+
+.pokemon-entry .type.water {
+  background-image: url('images/types/water.png');
+}
+
+.pokemon-entry .type.grass {
+  background-image: url('images/types/grass.png');
+}
+
+.pokemon-entry .type.electric {
+  background-image: url('images/types/electric.png');
+}
+
+.pokemon-entry .type.ice {
+  background-image: url('images/types/ice.png');
+}
+
+.pokemon-entry .type.fighting {
+  background-image: url('images/types/fighting.png');
+}
+
+.pokemon-entry .type.poison {
+  background-image: url('images/types/poison.png');
+}
+
+.pokemon-entry .type.ghost {
+  background-image: url('images/types/ghost.png');
+}
+
+.pokemon-entry .type.dark {
+  background-image: url('images/types/dark.png');
+}
+
+.pokemon-entry .type.dragon {
+  background-image: url('images/types/dragon.png');
+}
+
+.pokemon-entry .type.fairy {
+  background-image: url('images/types/fairy.png');
+}
+
+.pokemon-entry .type.rock {
+  background-image: url('images/types/rock.png');
+}
+
+.pokemon-entry .type.bug {
+  background-image: url('images/types/bug.png');
+}
+
+.pokemon-entry .type.steel {
+  background-image: url('images/types/steel.png');
+}
+
+.pokemon-entry .type.normal {
+  background-image: url('images/types/normal.png');
+}
+
+.pokemon-entry .type.psychic {
+  background-image: url('images/types/psychic.png');
+}
+
+.pokemon-entry .type.flying {
+  background-image: url('images/types/flying.png');
+}
+
+.pokemon-entry .type.ground {
+  background-image: url('images/types/ground.png');
+}
+
+
+/* Add similar type classes here... */
 .pokemon-entry .pokemon-stats {
   display: flex;
   flex-direction: column;
@@ -436,7 +520,7 @@ footer {
   border-radius: 10px;
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  margin-bottom: 10px; /* Space between the bars */
 }
 
 .pokemon-entry .stat-bar span {
@@ -446,6 +530,31 @@ footer {
   left: 5px;
 }
 
+/* Color adjustments for stat bars */
+.pokemon-entry .stat-hp .stat-bar {
+  background-color: red;
+}
+
+.pokemon-entry .stat-atk .stat-bar {
+  background-color: orange;
+}
+
+.pokemon-entry .stat-def .stat-bar {
+  background-color: yellow;
+}
+
+.pokemon-entry .stat-spatk .stat-bar {
+  background-color: blue;
+}
+
+.pokemon-entry .stat-spdef .stat-bar {
+  background-color: limegreen;
+}
+
+.pokemon-entry .stat-speed .stat-bar {
+  background-color: pink;
+}
+
 .pokemon-entry .move-list {
   background-color: #2a2a2a; /* Dark background for the move list */
   padding: 10px;
@@ -453,7 +562,7 @@ footer {
 }
 
 .pokemon-entry .move-toggle {
-  background-color: #4CAF50;
+  background-color: #af4c4c;
   color: white;
   padding: 5px 10px;
   border: none;
@@ -484,7 +593,3 @@ footer {
 .pokemon-entry .move-toggle:focus + .move-options {
   display: block;
 }
-
-
-
-
