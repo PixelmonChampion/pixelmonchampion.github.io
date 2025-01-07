@@ -47,7 +47,18 @@
     <!-- Newsfeed Section -->
     <div class="newsfeed-container">
       <h2>Latest News</h2>
-      <div id="newsfeed"></div>
+      <div class="news-item">
+        <h3>The PokéGems Wiki Lives!!?!</h3>
+        <p>
+          That's right, the PokéGems Wiki is back and has been entirely reworked! To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
+        </p>
+        <p><strong>Author:</strong> Ozzy</p>
+      </div>
+      <div class="news-item">
+        <h3>New Pokémon Added!</h3>
+        <p>We've added several new Pokémon to the PokéGems roster. Check out the Pokémon page for more details!</p>
+        <p><strong>Author:</strong> Admin</p>
+      </div>
     </div>
   </div>
 
@@ -59,110 +70,57 @@
   <!-- Font Awesome for Icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
-  <!-- Fetch Newsfeed -->
+  <!-- Search Functionality -->
   <script>
     const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
     const searchResults = document.getElementById("searchResults");
 
-    // Simulated list of pages
+    // List of pages and newsfeed items
     const pages = [
       { name: "Pokémon", url: "pokemon.html" },
       { name: "Characters", url: "characters.html" },
       { name: "Misc.", url: "misc.html" },
     ];
 
-    // Fetch the newsfeed from the server
-    async function fetchNewsfeed() {
-      try {
-        const response = await fetch("/api/newsfeed");
-        const posts = await response.json();
-        const newsfeed = document.getElementById("newsfeed");
+    const newsfeed = [
+      { name: "The PokéGems Wiki Lives!!?!", url: "#news1" },
+      { name: "New Pokémon Added!", url: "#news2" },
+    ];
 
-        newsfeed.innerHTML = ""; // Clear existing content
-        posts.forEach((post) => {
-          const newsItem = document.createElement("div");
-          newsItem.classList.add("news-item");
+    const allItems = [...pages, ...newsfeed];
 
-          const title = document.createElement("h3");
-          title.textContent = post.title;
-
-          const content = document.createElement("p");
-          content.textContent = post.content;
-
-          newsItem.appendChild(title);
-          newsItem.appendChild(content);
-
-          if (post.media) {
-            if (post.mediaType === "image") {
-              const img = document.createElement("img");
-              img.src = post.media;
-              img.alt = "News Image";
-              img.style.maxWidth = "100%";
-              newsItem.appendChild(img);
-            } else if (post.mediaType === "video") {
-              const video = document.createElement("video");
-              video.src = post.media;
-              video.controls = true;
-              video.style.maxWidth = "100%";
-              newsItem.appendChild(video);
-            }
-          }
-
-          newsfeed.appendChild(newsItem);
-        });
-      } catch (error) {
-        console.error("Error fetching newsfeed:", error);
-      }
-    }
-
-    // Dynamic search functionality
+    // Dynamic search
     searchInput.addEventListener("input", function () {
       const query = searchInput.value.toLowerCase().trim();
       searchResults.innerHTML = ""; // Clear previous results
 
       if (query === "") {
-        searchResults.style.display = "none"; // Hide results if input is empty
+        searchResults.style.display = "none";
         return;
       }
 
-      // Combine pages and newsfeed items
-      const results = [...pages];
+      const matches = allItems.filter((item) =>
+        item.name.toLowerCase().includes(query)
+      );
 
-      fetch("/api/newsfeed")
-        .then((res) => res.json())
-        .then((newsfeed) => {
-          newsfeed.forEach((post) => {
-            results.push({ name: post.title, url: "#" }); // Add news titles
-          });
-
-          const matches = results.filter((item) =>
-            item.name.toLowerCase().includes(query)
-          );
-
-          if (matches.length > 0) {
-            matches.forEach((match) => {
-              const resultItem = document.createElement("div");
-              resultItem.textContent = match.name;
-              resultItem.classList.add("search-result-item");
-              resultItem.onclick = () => {
-                if (match.url !== "#") {
-                  window.location.href = match.url;
-                } else {
-                  alert("Redirecting to news section is under development.");
-                }
-              };
-              searchResults.appendChild(resultItem);
-            });
-          } else {
-            const noResultItem = document.createElement("div");
-            noResultItem.textContent = "No results found!";
-            noResultItem.classList.add("search-result-item");
-            searchResults.appendChild(noResultItem);
-          }
-
-          searchResults.style.display = "block"; // Show results
+      if (matches.length > 0) {
+        matches.forEach((match) => {
+          const resultItem = document.createElement("div");
+          resultItem.textContent = match.name;
+          resultItem.classList.add("search-result-item");
+          resultItem.onclick = () => {
+            window.location.href = match.url;
+          };
+          searchResults.appendChild(resultItem);
         });
+      } else {
+        const noResultItem = document.createElement("div");
+        noResultItem.textContent = "No results found!";
+        noResultItem.classList.add("search-result-item");
+        searchResults.appendChild(noResultItem);
+      }
+
+      searchResults.style.display = "block";
     });
 
     // Hide results when clicking outside the search bar
@@ -171,8 +129,6 @@
         searchResults.style.display = "none";
       }
     });
-
-    fetchNewsfeed(); // Load newsfeed on page load
   </script>
 </body>
 </html>
