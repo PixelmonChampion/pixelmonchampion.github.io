@@ -1,165 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokémon Dex</title>
-  <style>
-    /* General page setup */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-
-    /* Container for the Pokémon list */
-    .dex-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 90%;
-    }
-
-    /* Column setup */
-    .dex-column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 16.66%; /* Each column will take 1/6th of the container width */
-      margin: 10px;
-    }
-
-    /* Each Pokémon entry */
-    .pokemon-entry {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    /* Button to hold image */
-    .pokemon-button {
-      border: none;
-      background: transparent;
-      padding: 5px;
-      margin-bottom: 5px;
-    }
-
-    /* Image styling */
-    .pokemon-button img {
-      width: 50px; /* Shrink the images to 50px */
-      height: 50px; /* Make sure the height is the same as width */
-      object-fit: contain;
-    }
-
-    /* Text under image */
-    .pokemon-entry p {
-      font-size: 14px;
-      color: #333;
-    }
-
-    /* Footer styling */
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 12px;
-      color: #888;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéGems Wiki - Pokémon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="dex-container">
-    <div class="dex-column">
-      <!-- Start of the first column -->
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/001cubear.png" alt="Cubear" />
-        </button>
-        <p>2001: Cubear</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/002combear.png" alt="Combear" />
-        </button>
-        <p>2002: Combear</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/003confabear.png" alt="Confabear" />
-        </button>
-        <p>2003: Confabear</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/004drakle.png" alt="Drakle" />
-        </button>
-        <p>2004: Drakle</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/005drakosis.png" alt="Drakosis" />
-        </button>
-        <p>2005: Drakosis</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/006drakorage.png" alt="Drakorage" />
-        </button>
-        <p>2006: Drakorage</p>
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="images/logo.png" alt="PokeGems Logo" />
+      </a>
     </div>
-    <div class="dex-column">
-      <!-- Start of the second column -->
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/007dripug.png" alt="Dripug" />
-        </button>
-        <p>2007: Dripug</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/008soakeros.png" alt="Soakeros" />
-        </button>
-        <p>2008: Soakeros</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/009hydrax.png" alt="Hydrax" />
-        </button>
-        <p>2009: Hydrax</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/010hopibug.png" alt="Hopibug" />
-        </button>
-        <p>2010: Hopibug</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/011hooperflip.png" alt="Hooperflip" />
-        </button>
-        <p>2011: Hooperflip</p>
-      </div>
-      <div class="pokemon-entry">
-        <button class="pokemon-button">
-          <img src="images/pokes/012jumplafloo.png" alt="Jumplafloo" />
-        </button>
-        <p>2012: Jumplafloo</p>
-      </div>
+    <ul class="nav-links">
+      <li><a href="pokemon.html">Pokémon</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="misc.html">Misc.</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search the wiki or newsfeed..." />
+      <button id="searchButton">Search</button>
+      <div id="searchResults" class="search-results"></div>
     </div>
-    <!-- Continue for remaining Pokémon entries -->
-    <!-- Repeat the same structure for the rest of the Pokémon list, adjusting the image and text accordingly -->
+
+    <!-- Pokémon List -->
+    <div class="pokemon-container">
+      <!-- Example Pokémon (repeat for all Pokémon) -->
+      <div class="pokemon-item">
+        <a href="pokemon_2001.html">
+          <img src="images/pokes/2001cubear.png" alt="Cubear" />
+          Cubear
+        </a>
+      </div>
+      <div class="pokemon-item">
+        <a href="pokemon_2002.html">
+          <img src="images/pokes/2002combear.png" alt="Combear" />
+          Combear
+        </a>
+      </div>
+      <!-- Repeat this block for all Pokémon -->
+      <!-- Continue the pattern for all Pokémon listed, ensuring each has the corresponding image and link to its page -->
+    </div>
   </div>
-  
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 PokéGems. All rights reserved.</p>
   </footer>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+  <!-- Search Functionality -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    // List of pages and newsfeed items
+    const pages = [
+      { name: "Pokémon", url: "pokemon.html" },
+      { name: "Characters", url: "characters.html" },
+      { name: "Misc.", url: "misc.html" },
+    ];
+
+    const newsfeed = [
+      { name: "The PokéGems Wiki Lives!!?!", url: "#news1" },
+      { name: "New Pokémon Added!", url: "#news2" },
+    ];
+
+    const allItems = [...pages, ...newsfeed];
+
+    // Dynamic search
+    searchInput.addEventListener("input", function () {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = ""; // Clear previous results
+
+      if (query === "") {
+        searchResults.style.display = "none";
+        return;
+      }
+
+      const matches = allItems.filter((item) =>
+        item.name.toLowerCase().includes(query)
+      );
+
+      if (matches.length > 0) {
+        matches.forEach((match) => {
+          const resultItem = document.createElement("div");
+          resultItem.textContent = match.name;
+          resultItem.classList.add("search-result-item");
+          resultItem.onclick = () => {
+            window.location.href = match.url;
+          };
+          searchResults.appendChild(resultItem);
+        });
+      } else {
+        const noResultItem = document.createElement("div");
+        noResultItem.textContent = "No results found!";
+        noResultItem.classList.add("search-result-item");
+        searchResults.appendChild(noResultItem);
+      }
+
+      searchResults.style.display = "block";
+    });
+
+    // Hide results when clicking outside the search bar
+    document.addEventListener("click", function (event) {
+      if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+        searchResults.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
