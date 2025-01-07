@@ -155,10 +155,6 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
-  background-color: #1f1f1f;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 1rem;
 }
 
 .newsfeed-box {
