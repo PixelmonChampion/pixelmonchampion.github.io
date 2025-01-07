@@ -379,11 +379,21 @@ footer {
 }
 
 .pokemon-entry #gif-toggle {
-  background-color: #ff7300;
+  background-color: royalblue; /* Royalblue for toggle */
   color: white;
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+  font-size: 1.2rem; /* FontAwesome size */
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pokemon-entry #gif-toggle i {
+  font-size: 1rem; /* FontAwesome icon size */
 }
 
 .pokemon-entry .pokemon-types {
@@ -404,12 +414,16 @@ footer {
 .pokemon-entry .pokemon-stats {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align stats to the right */
+  align-items: flex-start; /* Align stats more left */
   margin-bottom: 20px;
+  background-color: #2a2a2a; /* Dark box around stats */
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%; /* Ensure it spans the full width */
 }
 
 .pokemon-entry .stat {
-  text-align: right;
+  text-align: left; /* Align stat text to the left */
   font-size: 0.9em; /* Smaller font size for stats */
   margin-bottom: 10px;
   color: #f2f2f2; /* Lighter text for stats */
@@ -444,6 +458,7 @@ footer {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+  margin-bottom: 10px; /* Space between the button and the options */
 }
 
 .pokemon-entry .move-options {
@@ -469,5 +484,7 @@ footer {
 .pokemon-entry .move-toggle:focus + .move-options {
   display: block;
 }
+
+
 
 
