@@ -56,6 +56,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .search-bar input {
@@ -84,7 +85,7 @@ body {
 }
 
 .search-bar button:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Expand on hover */
 }
 
 /* Search Results Popup */

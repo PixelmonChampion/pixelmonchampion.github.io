@@ -80,32 +80,25 @@
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
 
-    // List of pages and newsfeed items
+    // Simulated page list
     const pages = [
       { name: "Pokémon", url: "pokemon" },
       { name: "Characters", url: "characters" },
       { name: "Misc.", url: "misc" },
     ];
 
-    const newsfeed = [
-      { name: "The PokéGems Wiki Lives!!?!", url: "news1" },
-      { name: "PokéGems Beta 1!", url: "news2" },
-    ];
-
-    const allItems = [...pages, ...newsfeed];
-
-    // Dynamic search
+    // Handle dynamic search
     searchInput.addEventListener("input", function () {
       const query = searchInput.value.toLowerCase().trim();
       searchResults.innerHTML = ""; // Clear previous results
 
       if (query === "") {
-        searchResults.style.display = "none";
+        searchResults.style.display = "none"; // Hide results if input is empty
         return;
       }
 
-      const matches = allItems.filter((item) =>
-        item.name.toLowerCase().includes(query)
+      const matches = pages.filter((page) =>
+        page.name.toLowerCase().includes(query)
       );
 
       if (matches.length > 0) {
@@ -113,9 +106,7 @@
           const resultItem = document.createElement("div");
           resultItem.textContent = match.name;
           resultItem.classList.add("search-result-item");
-          resultItem.onclick = () => {
-            window.location.href = match.url;
-          };
+          resultItem.onclick = () => (window.location.href = match.url);
           searchResults.appendChild(resultItem);
         });
       } else {
@@ -125,7 +116,7 @@
         searchResults.appendChild(noResultItem);
       }
 
-      searchResults.style.display = "block";
+      searchResults.style.display = "block"; // Show results
     });
 
     // Hide results when clicking outside the search bar
