@@ -28,8 +28,8 @@
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search the wiki..." />
       <button id="searchButton">Search</button>
+      <div id="searchResults" class="search-results"></div>
     </div>
-    <div id="searchNotification" class="search-notification"></div>
 
     <!-- Action Buttons -->
     <div class="button-container">
@@ -67,38 +67,53 @@
 
   <!-- Search Functionality -->
   <script>
-    const searchButton = document.getElementById("searchButton");
     const searchInput = document.getElementById("searchInput");
-    const searchNotification = document.getElementById("searchNotification");
+    const searchResults = document.getElementById("searchResults");
 
-    searchButton.addEventListener("click", function () {
+    // Simulated page list
+    const pages = [
+      { name: "Pokémon", url: "pokemon.html" },
+      { name: "Characters", url: "characters.html" },
+      { name: "Misc.", url: "misc.html" },
+    ];
+
+    // Handle dynamic search
+    searchInput.addEventListener("input", function () {
       const query = searchInput.value.toLowerCase().trim();
-      searchNotification.textContent = ""; // Clear previous notification
+      searchResults.innerHTML = ""; // Clear previous results
 
-      // Simulated page list
-      const pages = [
-        { name: "Pokémon", url: "pokemon.html" },
-        { name: "Characters", url: "characters.html" },
-        { name: "Misc.", url: "misc.html" },
-      ];
+      if (query === "") {
+        searchResults.style.display = "none"; // Hide results if input is empty
+        return;
+      }
 
       const matches = pages.filter((page) =>
         page.name.toLowerCase().includes(query)
       );
 
       if (matches.length > 0) {
-        searchNotification.textContent = `Found ${matches.length} result(s): ${matches.map(
-          (match) => match.name
-        ).join(", ")}`;
-        searchNotification.style.backgroundColor = "#2a2a2a"; // Dark gray
-        searchNotification.style.color = "#ffffff"; // White text
+        matches.forEach((match) => {
+          const resultItem = document.createElement("div");
+          resultItem.textContent = match.name;
+          resultItem.classList.add("search-result-item");
+          resultItem.onclick = () => (window.location.href = match.url);
+          searchResults.appendChild(resultItem);
+        });
       } else {
-        searchNotification.textContent = "No results found!";
-        searchNotification.style.backgroundColor = "#2a2a2a"; // Dark gray
-        searchNotification.style.color = "#ff0000"; // Red text for no results
+        const noResultItem = document.createElement("div");
+        noResultItem.textContent = "No results found!";
+        noResultItem.classList.add("search-result-item");
+        searchResults.appendChild(noResultItem);
       }
 
-      searchNotification.style.display = "block"; // Show notification
+      searchResults.style.display = "block"; // Show results
+    });
+
+    // Hide results when clicking outside the search bar
+    document.addEventListener("click", function (event) {
+      if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+        searchResults.style.display = "none";
+      }
     });
   </script>
 </body>
