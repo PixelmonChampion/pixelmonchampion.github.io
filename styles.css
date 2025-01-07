@@ -212,14 +212,14 @@ footer {
 }
 
 .pokemon-card img {
-  max-width: 80%; /* Shrinks images to 80% of the card size */
+  max-width: 90%; /* Increased image size */
   height: auto;
   display: block;
   margin-bottom: 10px;
 }
 
 .pokemon-card span {
-  font-size: 12px; /* Adjust font size for better alignment */
+  font-size: 14px; /* Increased font size */
   margin-top: 5px;
 }
 
