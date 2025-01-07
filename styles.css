@@ -151,6 +151,17 @@ body {
   transform: scale(1.1);
 }
 
+/* Styling specific to vertical buttons */
+.vertical-button-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+
+/* Individual vertical button styling */
 .vertical-button {
   display: block;
   background-color: royalblue;
@@ -158,14 +169,14 @@ body {
   padding: 20px;
   font-size: 18px;
   text-align: center;
-  width: 80%; /* 80% of the container's width, can be adjusted */
+  width: 80%; /* 80% of the container's width */
   margin: 10px 0; /* Space between buttons */
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for buttons */
+/* Hover effect for vertical buttons */
 .vertical-button:hover {
   background-color: #4169e1; /* Darker shade of royalblue */
 }
