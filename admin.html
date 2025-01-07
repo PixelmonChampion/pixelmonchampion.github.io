@@ -1,49 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - PokeGems Wiki</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/pg1.svg" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - PokéGems Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <div class="admin-container">
-    <h1>Admin Page</h1>
-    
+    <h1>Admin Panel</h1>
+
     <!-- Newsfeed Form -->
     <form id="newsfeed-form">
       <label for="news-title">News Title</label>
-      <input type="text" id="news-title" name="news-title" required>
+      <input type="text" id="news-title" placeholder="Enter title..." required />
 
       <label for="news-content">News Content</label>
-      <textarea id="news-content" name="news-content" rows="4" required></textarea>
+      <textarea id="news-content" placeholder="Write the news content..." required></textarea>
 
-      <label for="news-media">Optional Media (Image/Video URL)</label>
-      <input type="text" id="news-media" name="news-media" placeholder="Enter URL">
-
-      <label for="media-type">Media Type</label>
-      <select id="media-type" name="media-type">
-        <option value="image">Image</option>
-        <option value="video">Video</option>
-      </select>
+      <label for="news-media">Upload Media</label>
+      <input type="file" id="news-media" accept="image/*,video/*" />
 
       <button type="submit">Post News</button>
     </form>
 
-    <div id="newsfeed">
-      <!-- Generated newsfeed will be displayed here -->
+    <div id="preview" class="preview-container">
+      <h2>Preview</h2>
+      <div id="preview-content"></div>
     </div>
-
   </div>
 
-  <footer>
-    <p>&copy; 2025 PokéGems. All rights reserved.</p>
-  </footer>
+  <script>
+    const form = document.getElementById("newsfeed-form");
+    const previewContainer = document.getElementById("preview-content");
 
-  <script src="admin.js"></script>
+    // Fetch stored posts
+    let newsfeed = JSON.parse(localStorage.getItem("newsfeed")) || [];
 
+    // Render the preview
+    function renderPreview() {
+      previewContainer.innerHTML = ""; // Clear previous preview
+      newsfeed.forEach((post) => {
+        const postContainer = document.createElement("div");
+        postContainer.classList.add("news-item");
+
+        const title = document.createElement("h3");
+        title.textContent = post.title;
+
+        const content = document.createElement("p");
+        content.textContent = post.content;
+
+        postContainer.appendChild(title);
+        postContainer.appendChild(content);
+
+        // Add media (image or video)
+        if (post.media) {
+          const mediaContainer = document.createElement("div");
+          if (post.mediaType === "image") {
+            const img = document.createElement("img");
+            img.src = post.media;
+            img.alt = "News Image";
+            img.style.maxWidth = "100%";
+            mediaContainer.appendChild(img);
+          } else if (post.mediaType === "video") {
+            const video = document.createElement("video");
+            video.src = post.media;
+            video.controls = true;
+            video.style.maxWidth = "100%";
+            mediaContainer.appendChild(video);
+          }
+          postContainer.appendChild(mediaContainer);
+        }
+
+        previewContainer.appendChild(postContainer);
+      });
+    }
+
+    // Handle form submission
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("news-title").value;
+      const content = document.getElementById("news-content").value;
+      const mediaInput = document.getElementById("news-media");
+      let media = null;
+      let mediaType = null;
+
+      // Handle media upload
+      if (mediaInput.files.length > 0) {
+        const file = mediaInput.files[0];
+        mediaType = file.type.startsWith("image") ? "image" : "video";
+
+        // Convert media file to base64
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          media = e.target.result;
+
+          // Save to newsfeed
+          newsfeed.push({ title, content, media, mediaType });
+          localStorage.setItem("newsfeed", JSON.stringify(newsfeed));
+          renderPreview();
+        };
+        reader.readAsDataURL(file);
+      } else {
+        // Save text-only post
+        newsfeed.push({ title, content });
+        localStorage.setItem("newsfeed", JSON.stringify(newsfeed));
+        renderPreview();
+      }
+
+      // Clear form
+      form.reset();
+    });
+
+    // Render preview on page load
+    renderPreview();
+  </script>
 </body>
 </html>

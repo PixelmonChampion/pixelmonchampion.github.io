@@ -18,9 +18,9 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="pokemon">Pokémon</a></li>
-      <li><a href="characters">Characters</a></li>
-      <li><a href="misc">Misc.</a></li>
+      <li><a href="pokemon.html">Pokémon</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="misc.html">Misc.</a></li>
     </ul>
   </nav>
 
@@ -45,12 +45,6 @@
         <i class="fa-brands fa-discord"></i>
       </a>
     </div>
-
-    <!-- Newsfeed Section -->
-    <div class="newsfeed-container">
-      <h2>Latest News</h2>
-      <div id="newsfeed"></div>
-    </div>
   </div>
 
   <!-- Footer -->
@@ -63,55 +57,43 @@
 
   <!-- Search Functionality -->
   <script>
-    const newsfeedContainer = document.getElementById("newsfeed");
+    const allPages = [
+      { name: "Pokémon", url: "pokemon.html" },
+      { name: "Characters", url: "characters.html" },
+      { name: "Misc.", url: "misc.html" },
+    ];
 
-    // Fetch and display newsfeed from localStorage
-    function loadNewsfeed() {
-      const savedNews = JSON.parse(localStorage.getItem("newsfeed")) || [];
-      newsfeedContainer.innerHTML = ""; // Clear existing items
-      savedNews.forEach((item) => {
-        const newsItem = document.createElement("div");
-        newsItem.classList.add("news-item");
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+    const searchResults = document.getElementById("searchResults");
 
-        const newsTitle = document.createElement("h3");
-        newsTitle.textContent = item.title;
+    searchButton.addEventListener("click", function () {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = ""; // Clear previous results
 
-        const newsContent = document.createElement("p");
-        newsContent.textContent = item.content;
-
-        newsItem.appendChild(newsTitle);
-        newsItem.appendChild(newsContent);
-
-        newsfeedContainer.appendChild(newsItem);
-      });
-    }
-
-    // Handle search
-    document.getElementById("searchButton").addEventListener("click", function () {
-      const query = document.getElementById("searchInput").value.toLowerCase();
-      const allLinks = [...document.querySelectorAll("a[href$='.html']")];
-
-      const resultsContainer = document.getElementById("searchResults");
-      resultsContainer.innerHTML = ""; // Clear previous results
-      const matches = allLinks.filter((link) =>
-        link.textContent.toLowerCase().includes(query)
+      const matches = allPages.filter((page) =>
+        page.name.toLowerCase().includes(query)
       );
 
       if (matches.length > 0) {
         matches.forEach((match) => {
           const result = document.createElement("div");
-          result.textContent = match.textContent;
+          result.textContent = match.name;
           result.classList.add("search-result-item");
-          result.onclick = () => (window.location.href = match.href);
-          resultsContainer.appendChild(result);
+          result.onclick = () => (window.location.href = match.url);
+          searchResults.appendChild(result);
         });
       } else {
-        resultsContainer.textContent = "No results found!";
+        const noResult = document.createElement("div");
+        noResult.textContent = "No results found!";
+        noResult.classList.add("search-result-item");
+        searchResults.appendChild(noResult);
       }
     });
 
-    // Load newsfeed on page load
-    loadNewsfeed();
+    searchInput.addEventListener("input", function () {
+      searchResults.innerHTML = ""; // Clear results on input
+    });
   </script>
 </body>
 </html>
