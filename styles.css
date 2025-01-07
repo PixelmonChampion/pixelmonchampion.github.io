@@ -177,7 +177,7 @@ body {
 }
 
 .misc-button:hover {
-  background-color: dodgerblue;
+  background-color: #003f91;
   transform: scale(1.05);
 }
 
