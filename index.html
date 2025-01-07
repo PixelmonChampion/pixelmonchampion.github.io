@@ -62,7 +62,7 @@
             Beta 1 is on it's way, and it contains tons of amazing content. We look forward to seeing you in - <i>PokéGems: New Beginnings</i>!
           </p>
           <p>
-          <img src="images/update.png" alt="Update!" height="50" ALIGN="right" HSPACE="100">
+          <img src="images/update.png" alt="Update!" height="50" ALIGN="right" HSPACE="250">
           </p>
           <p><strong>Author:</strong> Ozzy</p>
         </div>
@@ -78,8 +78,8 @@
   <!-- Font Awesome for Icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
-  <!-- Search Functionality -->
-  <script>
+   <!-- Search Functionality -->
+   <script>
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
 
@@ -121,14 +121,14 @@
           };
           searchResults.appendChild(resultItem);
         });
+        searchResults.style.display = "block";
       } else {
         const noResultItem = document.createElement("div");
         noResultItem.textContent = "No results found!";
         noResultItem.classList.add("search-result-item");
         searchResults.appendChild(noResultItem);
+        searchResults.style.display = "block";
       }
-
-      searchResults.style.display = "block";
     });
 
     // Hide results when clicking outside the search bar
