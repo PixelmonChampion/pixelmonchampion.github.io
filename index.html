@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="images/pg1.svg" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokéGems Wiki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -18,9 +16,9 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="pokemon">Pokémon</a></li>
-      <li><a href="characters">Characters</a></li>
-      <li><a href="misc">Misc</a></li>
+      <li><a href="pokemon.html">Pokémon</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="misc.html">Misc.</a></li>
     </ul>
   </nav>
 
@@ -30,6 +28,7 @@
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search the wiki..." />
       <button id="searchButton">Search</button>
+      <div id="searchResults" class="search-results"></div>
     </div>
 
     <!-- Action Buttons -->
@@ -48,15 +47,13 @@
     <!-- Newsfeed Section -->
     <div class="newsfeed-container">
       <h2>Latest News</h2>
-      <div id="newsfeed">
-        <div class="news-item">
-          <h3>The PokéGems Wiki Lives!!?!</h3>
-          <p>
-            That's right, the PokéGems Wiki is back and has been entirely reworked! We are back! PokéGems is now in its open Beta state and is ready to rumble!<br /><br />
-            To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
-          </p>
-          <p><strong>Author:</strong> Ozzy</p>
-        </div>
+      <div id="latest-news" class="latest-news-box">
+        <h3>The PokéGems Wiki Lives!!?!</h3>
+        <p>
+          That's right, the PokéGems Wiki is back and has been entirely reworked! We are back! PokéGems is now in its open Beta state and is ready to rumble!<br /><br />
+          To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
+        </p>
+        <p><strong>Author:</strong> Ozzy</p>
       </div>
     </div>
   </div>
@@ -71,18 +68,38 @@
 
   <!-- Search Functionality -->
   <script>
-    document.getElementById("searchButton").addEventListener("click", function () {
-      const query = document.getElementById("searchInput").value.toLowerCase();
-      const allLinks = [...document.querySelectorAll("a[href$='.html']")];
+    const searchButton = document.getElementById("searchButton");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
 
-      const matches = allLinks.filter((link) =>
-        link.textContent.toLowerCase().includes(query)
+    searchButton.addEventListener("click", function () {
+      const query = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = ""; // Clear previous results
+
+      // Simulated page list
+      const pages = [
+        { name: "Pokémon", url: "pokemon.html" },
+        { name: "Characters", url: "characters.html" },
+        { name: "Misc.", url: "misc.html" },
+      ];
+
+      const matches = pages.filter((page) =>
+        page.name.toLowerCase().includes(query)
       );
 
       if (matches.length > 0) {
-        matches[0].click();
+        matches.forEach((match) => {
+          const result = document.createElement("div");
+          result.textContent = match.name;
+          result.classList.add("search-result-item");
+          result.onclick = () => (window.location.href = match.url);
+          searchResults.appendChild(result);
+        });
       } else {
-        alert("No results found!");
+        const noResult = document.createElement("div");
+        noResult.textContent = "No results found!";
+        noResult.classList.add("search-result-item");
+        searchResults.appendChild(noResult);
       }
     });
   </script>
