@@ -396,28 +396,8 @@ footer {
 }
 
 .pokemon-entry #gif-toggle i {
-  font-size: 1rem; /* FontAwesome icon size */
-  display: none;
-}
-
-.pokemon-entry .pokemon-types {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.pokemon-entry .type {
-  display: inline-block;
-  padding: 5px 15px;
-  margin: 0 10px;
-  background-color: transparent;
-  border-radius: 20px;
-  font-weight: bold;
-  color: #121212; /* Darker text for better contrast */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 40px;
-  height: 40px;
+  font-size: 1.2rem; /* Adjusted FontAwesome icon size */
+  display: block;
 }
 
 /* Type Background Images */
@@ -493,8 +473,7 @@ footer {
   background-image: url('images/types/ground.png');
 }
 
-
-/* Add similar type classes here... */
+/* Stats and Alignment */
 .pokemon-entry .pokemon-stats {
   display: flex;
   flex-direction: column;
@@ -555,6 +534,7 @@ footer {
   background-color: pink;
 }
 
+/* Move List and Dropdown Fix */
 .pokemon-entry .move-list {
   background-color: #2a2a2a; /* Dark background for the move list */
   padding: 10px;
@@ -568,6 +548,7 @@ footer {
   border: none;
   cursor: pointer;
   margin-bottom: 10px; /* Space between the button and the options */
+  font-size: 1rem;
 }
 
 .pokemon-entry .move-options {
@@ -590,6 +571,9 @@ footer {
   color: #f2f2f2; /* Lighter text for move items */
 }
 
-.pokemon-entry .move-toggle:focus + .move-options {
+/* Moves Dropdown: Fix for Display */
+.pokemon-entry .move-toggle:focus + .move-options,
+.pokemon-entry .move-toggle:hover + .move-options {
   display: block;
 }
+
