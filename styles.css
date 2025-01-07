@@ -151,6 +151,25 @@ body {
   transform: scale(1.1);
 }
 
+.vertical-button {
+  display: block;
+  background-color: royalblue;
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  width: 80%; /* 80% of the container's width, can be adjusted */
+  margin: 10px 0; /* Space between buttons */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.vertical-button:hover {
+  background-color: #4169e1; /* Darker shade of royalblue */
+}
+
 /* Newsfeed */
 .newsfeed-container {
   max-width: 800px;
