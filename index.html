@@ -49,16 +49,7 @@
     <!-- Newsfeed Section -->
     <div class="newsfeed-container">
       <h2>Latest News</h2>
-      <div id="newsfeed">
-        <div class="news-item">
-          <h3>The PokéGems Wiki Lives!!?!</h3>
-          <p>
-            That's right, the PokéGems Wiki is back and has been entirely reworked! We are back! PokéGems is now in its open Beta state and is ready to rumble!<br /><br />
-            To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
-          </p>
-          <p><strong>Author:</strong> Ozzy</p>
-        </div>
-      </div>
+      <div id="newsfeed"></div>
     </div>
   </div>
 
@@ -72,28 +63,55 @@
 
   <!-- Search Functionality -->
   <script>
+    const newsfeedContainer = document.getElementById("newsfeed");
+
+    // Fetch and display newsfeed from localStorage
+    function loadNewsfeed() {
+      const savedNews = JSON.parse(localStorage.getItem("newsfeed")) || [];
+      newsfeedContainer.innerHTML = ""; // Clear existing items
+      savedNews.forEach((item) => {
+        const newsItem = document.createElement("div");
+        newsItem.classList.add("news-item");
+
+        const newsTitle = document.createElement("h3");
+        newsTitle.textContent = item.title;
+
+        const newsContent = document.createElement("p");
+        newsContent.textContent = item.content;
+
+        newsItem.appendChild(newsTitle);
+        newsItem.appendChild(newsContent);
+
+        newsfeedContainer.appendChild(newsItem);
+      });
+    }
+
+    // Handle search
     document.getElementById("searchButton").addEventListener("click", function () {
       const query = document.getElementById("searchInput").value.toLowerCase();
       const allLinks = [...document.querySelectorAll("a[href$='.html']")];
 
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = ""; // Clear previous results
       const matches = allLinks.filter((link) =>
         link.textContent.toLowerCase().includes(query)
       );
 
-      const resultsContainer = document.getElementById("searchResults");
-      resultsContainer.innerHTML = ""; // Clear previous results
       if (matches.length > 0) {
-        matches.forEach(match => {
+        matches.forEach((match) => {
           const result = document.createElement("div");
           result.textContent = match.textContent;
           result.classList.add("search-result-item");
-          result.onclick = () => window.location.href = match.href;
+          result.onclick = () => (window.location.href = match.href);
           resultsContainer.appendChild(result);
         });
       } else {
         resultsContainer.textContent = "No results found!";
       }
     });
+
+    // Load newsfeed on page load
+    loadNewsfeed();
   </script>
 </body>
 </html>
