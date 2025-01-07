@@ -95,6 +95,8 @@ body {
   display: none;
   border-radius: 4px;
   font-size: 1rem;
+  position: relative;
+  z-index: 999;
 }
 
 /* Buttons */

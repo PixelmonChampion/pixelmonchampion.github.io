@@ -90,12 +90,12 @@
         searchNotification.textContent = `Found ${matches.length} result(s): ${matches.map(
           (match) => match.name
         ).join(", ")}`;
-        searchNotification.style.backgroundColor = "#1f1f1f";
-        searchNotification.style.color = "#ffffff";
+        searchNotification.style.backgroundColor = "#2a2a2a"; // Dark gray
+        searchNotification.style.color = "#ffffff"; // White text
       } else {
         searchNotification.textContent = "No results found!";
-        searchNotification.style.backgroundColor = "#1f1f1f";
-        searchNotification.style.color = "#ff0000";
+        searchNotification.style.backgroundColor = "#2a2a2a"; // Dark gray
+        searchNotification.style.color = "#ff0000"; // Red text for no results
       }
 
       searchNotification.style.display = "block"; // Show notification
