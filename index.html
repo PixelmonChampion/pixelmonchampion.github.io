@@ -20,7 +20,7 @@
     <ul class="nav-links">
       <li><a href="pokemon">Pokémon</a></li>
       <li><a href="characters">Characters</a></li>
-      <li><a href="misc">Misc</a></li>
+      <li><a href="misc">Misc.</a></li>
     </ul>
   </nav>
 
@@ -30,6 +30,7 @@
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search the wiki..." />
       <button id="searchButton">Search</button>
+      <div id="searchResults" class="search-results"></div>
     </div>
 
     <!-- Action Buttons -->
@@ -79,10 +80,18 @@
         link.textContent.toLowerCase().includes(query)
       );
 
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = ""; // Clear previous results
       if (matches.length > 0) {
-        matches[0].click();
+        matches.forEach(match => {
+          const result = document.createElement("div");
+          result.textContent = match.textContent;
+          result.classList.add("search-result-item");
+          result.onclick = () => window.location.href = match.href;
+          resultsContainer.appendChild(result);
+        });
       } else {
-        alert("No results found!");
+        resultsContainer.textContent = "No results found!";
       }
     });
   </script>
