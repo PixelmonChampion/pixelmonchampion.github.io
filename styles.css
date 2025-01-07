@@ -416,11 +416,11 @@ footer {
 }
 
 .pokemon-entry .type {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 22px;
   background-size: cover;
   border-radius: 5px;
-}
+  }
 
 /* Type Background Images */
 .pokemon-entry .type.fire {
@@ -508,7 +508,7 @@ footer {
   background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
-  width: 48%;
+  width: 50%;
   color: #f2f2f2;
   font-size: 1em;
   text-align: left;
@@ -518,11 +518,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 20px;
   background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
-  width: 48%;
+  width: 50%;
 }
 
 .pokemon-entry .stat {
@@ -562,7 +561,6 @@ footer {
   padding: 10px;
   border-radius: 10px;
   width: 100%;
-  margin-top: 20px; /* Move list below everything else */
 }
 
 .pokemon-entry .move-toggle {
