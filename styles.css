@@ -187,36 +187,39 @@ footer {
 
 /* Add new Pokemon list layout at the end */
 /* Pokémon List and Row Styles */
+/* Flexbox container for Pokémon list */
 .pokemon-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px; /* Adjust gap between the elements */
   justify-content: center;
-  gap: 20px;
 }
 
-.pokemon-row {
+/* Each Pokémon card */
+.pokemon-card {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  text-align: center;
 }
 
-.pokemon-row a {
-  text-align: center;
-  font-size: 14px;
+.pokemon-card a {
   color: #333;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.pokemon-row img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 5px;
+.pokemon-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.pokemon-row a:hover {
-  text-decoration: underline;
+.pokemon-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 @media (max-width: 768px) {
