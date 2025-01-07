@@ -196,13 +196,13 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px; /* Shrinks the card size */
+  width: 150px; /* Shrinks the card size */
   text-align: center;
   padding: 10px;
 }
 
 .pokemon-card a {
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   display: flex;
