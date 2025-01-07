@@ -56,7 +56,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-  position: relative;
 }
 
 .search-bar input {
@@ -85,7 +84,7 @@ body {
 }
 
 .search-bar button:hover {
-  transform: scale(1.1); /* Expand on hover */
+  transform: scale(1.1);
 }
 
 /* Search Results Popup */
@@ -158,11 +157,20 @@ body {
   text-align: left;
 }
 
-.latest-news-box {
-  background: #1f1f1f;
+.newsfeed-box {
+  background-color: #1f1f1f;
   padding: 1.5rem;
   border-radius: 8px;
   margin-top: 1rem;
+}
+
+.news-item {
+  margin-bottom: 1rem;
+}
+
+hr {
+  border: 1px solid #444;
+  margin: 1rem 0;
 }
 
 /* Footer */
