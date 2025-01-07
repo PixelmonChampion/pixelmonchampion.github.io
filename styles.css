@@ -196,7 +196,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px; /* Shrinks the card size */
+  width: 200px; /* Increased width of the card */
   text-align: center;
   padding: 10px;
 }
@@ -212,14 +212,14 @@ footer {
 }
 
 .pokemon-card img {
-  max-width: 90%; /* Increased image size */
+  max-width: 100%; /* Images take full width of the card */
   height: auto;
   display: block;
   margin-bottom: 10px;
 }
 
 .pokemon-card span {
-  font-size: 14px; /* Increased font size */
+  font-size: 16px; /* Increased font size */
   margin-top: 5px;
 }
 
@@ -228,14 +228,26 @@ footer {
   transition: transform 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .pokemon-list {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+  .pokemon-card {
+    width: 150px; /* Adjust width for medium screens */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 800px) {
   .pokemon-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+    justify-content: space-evenly; /* More evenly spaced items on smaller screens */
+  }
+
+  .pokemon-card {
+    width: 130px; /* Adjust for smaller screens */
   }
 }
+
+@media (max-width: 500px) {
+  .pokemon-card {
+    width: 100px; /* Further reduce size on very small screens */
+  }
+}
+
