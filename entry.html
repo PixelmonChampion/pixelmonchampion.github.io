@@ -50,22 +50,22 @@
             <div class="pokemon-stats">
                 <h2>Base Stats</h2>
                 <div class="stat">
-                    <span>HP: </span><div class="stat-bar" id="hp-stat">75</div>
+                    <span>HP: </span><div class="stat-bar" id="stat-hp">75</div>
                 </div>
                 <div class="stat">
-                    <span>Attack: </span><div class="stat-bar" id="attack-stat">50</div>
+                    <span>Attack: </span><div class="stat-bar" id="stat-atk">50</div>
                 </div>
                 <div class="stat">
-                    <span>Defense: </span><div class="stat-bar" id="defense-stat">60</div>
+                    <span>Defense: </span><div class="stat-bar" id="stat-def">60</div>
                 </div>
                 <div class="stat">
-                    <span>Sp. Attack: </span><div class="stat-bar" id="spattack-stat">50</div>
+                    <span>Sp. Attack: </span><div class="stat-bar" id="stat-spatk">50</div>
                 </div>
                 <div class="stat">
-                    <span>Sp. Defense: </span><div class="stat-bar" id="spdefense-stat">60</div>
+                    <span>Sp. Defense: </span><div class="stat-bar" id="stat-spdef">60</div>
                 </div>
                 <div class="stat">
-                    <span>Speed: </span><div class="stat-bar" id="speed-stat">40</div>
+                    <span>Speed: </span><div class="stat-bar" id="stat-speed">40</div>
                 </div>
             </div>
 
@@ -121,12 +121,12 @@
 
         // Stat animation effect
         const statBars = {
-            hp: document.getElementById('hp-stat'),
-            attack: document.getElementById('attack-stat'),
-            defense: document.getElementById('defense-stat'),
-            spattack: document.getElementById('spattack-stat'),
-            spdefense: document.getElementById('spdefense-stat'),                
-            speed: document.getElementById('speed-stat')
+            hp: document.getElementById('stat-hp'),
+            attack: document.getElementById('stat-atk'),
+            defense: document.getElementById('stat-def'),
+            spattack: document.getElementById('stat-spatk'),
+            spdefense: document.getElementById('stat-spdef'),                
+            speed: document.getElementById('stat-speed')
         };
 
         function animateStat(stat, value) {
