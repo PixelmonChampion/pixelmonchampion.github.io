@@ -350,48 +350,50 @@ footer {
   }
 }
 
-/* Scoped CSS for Pokémon Entry Page */
+/* General Style for Pokémon Entry Page */
 .pokemon-entry {
   width: 80%;
   margin: 20px auto;
   padding: 20px;
-  background-color: #1f1f1f; /* Dark background */
+  background-color: #1f1f1f;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Aligns content to the sides */
+  flex-direction: column;
+  align-items: center;
 }
 
 .pokemon-entry .pokemon-name {
   text-align: center;
   font-size: 2em;
-  color: white; /* White text */
+  color: white;
 }
 
+/* Pokémon Artwork */
 .pokemon-entry .pokemon-artwork {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
-  width: 45%; /* Increased size */
+  width: 100%; /* Widened */
+  justify-content: center;
   align-items: center;
 }
 
 .pokemon-entry #pokemon-artwork {
-  width: 300px; /* Larger artwork */
+  width: 300px;
   height: auto;
   transition: transform 0.3s;
 }
 
 .pokemon-entry #gif-toggle {
-  background-color: royalblue; /* Royalblue for toggle */
+  background-color: royalblue;
   color: white;
   width: 30px;
   height: 30px;
   padding: 0;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem; /* FontAwesome size */
+  font-size: 1.2rem;
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -401,127 +403,96 @@ footer {
 }
 
 .pokemon-entry #gif-toggle i {
-  font-size: 1.2rem; /* Adjusted FontAwesome icon size */
+  font-size: 1.2rem;
   display: block;
 }
 
-/* New Description Box */
+/* Type Icons */
+.pokemon-entry .pokemon-types {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.pokemon-entry .type {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+/* Type Background Images */
+.pokemon-entry .type.fire { background-image: url('images/types/fire.png'); }
+.pokemon-entry .type.water { background-image: url('images/types/water.png'); }
+.pokemon-entry .type.grass { background-image: url('images/types/grass.png'); }
+.pokemon-entry .type.electric { background-image: url('images/types/electric.png'); }
+.pokemon-entry .type.ice { background-image: url('images/types/ice.png'); }
+.pokemon-entry .type.fighting { background-image: url('images/types/fighting.png'); }
+.pokemon-entry .type.poison { background-image: url('images/types/poison.png'); }
+.pokemon-entry .type.ghost { background-image: url('images/types/ghost.png'); }
+.pokemon-entry .type.dark { background-image: url('images/types/dark.png'); }
+.pokemon-entry .type.dragon { background-image: url('images/types/dragon.png'); }
+.pokemon-entry .type.fairy { background-image: url('images/types/fairy.png'); }
+.pokemon-entry .type.rock { background-image: url('images/types/rock.png'); }
+.pokemon-entry .type.bug { background-image: url('images/types/bug.png'); }
+.pokemon-entry .type.steel { background-image: url('images/types/steel.png'); }
+.pokemon-entry .type.normal { background-image: url('images/types/normal.png'); }
+.pokemon-entry .type.psychic { background-image: url('images/types/psychic.png'); }
+.pokemon-entry .type.flying { background-image: url('images/types/flying.png'); }
+.pokemon-entry .type.ground { background-image: url('images/types/ground.png'); }
+
+/* Description and Stats */
+.pokemon-entry .pokemon-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  gap: 15px;
+}
+
 .pokemon-entry .pokemon-description {
-  background-color: #2a2a2a; /* Dark background */
+  background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
-  width: 45%; /* Make the description box the same size as the stats */
-  color: #f2f2f2; /* Lighter text */
+  width: 48%;
+  color: #f2f2f2;
   font-size: 1em;
   text-align: left;
 }
 
 .pokemon-entry .pokemon-description::before {
-  content: "Enter description here..."; /* Default placeholder text */
-  color: #999; /* Placeholder text color */
+  content: "Enter description here...";
+  color: #999;
   font-style: italic;
 }
 
-/* Type Background Images */
-.pokemon-entry .type.fire {
-  background-image: url('images/types/fire.png');
-}
-
-.pokemon-entry .type.water {
-  background-image: url('images/types/water.png');
-}
-
-.pokemon-entry .type.grass {
-  background-image: url('images/types/grass.png');
-}
-
-.pokemon-entry .type.electric {
-  background-image: url('images/types/electric.png');
-}
-
-.pokemon-entry .type.ice {
-  background-image: url('images/types/ice.png');
-}
-
-.pokemon-entry .type.fighting {
-  background-image: url('images/types/fighting.png');
-}
-
-.pokemon-entry .type.poison {
-  background-image: url('images/types/poison.png');
-}
-
-.pokemon-entry .type.ghost {
-  background-image: url('images/types/ghost.png');
-}
-
-.pokemon-entry .type.dark {
-  background-image: url('images/types/dark.png');
-}
-
-.pokemon-entry .type.dragon {
-  background-image: url('images/types/dragon.png');
-}
-
-.pokemon-entry .type.fairy {
-  background-image: url('images/types/fairy.png');
-}
-
-.pokemon-entry .type.rock {
-  background-image: url('images/types/rock.png');
-}
-
-.pokemon-entry .type.bug {
-  background-image: url('images/types/bug.png');
-}
-
-.pokemon-entry .type.steel {
-  background-image: url('images/types/steel.png');
-}
-
-.pokemon-entry .type.normal {
-  background-image: url('images/types/normal.png');
-}
-
-.pokemon-entry .type.psychic {
-  background-image: url('images/types/psychic.png');
-}
-
-.pokemon-entry .type.flying {
-  background-image: url('images/types/flying.png');
-}
-
-.pokemon-entry .type.ground {
-  background-image: url('images/types/ground.png');
-}
-
-/* Stats and Alignment */
 .pokemon-entry .pokemon-stats {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align stats more left */
+  align-items: flex-start;
   margin-bottom: 20px;
-  background-color: #2a2a2a; /* Dark box around stats */
+  background-color: #2a2a2a;
   padding: 15px;
   border-radius: 10px;
-  width: 45%; /* Ensure it spans the full width */
+  width: 48%;
 }
 
 .pokemon-entry .stat {
-  text-align: right; /* Align stat text to the left */
-  font-size: 0.9em; /* Smaller font size for stats */
+  text-align: right;
+  font-size: 0.9em;
   margin-bottom: 10px;
-  color: #f2f2f2; /* Lighter text for stats */
+  color: #f2f2f2;
 }
 
 .pokemon-entry .stat-bar {
-  background-color: #333; /* Darker bar color */
+  background-color: #333;
   width: 100%;
-  height: 15px; /* Smaller height for the bars */
+  height: 15px;
   border-radius: 10px;
   position: relative;
   display: flex;
-  margin-bottom: 10px; /* Space between the bars */
+  margin-bottom: 10px;
 }
 
 .pokemon-entry .stat-bar span {
@@ -531,36 +502,19 @@ footer {
   left: 5px;
 }
 
-/* Color adjustments for stat bars */
-.pokemon-entry .stat-hp .stat-bar {
-  background-color: red;
-}
+.pokemon-entry .stat-hp .stat-bar { background-color: red; }
+.pokemon-entry .stat-atk .stat-bar { background-color: orange; }
+.pokemon-entry .stat-def .stat-bar { background-color: yellow; }
+.pokemon-entry .stat-spatk .stat-bar { background-color: blue; }
+.pokemon-entry .stat-spdef .stat-bar { background-color: limegreen; }
+.pokemon-entry .stat-speed .stat-bar { background-color: pink; }
 
-.pokemon-entry .stat-atk .stat-bar {
-  background-color: orange;
-}
-
-.pokemon-entry .stat-def .stat-bar {
-  background-color: yellow;
-}
-
-.pokemon-entry .stat-spatk .stat-bar {
-  background-color: blue;
-}
-
-.pokemon-entry .stat-spdef .stat-bar {
-  background-color: limegreen;
-}
-
-.pokemon-entry .stat-speed .stat-bar {
-  background-color: pink;
-}
-
-/* Move List and Dropdown Fix */
+/* Move List and Dropdown */
 .pokemon-entry .move-list {
-  background-color: #2a2a2a; /* Dark background for the move list */
+  background-color: #2a2a2a;
   padding: 10px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .pokemon-entry .move-toggle {
@@ -569,7 +523,7 @@ footer {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  margin-bottom: 10px; /* Space between the button and the options */
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 
@@ -580,7 +534,7 @@ footer {
 
 .pokemon-entry .move-category h3 {
   font-size: 1.2em;
-  color: #f2f2f2; /* Lighter text for headers */
+  color: #f2f2f2;
 }
 
 .pokemon-entry .move-category ul {
@@ -590,7 +544,7 @@ footer {
 
 .pokemon-entry .move-category li {
   padding: 5px 0;
-  color: #f2f2f2; /* Lighter text for move items */
+  color: #f2f2f2;
 }
 
 /* Moves Dropdown: Fix for Display */
