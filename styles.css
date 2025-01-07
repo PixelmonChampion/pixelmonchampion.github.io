@@ -537,7 +537,6 @@ footer {
 }
 
 .pokemon-entry .stat-bar {
-  background-color: #333;
   width: 100%;
   height: 15px;
   border-radius: 10px;
@@ -573,6 +572,7 @@ footer {
   color: white;
   padding: 5px 10px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 1rem;
