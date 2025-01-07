@@ -368,6 +368,11 @@ footer {
   font-size: 2em;
   color: white;
 }
+.pokemon-entry .pokemon-desc {
+  text-align: center;
+  font-size: 1em;
+  color: white;
+}
 
 /* Pokémon Artwork */
 .pokemon-entry .pokemon-artwork {
