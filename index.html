@@ -18,19 +18,20 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="pokemon.html">Pokémon</a></li>
-      <li><a href="characters.html">Characters</a></li>
-      <li><a href="misc.html">Misc.</a></li>
+      <li><a href="pokemon">Pokémon</a></li>
+      <li><a href="characters">Characters</a></li>
+      <li><a href="misc">Misc.</a></li>
     </ul>
   </nav>
 
   <!-- Main Content -->
   <div class="main-content">
+    <h1>PokéGems Wiki</h1>
+
     <!-- Search Bar -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search the wiki..." />
       <button id="searchButton">Search</button>
-      <div id="searchResults" class="search-results"></div>
     </div>
 
     <!-- Action Buttons -->
@@ -45,6 +46,20 @@
         <i class="fa-brands fa-discord"></i>
       </a>
     </div>
+
+    <!-- Newsfeed Section -->
+    <div class="newsfeed-container">
+      <h2>Latest News</h2>
+      <div id="newsfeed">
+        <div class="news-item">
+          <h3>The PokéGems Wiki Lives!!?!</h3>
+          <p>
+            That's right, the PokéGems Wiki is back and has been entirely reworked! To get started using the wiki, use any of the buttons in the top navigation bar. You can also use our search bar to look up any information quicker if you don't want to scroll through the pages. With that all being said, we look forward to seeing you on the server!
+          </p>
+          <p><strong>Author:</strong> Ozzy</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -57,42 +72,19 @@
 
   <!-- Search Functionality -->
   <script>
-    const allPages = [
-      { name: "Pokémon", url: "pokemon.html" },
-      { name: "Characters", url: "characters.html" },
-      { name: "Misc.", url: "misc.html" },
-    ];
+    document.getElementById("searchButton").addEventListener("click", function () {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const allLinks = [...document.querySelectorAll("a[href$='.html']")];
 
-    const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-    const searchResults = document.getElementById("searchResults");
-
-    searchButton.addEventListener("click", function () {
-      const query = searchInput.value.toLowerCase().trim();
-      searchResults.innerHTML = ""; // Clear previous results
-
-      const matches = allPages.filter((page) =>
-        page.name.toLowerCase().includes(query)
+      const matches = allLinks.filter((link) =>
+        link.textContent.toLowerCase().includes(query)
       );
 
       if (matches.length > 0) {
-        matches.forEach((match) => {
-          const result = document.createElement("div");
-          result.textContent = match.name;
-          result.classList.add("search-result-item");
-          result.onclick = () => (window.location.href = match.url);
-          searchResults.appendChild(result);
-        });
+        matches[0].click();
       } else {
-        const noResult = document.createElement("div");
-        noResult.textContent = "No results found!";
-        noResult.classList.add("search-result-item");
-        searchResults.appendChild(noResult);
+        alert("No results found!");
       }
-    });
-
-    searchInput.addEventListener("input", function () {
-      searchResults.innerHTML = ""; // Clear results on input
     });
   </script>
 </body>
