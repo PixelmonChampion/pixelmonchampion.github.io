@@ -60,37 +60,36 @@
             </div>
 
             <!-- Move List Dropdown -->
-            <div class="move-list">
-                <button class="move-toggle">Moves</button>
-                <div class="move-options">
-                    <div class="move-category">
-                        <h3>Level Up Moves</h3>
-                        <ul id="level-up-list">
-                            <li>Move 1</li>
-                            <li>Move 2</li>
-                        </ul>
-                    </div>
-                    <div class="move-category">
-                        <h3>TM Moves</h3>
-                        <ul id="tm-list">
-                            <li>Move A</li>
-                            <li>Move B</li>
-                        </ul>
-                    </div>
-                    <div class="move-category">
-                        <h3>Tutor Moves</h3>
-                        <ul id="tutor-list">
-                            <li>Move X</li>
-                            <li>Move Y</li>
-                        </ul>
-                    </div>
-                    <div class="move-category">
-                        <h3>Egg Moves</h3>
-                        <ul id="egg-moves-list">
-                            <li>Egg Move 1</li>
-                            <li>Egg Move 2</li>
-                        </ul>
-                    </div>
+            div class="move-list">
+            <button class="move-toggle" id="move-toggle-btn">Moves</button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Level Up Moves</h3>
+                    <ul id="level-up-list">
+                        <li>Move 1</li>
+                        <li>Move 2</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>TM Moves</h3>
+                    <ul id="tm-list">
+                        <li>Move A</li>
+                        <li>Move B</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>Tutor Moves</h3>
+                    <ul id="tutor-list">
+                        <li>Move X</li>
+                        <li>Move Y</li>
+                    </ul>
+                </div>
+                <div class="move-category">
+                    <h3>Egg Moves</h3>
+                    <ul id="egg-moves-list">
+                        <li>Egg Move 1</li>
+                        <li>Egg Move 2</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -133,6 +132,17 @@
             animateStat(statBars.spattack, 50);  // Example for Attack stat
             animateStat(statBars.spdefense, 60);  // Example for Defense stat            
             animateStat(statBars.speed, 40);  // Example for Speed stat
+
+
+            // Get the move-toggle button and move-options div
+            const moveToggleBtn = document.getElementById("move-toggle-btn");
+            const moveOptions = document.querySelector(".move-options");
+
+            // Add event listener for click on the move-toggle button
+            moveToggleBtn.addEventListener("click", function() {
+                // Toggle the visibility of the move options
+                moveOptions.style.display = moveOptions.style.display === "block" ? "none" : "block";
+            });
         </script>
     </body>
 </html>
