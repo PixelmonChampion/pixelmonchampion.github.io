@@ -482,11 +482,11 @@ footer {
   background-color: #2a2a2a; /* Dark box around stats */
   padding: 15px;
   border-radius: 10px;
-  width: 100%; /* Ensure it spans the full width */
+  width: 50%; /* Ensure it spans the full width */
 }
 
 .pokemon-entry .stat {
-  text-align: left; /* Align stat text to the left */
+  text-align: right; /* Align stat text to the left */
   font-size: 0.9em; /* Smaller font size for stats */
   margin-bottom: 10px;
   color: #f2f2f2; /* Lighter text for stats */
