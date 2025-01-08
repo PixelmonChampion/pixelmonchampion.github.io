@@ -118,40 +118,42 @@
                 this.innerHTML = '<i class="fas fa-video"></i>';
             }
         });
-
-        // Stat animation effect
+    
+        // Stat animation effect with dynamic timing
         const statBars = {
             hp: document.getElementById('stat-hp'),
             attack: document.getElementById('stat-atk'),
             defense: document.getElementById('stat-def'),
             spattack: document.getElementById('stat-spatk'),
-            spdefense: document.getElementById('stat-spdef'),                
+            spdefense: document.getElementById('stat-spdef'),
             speed: document.getElementById('stat-speed')
         };
-
+    
         function animateStat(stat, value) {
             let progress = 0;
             const interval = setInterval(function () {
                 progress += 1;
                 stat.style.width = progress + '%';
                 if (progress >= value) clearInterval(interval);
-            }, 15);
+            }, 15); // Adjust the interval speed here for faster or slower animation
         }
-
+    
+        // Call the animateStat function for each stat
         animateStat(statBars.hp, 75);  
         animateStat(statBars.attack, 50);  
         animateStat(statBars.defense, 60);  
         animateStat(statBars.spattack, 50);  
         animateStat(statBars.spdefense, 60);            
         animateStat(statBars.speed, 40);  
-
+    
         // Move Toggle button functionality
         const moveToggleBtn = document.getElementById("move-toggle-btn");
         const moveOptions = document.querySelector(".move-options");
-
+    
         moveToggleBtn.addEventListener("click", function() {
             moveOptions.style.display = moveOptions.style.display === "block" ? "none" : "block";
         });
     </script>
+    
 </body>
 </html>
