@@ -573,6 +573,7 @@ footer {
   padding: 10px;
   border-radius: 10px;
   width: 98.5%;
+  gap: 10px; /* Space between the button and the text */
 }
 
 /* Move Toggle Button */
