@@ -573,7 +573,7 @@ footer {
   background-color: #2a2a2a;
   padding: 10px;
   border-radius: 10px;
-  width: 50%;
+  width: 98.5%;
   gap: 10px; /* Space between the button and the text */
 }
 
@@ -694,54 +694,54 @@ footer {
 }
 
 
+/* Abilities and Location Section Container */
+.abilities-location-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
 /* Abilities Section */
 .pokemon-abilities {
-  margin: 2rem 0;
+  flex: 1;
+  text-align: left;
 }
 
 .pokemon-abilities h2 {
-  font-size: 1.8rem;
-  color: royalblue;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: royalblue;
 }
 
 .pokemon-abilities ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
-.pokemon-abilities li {
+.pokemon-abilities ul li {
   background-color: #2a2a2a;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  color: white;
 }
 
-/* Locations Section */
-.pokemon-locations {
-  margin: 2rem 0;
+/* Location Data Section */
+.pokemon-location {
+  flex: 1;
+  text-align: left;
 }
 
-.pokemon-locations h2 {
-  font-size: 1.8rem;
+.pokemon-location h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: royalblue;
-  margin-bottom: 1rem;
 }
 
-.pokemon-locations p {
-  margin-bottom: 1rem;
-}
-
-.pokemon-locations ul {
-  list-style: none;
-  padding: 0;
-}
-
-.pokemon-locations li {
+.pokemon-location p {
   background-color: #2a2a2a;
-  padding: 0.8rem;
-  margin: 0.5rem 0;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
 }
