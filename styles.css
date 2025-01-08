@@ -745,3 +745,9 @@ footer {
   border-radius: 5px;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .abilities-location-container {
+    flex-direction: column;
+  }
+}
