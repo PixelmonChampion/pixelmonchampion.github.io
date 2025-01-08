@@ -573,22 +573,60 @@ footer {
   padding: 10px;
   border-radius: 10px;
   width: 98.5%;
-  }
+}
+
+/* Move Toggle Button */
 .pokemon-entry .move-toggle {
-  background-color: #af4c4c;
-  color: white;
-  padding: 5px 10px;
+  background-color: #af4c4c; /* Button background */
+  color: white; /* Icon color */
   border: none;
-  border-radius: 5px;
+  border-radius: 50%; /* Circular button */
+  width: 40px; /* Circular dimensions */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease; /* Snappy effect */
+  padding: 0; /* Remove inner padding for perfect icon alignment */
 }
 
+.pokemon-entry .move-toggle:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.pokemon-entry .move-toggle:active {
+  transform: scale(0.95); /* Pressed effect */
+}
+
+/* Move Options Dropdown */
 .pokemon-entry .move-options {
-  display: none;
+  display: none; /* Hidden by default */
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
   margin-top: 10px;
+  animation: dropdown-snappy 0.3s ease-out; /* Smooth dropdown effect */
 }
 
+.pokemon-entry .move-options.active {
+  display: block; /* Display when active */
+}
+
+/* Snappy Dropdown Animation */
+@keyframes dropdown-snappy {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Move Category Styles */
 .pokemon-entry .move-category h3 {
   font-size: 1.2em;
   color: #f2f2f2;
@@ -602,14 +640,4 @@ footer {
 .pokemon-entry .move-category li {
   padding: 5px 0;
   color: #f2f2f2;
-}
-
-/* Moves Dropdown: Fix for Display */
-/* Remove hover for displaying move options */
-.pokemon-entry .move-toggle:focus + .move-options {
-  display: block;
-}
-
-.pokemon-entry .move-toggle:hover + .move-options {
-  display: none; /* Removed hover display */
 }

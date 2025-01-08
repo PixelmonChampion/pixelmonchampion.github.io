@@ -72,7 +72,7 @@
         </div>
                     <!-- Move List Dropdown -->
                     <div class="move-list">
-                        <button class="move-toggle" id="move-toggle-btn">Moves</button>
+                        <button class="move-toggle" id="move-toggle-btn"><i class="fas fa-bars"></i></button>
                         <div class="move-options">
                             <div class="move-category">
                                 <h3>Level Up Moves</h3>
@@ -146,13 +146,15 @@
         animateStat(statBars.spdefense, 60);            
         animateStat(statBars.speed, 40);  
     
-        // Move Toggle button functionality
-        const moveToggleBtn = document.getElementById("move-toggle-btn");
+        document.addEventListener("DOMContentLoaded", () => {
+        const moveToggle = document.querySelector(".move-toggle");
         const moveOptions = document.querySelector(".move-options");
-    
-        moveToggleBtn.addEventListener("click", function() {
-            moveOptions.style.display = moveOptions.style.display === "block" ? "none" : "block";
+
+        moveToggle.addEventListener("click", () => {
+            moveOptions.classList.toggle("active");
         });
+        });
+
     </script>
     
 </body>
