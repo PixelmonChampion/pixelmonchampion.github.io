@@ -557,12 +557,12 @@ footer {
   left: 5px;
 }
 
-#stat-hp.stat-bar  { background-color: red; }
-#stat-atk.stat-bar  { background-color: orange; }
-#stat-def.stat-bar { background-color: yellow; }
-#stat-spatk.stat-bar  { background-color: blue; }
-#stat-spdef.stat-bar  { background-color: limegreen; }
-#stat-speed.stat-bar  { background-color: pink; }
+#stat-hp.stat-bar  { background-color: rgb(201, 68, 68); }
+#stat-atk.stat-bar  { background-color: rgb(219, 168, 74); }
+#stat-def.stat-bar { background-color: rgb(215, 215, 74); }
+#stat-spatk.stat-bar  { background-color: rgb(83, 151, 218); }
+#stat-spdef.stat-bar  { background-color: rgb(95, 177, 85); }
+#stat-speed.stat-bar  { background-color: rgb(203, 122, 135); }
 
 
 /* Move List and Dropdown */
