@@ -577,7 +577,7 @@ footer {
 
 /* Move Toggle Button */
 .pokemon-entry .move-toggle {
-  background-color: #af4c4c; /* Button background */
+  background-color: royalblue; /* Button background */
   color: white; /* Icon color */
   border: none;
   border-radius: 50%; /* Circular button */
@@ -640,4 +640,10 @@ footer {
 .pokemon-entry .move-category li {
   padding: 5px 0;
   color: #f2f2f2;
+}
+/* Move Label Text */
+.pokemon-entry .move-label {
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
 }
