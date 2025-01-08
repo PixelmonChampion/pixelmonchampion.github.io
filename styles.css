@@ -605,7 +605,11 @@ footer {
 }
 
 /* Moves Dropdown: Fix for Display */
-.pokemon-entry .move-toggle:focus + .move-options,
-.pokemon-entry .move-toggle:hover + .move-options {
+/* Remove hover for displaying move options */
+.pokemon-entry .move-toggle:focus + .move-options {
   display: block;
+}
+
+.pokemon-entry .move-toggle:hover + .move-options {
+  display: none; /* Removed hover display */
 }
