@@ -364,14 +364,17 @@ footer {
 }
 
 .pokemon-entry .pokemon-name {
+  margin-bottom:auto;
   text-align: center;
   font-size: 2em;
   color: white;
 }
 .pokemon-entry .pokemon-desc {
+  margin-bottom:auto;
   text-align: center;
   font-size: 1em;
   color: white;
+  font-style: italic;
 }
 
 /* Pokémon Artwork */
@@ -391,6 +394,7 @@ footer {
 }
 
 .pokemon-entry #gif-toggle {
+  align-self:flex-end;
   background-color: royalblue;
   color: white;
   width: 30px;
@@ -561,12 +565,13 @@ footer {
 
 /* Move List and Dropdown */
 .pokemon-entry .move-list {
+  margin-top: 10px;
+  align-self: center;
   background-color: #2a2a2a;
   padding: 10px;
   border-radius: 10px;
-  width: 100%;
-}
-
+  width: 98.5%;
+  }
 .pokemon-entry .move-toggle {
   background-color: #af4c4c;
   color: white;
@@ -574,7 +579,6 @@ footer {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 10px;
   font-size: 1rem;
 }
 
