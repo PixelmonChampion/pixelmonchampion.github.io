@@ -523,19 +523,6 @@ footer {
   text-align: left;
 }
 
-.pokemon-entry .pokemon-abilities {
-  background-color: #2a2a2a;
-  padding: 15px;
-  border-radius: 10px;
-  width: 50%;
-  color: #f2f2f2;
-  font-size: 1em;
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
 
 .pokemon-entry .pokemon-stats {
   display: flex;
@@ -661,4 +648,98 @@ footer {
   font-size: 1rem;
   color: white;
   font-weight: bold;
+}
+
+/* Evolutions Section */
+.pokemon-evolutions {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.pokemon-evolutions h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: royalblue;
+}
+
+.evolution-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.evolution-box {
+  text-align: center;
+}
+
+.evolution-box img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid royalblue;
+  background-color: #1f1f1f;
+  padding: 0.5rem;
+}
+
+.evolution-box p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.evolution-arrow i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Abilities Section */
+.pokemon-abilities {
+  margin: 2rem 0;
+}
+
+.pokemon-abilities h2 {
+  font-size: 1.8rem;
+  color: royalblue;
+  margin-bottom: 1rem;
+}
+
+.pokemon-abilities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pokemon-abilities li {
+  background-color: #2a2a2a;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Locations Section */
+.pokemon-locations {
+  margin: 2rem 0;
+}
+
+.pokemon-locations h2 {
+  font-size: 1.8rem;
+  color: royalblue;
+  margin-bottom: 1rem;
+}
+
+.pokemon-locations p {
+  margin-bottom: 1rem;
+}
+
+.pokemon-locations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pokemon-locations li {
+  background-color: #2a2a2a;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
 }
