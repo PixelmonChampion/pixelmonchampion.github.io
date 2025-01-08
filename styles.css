@@ -650,14 +650,14 @@ footer {
   font-weight: bold;
 }
 
-/* Evolutions Section */
+/* Pokémon Evolutions Section */
 .pokemon-evolutions {
   margin: 2rem 0;
   text-align: center;
 }
 
 .pokemon-evolutions h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: royalblue;
 }
@@ -669,28 +669,30 @@ footer {
   gap: 1rem;
 }
 
-.evolution-box {
-  text-align: center;
+.evolution-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.evolution-box img {
-  width: 100px;
-  height: auto;
-  border-radius: 8px;
+.evolution-stage img {
+  width: 80px;
+  height: 80px;
   border: 2px solid royalblue;
-  background-color: #1f1f1f;
-  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #2a2a2a;
 }
 
-.evolution-box p {
+.evolution-stage p {
   margin-top: 0.5rem;
-  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.evolution-arrow i {
-  font-size: 2rem;
-  color: white;
+.evolution-arrow {
+  font-size: 1.5rem;
+  color: royalblue;
 }
+
 
 /* Abilities Section */
 .pokemon-abilities {
