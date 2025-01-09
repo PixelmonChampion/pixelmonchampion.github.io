@@ -523,29 +523,26 @@ footer {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
+/* Stats section */
 .pokemon-stats {
-  flex: 1;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Each stat section */
 .pokemon-stat {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Labels for stat names and values */
 .pokemon-stat .stat-labels {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
 }
 
-/* Stat bar container */
 .pokemon-stat .stat-bar-container {
   position: relative;
   background: rgba(0, 0, 0, 0.2);
@@ -554,17 +551,10 @@ footer {
   overflow: hidden;
 }
 
-/* Stat bar styles */
 .pokemon-stat .stat-bar {
   position: absolute;
   height: 100%;
-  transition: width 1s ease-in-out; /* Animation duration and easing */
-}
-
-/* Stat value text styling */
-.pokemon-stat .stat-value {
-  font-size: 0.9em;
-  color: white;
+  transition: width 1s ease-in-out;
 }
 
 /* Base colors for stat bars */
@@ -676,7 +666,6 @@ footer {
 
 /* Pokémon Evolutions Section */
 .pokemon-evolutions {
-  margin: 2rem 0;
   text-align: center;
 }
 
