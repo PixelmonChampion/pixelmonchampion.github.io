@@ -601,17 +601,15 @@ footer {
   width: 98.5%;
   gap: 10px; /* Space between the button and the text */
   display: flex;
-  flex-direction: column; /* Stack button, label, and dropdown vertically */
-  align-items: flex-start; /* Align items to the left */
+  align-items: center; /* Align button and label in a row */
 }
 
 /* Move Label */
 .pokemon-entry .move-label {
   font-weight: bold;
-  margin-top: 10px; /* Space between the button and label */
-  margin-left: 10px; /* Align with the button */
+  margin-left: 10px; /* Space between the button and label */
   color: #f2f2f2;
-  order: 1; /* Ensure label comes after the button */
+  margin-top: 0; /* Remove any extra top margin */
 }
 
 /* Move Toggle Button */
@@ -629,9 +627,9 @@ footer {
   font-size: 1.2rem;
   transition: transform 0.2s ease; /* Snappy effect */
   padding: 0; /* Remove inner padding for perfect icon alignment */
-  order: 0; /* Ensure the button comes before the label */
 }
 
+/* Button Hover Effect */
 .pokemon-entry .move-toggle:hover {
   transform: scale(1.1); /* Slight zoom on hover */
 }
