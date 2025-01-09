@@ -51,7 +51,7 @@
               <div class="pokemon-stat" id="stat-hp">
                 <div class="stat-labels">
                   <span>HP</span>
-                  <span class="stat-value" id="hp-value">16.47</span>
+                  <span class="stat-value" id="hp-value">80</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -62,7 +62,7 @@
               <div class="pokemon-stat" id="stat-atk">
                 <div class="stat-labels">
                   <span>Attack</span>
-                  <span class="stat-value" id="atk-value">19.6</span>
+                  <span class="stat-value" id="atk-value">120</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -73,7 +73,7 @@
               <div class="pokemon-stat" id="stat-def">
                 <div class="stat-labels">
                   <span>Defense</span>
-                  <span class="stat-value" id="def-value">14.9</span>
+                  <span class="stat-value" id="def-value">95</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -84,7 +84,7 @@
               <div class="pokemon-stat" id="stat-spatk">
                 <div class="stat-labels">
                   <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">25.4</span>
+                  <span class="stat-value" id="spatk-value">110</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -95,7 +95,7 @@
               <div class="pokemon-stat" id="stat-spdef">
                 <div class="stat-labels">
                   <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">17.6</span>
+                  <span class="stat-value" id="spdef-value">85</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -106,7 +106,7 @@
               <div class="pokemon-stat" id="stat-speed">
                 <div class="stat-labels">
                   <span>Speed</span>
-                  <span class="stat-value" id="speed-value">23.5</span>
+                  <span class="stat-value" id="speed-value">100</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -211,30 +211,25 @@
             }
         });
     
-  // Function to calculate and update the stat bar width based on stat value
-  function updateStatBar(statId, statValue) {
-    const statBar = document.querySelector(`#${statId} .stat-bar`);
-    const statValueElement = document.querySelector(`#${statId} .stat-value`);
-    
-    // Calculate the width as a percentage
-    const width = (statValue / 255) * 100;
-
-    // Update the stat bar width
-    statBar.style.width = `${width}%`;
-
-    // Update the stat value display
-    statValueElement.textContent = `${statValue}%`;
-  }
-
-  // Example stat values (you can change these based on actual stats)
-  const statValues = {
-    hp: 16.47,
-    atk: 19.6,
-    def: 14.9,
-    spatk: 25.4,
-    spdef: 17.6,
-    speed: 23.5
+// JavaScript for Stats Bar Animation
+document.addEventListener('DOMContentLoaded', () => {
+  const stats = {
+    hp: 80,
+    atk: 120,
+    def: 95,
+    spatk: 110,
+    spdef: 85,
+    speed: 100,
   };
+
+  const maxStat = 255; // Max stat value for scaling
+
+  Object.entries(stats).forEach(([key, value]) => {
+    const statBar = document.querySelector(`#stat-${key} .stat-bar`);
+    const statValue = (value / maxStat) * 100; // Scale to percentage
+    statBar.style.width = `${statValue}%`;
+  });
+});
 
   // Update each stat bar with its corresponding value
   updateStatBar('stat-hp', statValues.hp);
