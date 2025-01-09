@@ -614,6 +614,8 @@ footer {
 .pokemon-entry .move-label {
   font-weight: bold;
   color: #f2f2f2;
+  margin-top:10px;
+  margin-left:7px;
 }
 
 /* Move Toggle Button */
@@ -631,6 +633,7 @@ footer {
   font-size: 1.2rem;
   transition: transform 0.2s ease; /* Snappy effect */
   padding: 0; /* Remove inner padding for perfect icon alignment */
+  order:-1;
 }
 
 /* Button Hover Effect */
