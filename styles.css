@@ -826,7 +826,8 @@ footer {
 
   .pokemon-container {
     flex-direction: column;
-    padding: 1rem;
+    align-content: center;
+
   }
 
   .pokedex-description,
