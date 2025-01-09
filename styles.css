@@ -721,8 +721,9 @@ footer {
 
 /* Abilities and Location Section Container */
 .abilities-location-container {
+  max-width:1200px;
   display: flex;
-  gap: 2rem;
+  gap: 4.5rem;
   justify-content: space-between;
   margin: 2rem 0;
 }
