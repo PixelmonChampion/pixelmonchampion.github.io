@@ -239,14 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStatBar('stat-speed', statValues.speed);
 
   //button toggle
-  document.addEventListener("DOMContentLoaded", () => {
-  const moveToggle = document.querySelector(".move-toggle");
-  const moveOptions = document.querySelector(".move-options");
+  document.addEventListener("DOMContentLoaded", function() {
+        const moveToggleButton = document.querySelector('.move-toggle');
+        const moveOptions = document.querySelector('.move-options');
 
-  moveToggle.addEventListener("click", () => {
-    moveOptions.classList.toggle("active");
-  });
-});
+        moveToggleButton.addEventListener('click', function() {
+            moveOptions.classList.toggle('active');
+        });
+    });
 
     </script>
     
