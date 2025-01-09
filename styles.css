@@ -600,7 +600,6 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   display: flex;
-  flex-direction: column;  /* Stack dropdown below the button and label */
 }
 
 /* Move Label and Button Container */
