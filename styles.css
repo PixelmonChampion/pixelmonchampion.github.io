@@ -790,6 +790,12 @@ footer {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .abilities-location-container {
+    flex-direction: column;
+  }
+}
+
 /* Additional Media Queries for Improved Mobile Responsiveness */
 @media (max-width: 1200px) {
   .pokemon-card, .character-card {
@@ -798,15 +804,6 @@ footer {
 }
 
 @media (max-width: 800px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
 
   .pokemon-list, .character-list {
     justify-content: space-evenly;
@@ -840,7 +837,6 @@ footer {
 
   .abilities-location-container {
     flex-direction: column;
-    gap: 1rem;
   }
 
   footer {
