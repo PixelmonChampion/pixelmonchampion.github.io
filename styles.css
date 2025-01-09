@@ -600,11 +600,20 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   gap: 10px; /* Space between the button and the text */
+  display: flex;
+  align-items: center;
+}
+
+/* Move Label */
+.pokemon-entry .move-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #f2f2f2;
 }
 
 /* Move Toggle Button */
 .pokemon-entry .move-toggle {
-  background-color: #af4c4c; /* Button background */
+  background-color: royalblue; /* Button background */
   color: white; /* Icon color */
   border: none;
   border-radius: 50%; /* Circular button */
@@ -649,15 +658,14 @@ footer {
 /* Snappy Dropdown Animation */
 @keyframes dropdown-snappy {
   from {
-      opacity: 0;
-      transform: translateY(-10px);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 /* Move Category Styles */
 .pokemon-entry .move-category h3 {
@@ -674,6 +682,7 @@ footer {
   padding: 5px 0;
   color: #f2f2f2;
 }
+
 
 /* Pokémon Evolutions Section */
 .pokemon-evolutions {

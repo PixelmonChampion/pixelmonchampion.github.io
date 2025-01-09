@@ -163,9 +163,12 @@
 </div>
                     <!-- Move List Dropdown -->
                     <div class="move-list">
+                        <!-- Label 'MOVES' next to the toggle -->
+                        <span class="move-label">MOVES</span>
+                        
                         <!-- Move Toggle Button -->
                         <button class="move-toggle">
-                          <i class="fas fa-chevron-down"></i> <!-- Use an icon or text here -->
+                          <i class="fas fa-chevron-down"></i> <!-- You can use an icon or text here -->
                         </button>
                       
                         <!-- Move Options Dropdown (Initially Hidden) -->
@@ -188,6 +191,7 @@
                         </div>
                       </div>
                       
+                      
     </div>
 
     <script>
@@ -203,6 +207,19 @@
             }
         });
     
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select the move-toggle button and move-options container
+    const moveToggle = document.querySelector('.move-toggle');
+    const moveOptions = document.querySelector('.move-options');
+
+    // Add a click event listener to the move-toggle button
+    moveToggle.addEventListener('click', function() {
+      // Toggle the 'active' class on the move-options dropdown
+      moveOptions.classList.toggle('active');
+    });
+  });
+
 // JavaScript for Stats Bar Animation
 document.addEventListener('DOMContentLoaded', () => {
   const stats = {
@@ -231,17 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStatBar('stat-spdef', statValues.spdef);
   updateStatBar('stat-speed', statValues.speed);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Select the move-toggle button and move-options container
-    const moveToggle = document.querySelector('.move-toggle');
-    const moveOptions = document.querySelector('.move-options');
 
-    // Add a click event listener to the move-toggle button
-    moveToggle.addEventListener('click', function() {
-      // Toggle the 'active' class on the move-options dropdown
-      moveOptions.classList.toggle('active');
-    });
-  });
+
+
 
     </script>
     
