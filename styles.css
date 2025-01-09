@@ -600,8 +600,8 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   display: flex;
+  flex-direction: row;
 }
-
 /* Move Label and Button Container */
 .pokemon-entry .move-label-container {
   display: flex;
