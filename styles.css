@@ -599,16 +599,21 @@ footer {
   padding: 10px;
   border-radius: 10px;
   width: 98.5%;
-  gap: 10px; /* Space between the button and the text */
   display: flex;
-  align-items: center; /* Align button and label in a row */
+  flex-direction: column;  /* Stack dropdown below the button and label */
+}
+
+/* Move Label and Button Container */
+.pokemon-entry .move-label-container {
+  display: flex;
+  align-items: center;  /* Align button and label horizontally */
+  gap: 10px;  /* Space between the button and the label */
 }
 
 /* Move Label */
 .pokemon-entry .move-label {
   font-weight: bold;
   color: #f2f2f2;
-  margin-top: 10px; /* Remove any extra top margin */
 }
 
 /* Move Toggle Button */
@@ -626,7 +631,6 @@ footer {
   font-size: 1.2rem;
   transition: transform 0.2s ease; /* Snappy effect */
   padding: 0; /* Remove inner padding for perfect icon alignment */
-  order:-1;
 }
 
 /* Button Hover Effect */
@@ -684,6 +688,7 @@ footer {
   padding: 5px 0;
   color: #f2f2f2;
 }
+
 
 
 /* Pokémon Evolutions Section */
