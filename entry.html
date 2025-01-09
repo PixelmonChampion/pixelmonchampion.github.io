@@ -163,38 +163,31 @@
 </div>
                     <!-- Move List Dropdown -->
                     <div class="move-list">
-                        <button class="move-toggle" id="move-toggle-btn"><i class="fas fa-caret-down"></i></button>
-                        <div class="move-options"> 
-                            <div class="move-category">
-                                <h3>Level Up Moves</h3>
-                                <ul id="level-up-list">
-                                    <li>Move 1</li>
-                                    <li>Move 2</li>
-                                </ul>
-                            </div>
-                            <div class="move-category">
-                                <h3>TM Moves</h3>
-                                <ul id="tm-list">
-                                    <li>Move A</li>
-                                    <li>Move B</li>
-                                </ul>
-                            </div>
-                            <div class="move-category">
-                                <h3>Tutor Moves</h3>
-                                <ul id="tutor-list">
-                                    <li>Move X</li>
-                                    <li>Move Y</li>
-                                </ul>
-                            </div>
-                            <div class="move-category">
-                                <h3>Egg Moves</h3>
-                                <ul id="egg-moves-list">
-                                    <li>Egg Move 1</li>
-                                    <li>Egg Move 2</li>
-                                </ul>
-                            </div>
+                        <!-- Move Toggle Button -->
+                        <button class="move-toggle">
+                          <i class="fas fa-chevron-down"></i> <!-- Use an icon or text here -->
+                        </button>
+                      
+                        <!-- Move Options Dropdown (Initially Hidden) -->
+                        <div class="move-options">
+                          <!-- Add your move categories and items here -->
+                          <div class="move-category">
+                            <h3>Move Category 1</h3>
+                            <ul>
+                              <li>Move 1</li>
+                              <li>Move 2</li>
+                            </ul>
+                          </div>
+                          <div class="move-category">
+                            <h3>Move Category 2</h3>
+                            <ul>
+                              <li>Move 3</li>
+                              <li>Move 4</li>
+                            </ul>
+                          </div>
                         </div>
-                    </div>
+                      </div>
+                      
     </div>
 
     <script>
@@ -238,15 +231,17 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStatBar('stat-spdef', statValues.spdef);
   updateStatBar('stat-speed', statValues.speed);
 
-  //button toggle
-  document.addEventListener("DOMContentLoaded", function() {
-        const moveToggleButton = document.querySelector('.move-toggle');
-        const moveOptions = document.querySelector('.move-options');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select the move-toggle button and move-options container
+    const moveToggle = document.querySelector('.move-toggle');
+    const moveOptions = document.querySelector('.move-options');
 
-        moveToggleButton.addEventListener('click', function() {
-            moveOptions.classList.toggle('active');
-        });
+    // Add a click event listener to the move-toggle button
+    moveToggle.addEventListener('click', function() {
+      // Toggle the 'active' class on the move-options dropdown
+      moveOptions.classList.toggle('active');
     });
+  });
 
     </script>
     
