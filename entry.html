@@ -38,39 +38,83 @@
             <div class="type water"></div>
         </div>
 
-        <!-- Pokémon Info Section (Stacked) -->
-        <div class="pokemon-info">
-            <!-- Description Box -->
-            <div class="pokemon-description">
-                <h2>PokéDex Entry</h2>
-                <i>Enter description here...</i>
+        <div class="pokemon-container">
+            <!-- Pokedex Description Section -->
+            <div class="pokedex-description">
+              <h2>Pokédex Entry</h2>
+              <p>This is a description of the Pokémon. It provides some lore or backstory about the Pokémon, its habits, and more.</p>
             </div>
-
-            <!-- Stats Box -->
+          
+            <!-- Stats Section -->
             <div class="pokemon-stats">
-                <h2>Base Stats</h2>
-                <div class="stat">
-                    <span>HP: </span><div class="stat-bar" id="stat-hp">75</div>
+              <!-- HP Stat -->
+              <div class="pokemon-stat" id="stat-hp">
+                <div class="stat-labels">
+                  <span>HP</span>
+                  <span class="stat-value" id="hp-value">16.47</span>
                 </div>
-                <div class="stat">
-                    <span>Attack: </span><div class="stat-bar" id="stat-atk">50</div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
                 </div>
-                <div class="stat">
-                    <span>Defense: </span><div class="stat-bar" id="stat-def">60</div>
+              </div>
+          
+              <!-- Attack Stat -->
+              <div class="pokemon-stat" id="stat-atk">
+                <div class="stat-labels">
+                  <span>Attack</span>
+                  <span class="stat-value" id="atk-value">19.6</span>
                 </div>
-                <div class="stat">
-                    <span>Sp. Attack: </span><div class="stat-bar" id="stat-spatk">50</div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
                 </div>
-                <div class="stat">
-                    <span>Sp. Defense: </span><div class="stat-bar" id="stat-spdef">60</div>
+              </div>
+          
+              <!-- Defense Stat -->
+              <div class="pokemon-stat" id="stat-def">
+                <div class="stat-labels">
+                  <span>Defense</span>
+                  <span class="stat-value" id="def-value">14.9</span>
                 </div>
-                <div class="stat">
-                    <span>Speed: </span><div class="stat-bar" id="stat-speed">40</div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
                 </div>
+              </div>
+          
+              <!-- Special Attack Stat -->
+              <div class="pokemon-stat" id="stat-spatk">
+                <div class="stat-labels">
+                  <span>Special Attack</span>
+                  <span class="stat-value" id="spatk-value">25.4</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Special Defense Stat -->
+              <div class="pokemon-stat" id="stat-spdef">
+                <div class="stat-labels">
+                  <span>Special Defense</span>
+                  <span class="stat-value" id="spdef-value">17.6</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Speed Stat -->
+              <div class="pokemon-stat" id="stat-speed">
+                <div class="stat-labels">
+                  <span>Speed</span>
+                  <span class="stat-value" id="speed-value">23.5</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
             </div>
+          </div>
 
-        </div>
-        <!-- Existing Sections... -->
 
 <!-- Pokémon Evolutions Section -->
 <div class="pokemon-evolutions">
@@ -166,41 +210,38 @@
             }
         });
     
-        // Stat animation effect with dynamic timing
-        const statBars = {
-            hp: document.getElementById('stat-hp'),
-            attack: document.getElementById('stat-atk'),
-            defense: document.getElementById('stat-def'),
-            spattack: document.getElementById('stat-spatk'),
-            spdefense: document.getElementById('stat-spdef'),
-            speed: document.getElementById('stat-speed')
-        };
+  // Function to calculate and update the stat bar width based on stat value
+  function updateStatBar(statId, statValue) {
+    const statBar = document.querySelector(`#${statId} .stat-bar`);
+    const statValueElement = document.querySelector(`#${statId} .stat-value`);
     
-        function animateStat(stat, value) {
-            let progress = 0;
-            const interval = setInterval(function () {
-                progress += 1;
-                stat.style.width = progress + '%';
-                if (progress >= value) clearInterval(interval);
-            }, 15); // Adjust the interval speed here for faster or slower animation
-        }
-    
-        // Call the animateStat function for each stat
-        animateStat(statBars.hp, 75);  
-        animateStat(statBars.attack, 50);  
-        animateStat(statBars.defense, 60);  
-        animateStat(statBars.spattack, 50);  
-        animateStat(statBars.spdefense, 60);            
-        animateStat(statBars.speed, 40);  
-    
-        document.addEventListener("DOMContentLoaded", () => {
-        const moveToggle = document.querySelector(".move-toggle");
-        const moveOptions = document.querySelector(".move-options");
+    // Calculate the width as a percentage
+    const width = (statValue / 255) * 100;
 
-        moveToggle.addEventListener("click", () => {
-            moveOptions.classList.toggle("active");
-        });
-        });
+    // Update the stat bar width
+    statBar.style.width = `${width}%`;
+
+    // Update the stat value display
+    statValueElement.textContent = `${statValue}%`;
+  }
+
+  // Example stat values (you can change these based on actual stats)
+  const statValues = {
+    hp: 16.47,
+    atk: 19.6,
+    def: 14.9,
+    spatk: 25.4,
+    spdef: 17.6,
+    speed: 23.5
+  };
+
+  // Update each stat bar with its corresponding value
+  updateStatBar('stat-hp', statValues.hp);
+  updateStatBar('stat-atk', statValues.atk);
+  updateStatBar('stat-def', statValues.def);
+  updateStatBar('stat-spatk', statValues.spatk);
+  updateStatBar('stat-spdef', statValues.spdef);
+  updateStatBar('stat-speed', statValues.speed);
 
     </script>
     

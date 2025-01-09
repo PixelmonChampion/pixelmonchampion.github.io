@@ -504,64 +504,89 @@ footer {
   background-image: url('images/types/ground.png');
 }
 
-/* Description and Stats */
-.pokemon-entry .pokemon-info {
+/* Container for both the Pokedex description and stats */
+.pokemon-container {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   justify-content: space-between;
-  margin: 2rem 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
-.pokemon-entry .pokemon-description {
-  background-color: #2a2a2a;
-  padding: 15px;
+.pokedex-description {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f4f4f4;
   border-radius: 10px;
-  width: 60%; /* Increased from 50% to 60% */
-  color: #f2f2f2;
-  font-size: 1em;
-  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.pokemon-entry .pokemon-stats {
+.pokemon-stats {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  background-color: #2a2a2a;
-  padding: 15px;
-  border-radius: 10px;
-  width: 60%; /* Increased from 50% to 60% */
+  gap: 1rem;
 }
 
-.pokemon-entry .stat {
-  text-align: right;
-  font-size: 0.9em;
-  margin-bottom: 10px;
-  color: #f2f2f2;
-}
-
-.pokemon-entry .stat-bar {
-  font-size: small;
-  width: 100%;
-  height: 15px;
-  border-radius: 10px;
-  position: relative;
+/* Each stat section */
+.pokemon-stat {
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.pokemon-entry .stat-bar span {
-  position: absolute;
-  color: white;
+/* Labels for stat names and values */
+.pokemon-stat .stat-labels {
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
-  left: 5px;
 }
 
-#stat-hp.stat-bar  { background-color: rgb(201, 68, 68); }
-#stat-atk.stat-bar  { background-color: rgb(219, 168, 74); }
-#stat-def.stat-bar { background-color: rgb(215, 215, 74); }
-#stat-spatk.stat-bar  { background-color: rgb(83, 151, 218); }
-#stat-spdef.stat-bar  { background-color: rgb(95, 177, 85); }
-#stat-speed.stat-bar  { background-color: rgb(203, 122, 135); }
+/* Stat bar container */
+.pokemon-stat .stat-bar-container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  height: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Stat bar styles */
+.pokemon-stat .stat-bar {
+  position: absolute;
+  height: 100%;
+  transition: width 1s ease-in-out; /* Animation duration and easing */
+}
+
+/* Stat value text styling */
+.pokemon-stat .stat-value {
+  font-size: 0.9em;
+  color: white;
+}
+
+/* Base colors for stat bars */
+#stat-hp .stat-bar { background-color: rgb(201, 68, 68); }
+#stat-atk .stat-bar { background-color: rgb(219, 168, 74); }
+#stat-def .stat-bar { background-color: rgb(215, 215, 74); }
+#stat-spatk .stat-bar { background-color: rgb(83, 151, 218); }
+#stat-spdef .stat-bar { background-color: rgb(95, 177, 85); }
+#stat-speed .stat-bar { background-color: rgb(203, 122, 135); }
+
+/* Responsiveness: Stack elements on smaller screens */
+@media (max-width: 768px) {
+  .pokemon-container {
+    flex-direction: column;
+  }
+
+  .pokedex-description,
+  .pokemon-stats {
+    flex: 1 0 100%;
+  }
+}
+
 
 
 
