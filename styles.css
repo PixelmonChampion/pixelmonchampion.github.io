@@ -422,6 +422,7 @@ footer {
   justify-content: center;
   gap: 10px;
   margin-top: 15px;
+  padding: 10px;
 }
 
 .pokemon-entry .type {
@@ -513,7 +514,6 @@ footer {
   width: 100%;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 1rem;
 }
 
 .pokedex-description {
@@ -592,8 +592,9 @@ footer {
 
 /* Move List and Dropdown */
 .pokemon-entry .move-list {
+  max-width: 1200px;
   margin-top: 10px;
-  align-self: flex-start;
+  align-self: center;
   background-color: #2a2a2a;
   padding: 10px;
   border-radius: 10px;
