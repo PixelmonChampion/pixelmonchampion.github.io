@@ -45,69 +45,75 @@
               <p>This is a description of the Pokémon. It provides some lore or backstory about the Pokémon, its habits, and more.</p>
             </div>
           
-
-        <!-- Stats Section -->
-        <div class="pokemon-stats">
-            <div class="pokemon-stat" id="stat-hp">
-            <div class="stat-labels">
-                <span>HP</span>
-                <span class="stat-value" id="hp-value">0</span>
+            <!-- Stats Section -->
+            <div class="pokemon-stats">
+              <!-- HP Stat -->
+              <div class="pokemon-stat" id="stat-hp">
+                <div class="stat-labels">
+                  <span>HP</span>
+                  <span class="stat-value" id="hp-value">16.47</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Attack Stat -->
+              <div class="pokemon-stat" id="stat-atk">
+                <div class="stat-labels">
+                  <span>Attack</span>
+                  <span class="stat-value" id="atk-value">19.6</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Defense Stat -->
+              <div class="pokemon-stat" id="stat-def">
+                <div class="stat-labels">
+                  <span>Defense</span>
+                  <span class="stat-value" id="def-value">14.9</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Special Attack Stat -->
+              <div class="pokemon-stat" id="stat-spatk">
+                <div class="stat-labels">
+                  <span>Special Attack</span>
+                  <span class="stat-value" id="spatk-value">25.4</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Special Defense Stat -->
+              <div class="pokemon-stat" id="stat-spdef">
+                <div class="stat-labels">
+                  <span>Special Defense</span>
+                  <span class="stat-value" id="spdef-value">17.6</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
+          
+              <!-- Speed Stat -->
+              <div class="pokemon-stat" id="stat-speed">
+                <div class="stat-labels">
+                  <span>Speed</span>
+                  <span class="stat-value" id="speed-value">23.5</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar"></div>
+                </div>
+              </div>
             </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-
-            <div class="pokemon-stat" id="stat-atk">
-            <div class="stat-labels">
-                <span>Attack</span>
-                <span class="stat-value" id="atk-value">0</span>
-            </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-
-            <div class="pokemon-stat" id="stat-def">
-            <div class="stat-labels">
-                <span>Defense</span>
-                <span class="stat-value" id="def-value">0</span>
-            </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-
-            <div class="pokemon-stat" id="stat-spatk">
-            <div class="stat-labels">
-                <span>Sp. Atk</span>
-                <span class="stat-value" id="spatk-value">0</span>
-            </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-
-            <div class="pokemon-stat" id="stat-spdef">
-            <div class="stat-labels">
-                <span>Sp. Def</span>
-                <span class="stat-value" id="spdef-value">0</span>
-            </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-
-            <div class="pokemon-stat" id="stat-speed">
-            <div class="stat-labels">
-                <span>Speed</span>
-                <span class="stat-value" id="speed-value">0</span>
-            </div>
-            <div class="stat-bar-container">
-                <div class="stat-bar"></div>
-            </div>
-            </div>
-        </div>
+          </div>
 
 
 
@@ -205,37 +211,38 @@
             }
         });
     
-// Function to update stat bars and display actual stat values
-function updateStatBar(statId, statValue) {
-  const statBar = document.querySelector(`#${statId} .stat-bar`);
-  const statValueElement = document.querySelector(`#${statId} .stat-value`);
+  // Function to calculate and update the stat bar width based on stat value
+  function updateStatBar(statId, statValue) {
+    const statBar = document.querySelector(`#${statId} .stat-bar`);
+    const statValueElement = document.querySelector(`#${statId} .stat-value`);
+    
+    // Calculate the width as a percentage
+    const width = (statValue / 255) * 100;
 
-  // Calculate the width as a percentage
-  const width = (statValue / 255) * 100;
+    // Update the stat bar width
+    statBar.style.width = `${width}%`;
 
-  // Update the stat bar width and stat value display
-  statBar.style.width = `${width}%`;
-  statValueElement.textContent = statValue;
-}
+    // Update the stat value display
+    statValueElement.textContent = `${statValue}%`;
+  }
 
-// Example stat values (replace these with actual Pokémon stats)
-const statValues = {
-  hp: 120,
-  atk: 100,
-  def: 90,
-  spatk: 110,
-  spdef: 80,
-  speed: 95,
-};
+  // Example stat values (you can change these based on actual stats)
+  const statValues = {
+    hp: 16.47,
+    atk: 19.6,
+    def: 14.9,
+    spatk: 25.4,
+    spdef: 17.6,
+    speed: 23.5
+  };
 
-// Update each stat bar with its respective value
-updateStatBar('stat-hp', statValues.hp);
-updateStatBar('stat-atk', statValues.atk);
-updateStatBar('stat-def', statValues.def);
-updateStatBar('stat-spatk', statValues.spatk);
-updateStatBar('stat-spdef', statValues.spdef);
-updateStatBar('stat-speed', statValues.speed);
-
+  // Update each stat bar with its corresponding value
+  updateStatBar('stat-hp', statValues.hp);
+  updateStatBar('stat-atk', statValues.atk);
+  updateStatBar('stat-def', statValues.def);
+  updateStatBar('stat-spatk', statValues.spatk);
+  updateStatBar('stat-spdef', statValues.spdef);
+  updateStatBar('stat-speed', statValues.speed);
 
     </script>
     
