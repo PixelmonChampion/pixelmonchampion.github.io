@@ -602,8 +602,20 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   flex-direction: row;
 }
+.pokemon-entry .move-category {
+  flex: 1 1 25%; /* Each category will take up 25% of the container width */
+  min-width: 200px; /* Optional: Ensures categories won't get too small */
+}
+
+.pokemon-entry .move-category h3 {
+  margin-bottom: 10px; /* Space between the heading and list */
+}
+
+
 /* Move Label and Button Container */
 .pokemon-entry .move-label-container {
   display: flex;
@@ -663,6 +675,9 @@ footer {
 .pokemon-entry .move-options.active {
   opacity: 1;
   max-height: 500px; /* Give a max height for the dropdown */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between the move categories */
 }
 
 /* Snappy Dropdown Animation */
