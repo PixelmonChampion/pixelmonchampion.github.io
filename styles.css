@@ -737,6 +737,23 @@ footer {
   color: royalblue;
 }
 
+/* Hover effect for evolution stages */
+.evolution-stage a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.evolution-stage:hover img {
+  transform: scale(1.1); /* Slightly enlarge the image */
+  border-color: rgb(255, 255, 255); /* Change the border color on hover */
+  box-shadow: 0 0 10px gold; /* Add a glowing effect */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evolution-stage:hover p {
+  color: gold; /* Change text color on hover */
+  transition: color 0.3s ease;
+}
+
 
 /* Abilities and Location Section Container */
 .abilities-location-container {
