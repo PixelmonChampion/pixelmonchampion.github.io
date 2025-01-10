@@ -593,7 +593,6 @@ footer {
 
 /* Move List and Dropdown */
 .pokemon-entry .move-list {
-  max-height: 100%;
   max-width: 1200px;
   margin-top: 10px;
   align-self: center;
@@ -602,7 +601,6 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   display: flex;
-  flex-direction: column;
   gap: 10px; /* Space between elements */
 }
 
@@ -611,7 +609,6 @@ footer {
   display: flex;
   flex-direction: column; /* Stack items vertically inside each category */
   flex: 1 1 25%; /* Adjust category size */
-  min-width: 200px; /* Ensures categories won't get too small */
   margin-right: 10px; /* Space between categories */
 }
 
@@ -651,7 +648,7 @@ footer {
   cursor: pointer;
   font-size: 1.2rem;
   transition: transform 0.2s ease;
-  padding: 0;
+  padding: 1rem;
   order: -1;
 }
 
@@ -669,11 +666,11 @@ footer {
 
 /* Show the dropdown when active */
 .pokemon-entry .move-options.active {
+  text-align: center;
+  padding: 1em;
   display: flex;
-  flex-wrap: wrap; /* Allow categories to be side-by-side */
-  gap: 20px; /* Adjust the gap between categories */
   opacity: 1;
-  max-height: 500px; /* Set a max height for the dropdown */
+  max-height: 100%; /* Set a max height for the dropdown */
 }
 
 /* Snappy Dropdown Animation */
