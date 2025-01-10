@@ -680,16 +680,19 @@ footer {
 .pokemon-entry .move-category h3 {
   font-size: 1.2em;
   color: #f2f2f2;
+  height:100%;
 }
 
 .pokemon-entry .move-category ul {
   list-style-type: none;
   padding: 0;
+  height:100%;
 }
 
 .pokemon-entry .move-category li {
   padding: 5px 0;
   color: #f2f2f2;
+  height:100%;
 }
 
 
