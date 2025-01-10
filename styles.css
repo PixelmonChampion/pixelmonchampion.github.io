@@ -602,41 +602,17 @@ footer {
   border-radius: 10px;
   width: 98.5%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  flex-direction: row;
-}
-.pokemon-entry .move-category {
-  flex: 1 1 25%; /* Each category will take up 25% of the container width */
-  min-width: 200px; /* Optional: Ensures categories won't get too small */
-}
-
-.pokemon-entry .move-category h3 {
-  margin-bottom: 10px; /* Space between the heading and list */
-}
-
-
-/* Move List and Dropdown */
-.pokemon-entry .move-list {
-  max-height: 100%;
-  max-width: 1200px;
-  margin-top: 10px;
-  align-self: center;
-  background-color: #2a2a2a;
-  padding: 10px;
-  border-radius: 10px;
-  width: 98.5%;
-  display: flex;
-  flex-direction: column; /* Align vertically */
+  flex-direction: column;
   gap: 10px; /* Space between elements */
 }
 
 /* Move Category */
 .pokemon-entry .move-category {
-  flex: 1 1 25%; /* Each category will take up 25% of the container width */
-  min-width: 200px; /* Ensures categories won't get too small */
   display: flex;
-  flex-direction: column; /* Keep the list items stacked vertically */
+  flex-direction: column; /* Stack items vertically inside each category */
+  flex: 1 1 25%; /* Adjust category size */
+  min-width: 200px; /* Ensures categories won't get too small */
+  margin-right: 10px; /* Space between categories */
 }
 
 /* Move Category Headings */
@@ -657,8 +633,8 @@ footer {
 .pokemon-entry .move-label {
   font-weight: bold;
   color: #f2f2f2;
-  margin-top:10px;
-  margin-left:7px;
+  margin-top: 10px;
+  margin-left: 7px;
 }
 
 /* Move Toggle Button */
@@ -719,6 +695,7 @@ footer {
   display: flex;
   flex-wrap: wrap; /* Allow list items to be displayed side by side */
   gap: 10px; /* Space between list items */
+  margin: 0;
 }
 
 /* Move Category List Item Styling */
@@ -736,6 +713,7 @@ footer {
 .pokemon-entry .move-toggle:active {
   transform: scale(0.95);
 }
+
 
 
 
