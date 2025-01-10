@@ -616,11 +616,39 @@ footer {
 }
 
 
-/* Move Label and Button Container */
+/* Move List and Dropdown */
+.pokemon-entry .move-list {
+  max-height: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+  align-self: center;
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
+  width: 98.5%;
+  display: flex;
+  flex-direction: column; /* Align vertically */
+  gap: 10px; /* Space between elements */
+}
+
+/* Move Category */
+.pokemon-entry .move-category {
+  flex: 1 1 25%; /* Each category will take up 25% of the container width */
+  min-width: 200px; /* Ensures categories won't get too small */
+}
+
+/* Move Category Headings */
+.pokemon-entry .move-category h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #f2f2f2;
+}
+
+/* Move List Button & Label */
 .pokemon-entry .move-label-container {
   display: flex;
-  align-items: center;  /* Align button and label horizontally */
-  gap: 10px;  /* Space between the button and the label */
+  align-items: center;
+  gap: 10px;
 }
 
 /* Move Label */
@@ -633,51 +661,41 @@ footer {
 
 /* Move Toggle Button */
 .pokemon-entry .move-toggle {
-  background-color: royalblue; /* Button background */
-  color: white; /* Icon color */
+  background-color: royalblue;
+  color: white;
   border: none;
-  border-radius: 50%; /* Circular button */
-  width: 40px; /* Circular dimensions */
+  border-radius: 50%;
+  width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   font-size: 1.2rem;
-  transition: transform 0.2s ease; /* Snappy effect */
-  padding: 0; /* Remove inner padding for perfect icon alignment */
-  order:-1;
-}
-
-/* Button Hover Effect */
-.pokemon-entry .move-toggle:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
-
-.pokemon-entry .move-toggle:active {
-  transform: scale(0.95); /* Pressed effect */
+  transition: transform 0.2s ease;
+  padding: 0;
+  order: -1;
 }
 
 /* Move Options Dropdown */
 .pokemon-entry .move-options {
-  display: block; /* Make sure it's block by default */
+  display: none; /* Initially hidden */
   background-color: #2a2a2a;
   border-radius: 8px;
   padding: 10px;
   margin-top: 10px;
-  animation: dropdown-snappy 0.3s ease-out; /* Smooth dropdown effect */
+  animation: dropdown-snappy 0.3s ease-out;
   opacity: 0;
-  max-height: 0; /* Start with 0 height */
   overflow: hidden;
 }
 
 /* Show the dropdown when active */
 .pokemon-entry .move-options.active {
-  opacity: 1;
-  max-height: 500px; /* Give a max height for the dropdown */
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between the move categories */
+  flex-wrap: wrap; /* Allow categories to be side-by-side */
+  gap: 20px; /* Adjust the gap between categories */
+  opacity: 1;
+  max-height: 500px; /* Set a max height for the dropdown */
 }
 
 /* Snappy Dropdown Animation */
@@ -692,24 +710,21 @@ footer {
   }
 }
 
-/* Move Category Styles */
-.pokemon-entry .move-category h3 {
-  font-size: 1.2em;
-  color: #f2f2f2;
-  height:100%;
-}
-
+/* Move Category List Styling */
 .pokemon-entry .move-category ul {
   list-style-type: none;
   padding: 0;
-  height:100%;
 }
 
-.pokemon-entry .move-category li {
-  padding: 5px 0;
-  color: #f2f2f2;
-  height:100%;
+/* Button Hover Effect */
+.pokemon-entry .move-toggle:hover {
+  transform: scale(1.1);
 }
+
+.pokemon-entry .move-toggle:active {
+  transform: scale(0.95);
+}
+
 
 
 
