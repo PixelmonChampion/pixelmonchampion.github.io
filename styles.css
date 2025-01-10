@@ -752,7 +752,7 @@ footer {
 }
 
 .evolution-stage:hover p {
-  color: rgb(255, 255, 255); /* Change text color on hover */
+  color: white; /* Change text color on hover */
   transition: color 0.3s ease;
 }
 
