@@ -593,6 +593,7 @@ footer {
 
 /* Move List and Dropdown */
 .pokemon-entry .move-list {
+  max-height: 100%;
   max-width: 1200px;
   margin-top: 10px;
   align-self: center;
