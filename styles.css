@@ -606,6 +606,7 @@ footer {
 
 /* Move Category */
 .pokemon-entry .move-category {
+  max-width: 200px;
   display: flex;
   flex-direction: column; /* Stack items vertically inside each category */
   flex: 1 1 25%; /* Adjust category size */
@@ -666,7 +667,6 @@ footer {
 
 /* Show the dropdown when active */
 .pokemon-entry .move-options.active {
-  text-align: center;
   padding: 1em;
   display: flex;
   opacity: 1;
