@@ -635,6 +635,8 @@ footer {
 .pokemon-entry .move-category {
   flex: 1 1 25%; /* Each category will take up 25% of the container width */
   min-width: 200px; /* Ensures categories won't get too small */
+  display: flex;
+  flex-direction: column; /* Keep the list items stacked vertically */
 }
 
 /* Move Category Headings */
@@ -714,6 +716,16 @@ footer {
 .pokemon-entry .move-category ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow list items to be displayed side by side */
+  gap: 10px; /* Space between list items */
+}
+
+/* Move Category List Item Styling */
+.pokemon-entry .move-category ul li {
+  flex: 1 1 30%; /* Allow list items to take up 30% of the available width */
+  min-width: 100px; /* Ensure the items don't get too small */
+  margin-bottom: 5px; /* Space between items */
 }
 
 /* Button Hover Effect */
