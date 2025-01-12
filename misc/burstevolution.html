@@ -27,35 +27,25 @@
 
             <!-- Feed Section -->
             <div class="newsfeed-container">
-                <div style="display: flex; justify-content: center; align-items: center; background-color: #1f1f1f; padding: 20px; border-radius: 20px; max-width: 80%; margin: auto; position: relative; overflow: hidden;">
+                <div style="display: flex; justify-content: center; align-items: center; background-color: #1f1f1f; padding: 20px; border-radius: 20px; max-width: 100%; margin: auto; position: relative; overflow: hidden;">
                     <img src="../images/bursticon.png" alt="Central Image" style="max-width: 100%; border-radius: 15px; transition: transform 0.3s ease; z-index: 1;">
-                    <div class="hover-rainbow" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 15px; background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); background-size: 400% 400%; animation: rainbow 5s linear infinite; z-index: 0; pointer-events: none;"></div>
+                    <div class="hover-rainbow" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 15px; background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); background-size: 400% 400%; animation: rainbow-spin 5s linear infinite; z-index: 0; pointer-events: none;"></div>
                 </div>
                 
                 <style>
-                    .hover-rainbow {
-                        opacity: 0;
-                        transition: opacity 0.3s ease;
-                    }
-                
-                    div:hover .hover-rainbow {
-                        opacity: 1;
+                    @keyframes rainbow-spin {
+                        0% {
+                            transform: rotate(0deg);
+                            background-position: 0% 50%;
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                            background-position: 100% 50%;
+                        }
                     }
                 
                     div:hover img {
                         transform: scale(1.05);
-                    }
-                
-                    @keyframes rainbow {
-                        0% {
-                            background-position: 0% 50%;
-                        }
-                        50% {
-                            background-position: 100% 50%;
-                        }
-                        100% {
-                            background-position: 0% 50%;
-                        }
                     }
                 </style>
                 <hr/>            
