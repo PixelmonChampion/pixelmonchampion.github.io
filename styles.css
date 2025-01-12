@@ -417,7 +417,7 @@ footer {
   display: block;
 }
 
-.newsfeed-box .pokemon-artwork {
+.pokemon-artwork {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
