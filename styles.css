@@ -417,15 +417,6 @@ footer {
   display: block;
 }
 
-.pokemon-artwork {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
 
 /* Type Icons */
 .pokemon-entry .pokemon-types {
