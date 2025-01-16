@@ -901,3 +901,110 @@ footer {
     width: 90%;
   }
 }
+
+
+/* Character Section */
+.character-page {
+  display: flex;
+  width: 100%;
+}
+
+.character-left {
+  width: 30%;
+  background-color: #2a2a2a; /* Dark background to match */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  border-right: 2px solid royalblue; /* Add a blue border for separation */
+}
+
+.character-image img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  border: 3px solid royalblue; /* Highlighted with blue border */
+  background-color: #1a1a1a; /* Inner background */
+}
+
+.team-bubbles {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.bubble {
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2a; /* Matches background */
+  border-radius: 50%;
+  border: 2px solid royalblue; /* Blue border for consistency */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.bubble:hover {
+  transform: scale(1.1); /* Enlarge on hover */
+  border-color: white; /* Highlighted border */
+}
+
+.character-right {
+  margin-left: 30%;
+  padding: 20px;
+  width: 70%;
+  overflow-y: auto;
+  height: 100vh;
+  background-color: #2a2a2a; /* Match darker theme */
+  color: white; /* Text color to contrast */
+}
+
+.character-right h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: royalblue; /* Use blue for headings */
+  text-shadow: 1px 1px 2px black; /* Subtle shadow for depth */
+}
+
+.character-right p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white; /* Ensure text is readable */
+}
+
+.character-right a {
+  color: royalblue;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.character-right a:hover {
+  color: white; /* Inverse effect on hover */
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .character-left {
+    width: 40%; /* Adjust size for smaller screens */
+  }
+
+  .character-right {
+    margin-left: 40%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  .character-left {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .character-right {
+    margin-left: 0;
+    width: 100%;
+  }
+}
