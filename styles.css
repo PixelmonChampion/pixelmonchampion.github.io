@@ -1009,8 +1009,9 @@ footer {
   }
 
   .character-right {
-    margin-left: 40%;
-    width: 60%;
+    margin-left: 60%;
+    margin-left: 20%;
+    width: 80%;
   }
 }
 
