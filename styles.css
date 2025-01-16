@@ -943,7 +943,7 @@ footer {
 .bubble {
   width: 50px;
   height: 50px;
-  background-color: #2a2a2a; /* Matches background */
+  background-color: #1a1a1a; /* Matches background */
   border-radius: 50%;
   border: 2px solid royalblue; /* Blue border for consistency */
   transition: transform 0.2s ease, border-color 0.2s ease;
@@ -955,12 +955,12 @@ footer {
 }
 
 .character-right {
-  margin-left: 30%;
+  margin-right: 10%;
+  margin-left: 40%;
   padding: 20px;
-  width: 70%;
+  width: 100%;
   overflow-y: auto;
   height: 100vh;
-  background-color: #2a2a2a; /* Match darker theme */
   color: white; /* Text color to contrast */
 }
 
