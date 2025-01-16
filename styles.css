@@ -933,7 +933,6 @@ footer {
 }
 
 .team-bubbles {
-  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
@@ -943,9 +942,9 @@ footer {
 .bubble {
   width: 50px;
   height: 50px;
-  background-color: #d9d9d9;
+  background-color: #1a1a1a;
   border-radius: 50%;
-  border: 2px solid #bbb;
+  border: 2px solid royalblue;
   overflow: hidden; /* Ensures the image stays within the bubble */
   display: flex;
   justify-content: center;
@@ -969,9 +968,6 @@ footer {
   transform: scale(0.95); /* Click effect */
 }
 
-.bubble:hover img {
-  filter: brightness(1.1); /* Slightly brighten the image on hover */
-}
 
 
 .character-right {
