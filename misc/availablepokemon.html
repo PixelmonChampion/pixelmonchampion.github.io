@@ -57,24 +57,1407 @@
     </ul>
   </nav>
 
-  <script>
-    const entries = [
-        "cubear", "combear", "confabear", "confabear-burst", "drakle", "drakosis", "drakorage", "drakorage-burst", "dripug", "soakeros", "hydrax", "hydrax-burst", "ledyba", "ledian", "hopibug", "hooperflip", "jumpafloo", "spinarak", "ariados", "venipede", "whirlipede", "scolipede", "weedle", "kakuna", "beedrill", "caterpie", "metapod", "butterfree", "shuckle-zalian", "quakey", "quakia", "quakiot", "spearow", "fearow", "hoothoot", "noctowl", "ralts", "kirlia", "gardevoir", "gallade", "abra", "kadabra", "alakazam", "posamal", "poseghaust", "rattata", "raticate", "sentret", "furret", "wooloo", "dubwool", "mareep", "flaaffy", "ampharos", "glameow", "purugly", "purugly-burst", "pangaroo", "eevee", "eevee-burst", "vaporeon", "jolteon", "flareon", "espeon", "umbreon", "leafeon", "glaceon", "sylveon", "pichu", "pikachu", "pikachu-burst", "raichu", "cleffa", "clefairy", "clefable", "timburr", "gurdurr", "conkeldurr", "yamask-centonian", "bagrigus", "throh", "sawk", "munchlax", "snorlax", "buizel", "floatzel", "floatzel-burst", "arrokuda", "barraskewda", "wishiwashi", "lurish", "vicalure", "magikarp", "gyarados", "frillish", "jellicent", "carvanha", "sharpedo", "finizen", "palafin", "staryu", "starmie", "luvdisc", "horsea", "seadra", "kingdra", "corphish", "crawdaunt", "clampearl", "huntail", "gorebyss", "wailmer", "wailord", "wailord-burst", "relicanth", "relicanth-burst", "wingull", "pelipper", "wattrel", "kilowattrel", "gastly", "haunter", "gengar-centonian", "jellian", "jellinuma", "psyduck", "golduck", "vampha", "vamphous", "corsola", "swirlicky", "swolicky", "woobat", "swoobat", "swoobat-burst", "dwebble", "crustle", "clobabust", "clobabash", "drilbur", "excadrill", "rolycoly", "carkol", "coalossal", "nosepass", "probopass", "sableye", "aron", "lairon", "aggron", "lunatone", "bonsly", "sudowoodo", "diglett", "dugtrio", "dunsparce", "dudunsparce", "dudunsparce-burst", "pineco", "forretress", "petilil", "lilligant", "teddiursa", "ursaring", "ursaluna", "aipom", "ambipom", "tadel", "dancifrog", "sumatoad", "hoppip", "skiploom", "jumpluff", "riolu", "lucario", "bandicoon", "robicoon", "drifloon", "drifblim", "tauros", "tauros-burst", "pansage", "simisage", "pansear", "simisear", "panpour", "simipour", "sunkern", "sunflora", "sunflora-burst", "grounsquatch", "grounsquatch-burst", "budew", "roselia", "roserade", "seedot", "nuzleaf", "shiftry", "shinja", "shroomish", "breloom", "scyther", "scizor", "kleavor", "nincada", "ninjask", "shedinja", "spinda", "indeedee", "audino", "phanpy", "donphan", "delicrow", "tandemeows", "meowshold", "nacli", "naclstack", "garganacl", "rollimolli", "rollaslash", "skarmory", "rufflet", "braviary", "neboy", "nebuman", "snagsteel", "abducsteel", "hippopotas", "hippowdon", "cacnea", "cacturne", "cacturne-burst", "capsakid", "scovillain", "scovillain-burst", "cubone", "marowak", "marowak-burst", "sandile", "krokorok", "krookodile", "krookodile-burst", "mudbray", "mudsdale", "silicobra", "sandaconda", "heatmor", "torkoal", "torkoal-burst", "scraggy", "scrafty", "scrafty-centonian", "croagunk", "toxicroak", "koffing", "weezing", "gulpin", "swalot", "swalot-burst", "poliwag", "poliwhirl", "poliwrath", "poliwrath-burst", "politoed", "wooper", "quagsire", "yanma", "yanmega", "dewpider", "araquanid", "tympole", "palpitoad", "seismitoad", "shuppet", "banette", "trubbish", "garbodor", "ditto", "natu", "xatu", "slowpoke", "slowbro", "slowking", "slowking-burst", "rotom", "castform", "absol", "charcadet", "armarouge", "ceruledge", "seviper-centonian", "zangoose-centonian", "meditite", "medicham", "beldum", "metang", "metagross", "sneasel", "weavile", "cryogonal", "cubchoo", "beartic", "cetoddle", "cetitan", "buneary-centonian", "buneary-centonian", "lopunny-centonian", "vanillite-centonian", "vanillish-centonian", "vanillush", "snover", "abomasnow", "spheal", "sealeo", "walrein", "snorunt", "glalie", "froslass", "carbink", "carbink-burst", "spiritomb", "spiritomb-burst", "jynx", "swinub", "piloswine", "mamoswine", "drampa", "frigibax", "arctibax", "baxcalibur", "bagon", "shelgon", "salamence", "dracolarv", "dracoon", "dracotar", "snachoo", "serpyro", "pyrukobra", "wuriphant", "wuriplow", "tesakite", "caslatoar", "naitu", "pritu", "deitu", "jadris", "cyberu5", "cizibear"
-    ];
 
-    const container = document.body;
+  <div class="pokemon-grid">
 
-    entries.forEach(entry => {
-        const bubble = document.createElement('a');
-        bubble.href = entry.includes("centonian") || entry.includes("-burst") || !/^[a-z]+$/.test(entry) ? `../pokemon/${entry.toLowerCase()}` : `https://bulbapedia.bulbagarden.net/wiki/${entry.charAt(0).toUpperCase() + entry.slice(1)}_(Pok%C3%A9mon)`;
-        bubble.className = 'pokemon-bubble';
-        const img = document.createElement('img');
-        img.src = `../images/${entry.toLowerCase()}.png`;
-        img.alt = entry;
-        bubble.appendChild(img);
-        container.appendChild(bubble);
-    });
-</script>
+    <a class="pokemon-bubble" href="../pokemon/cubear">
+      <img src="images/pokes/cubear.png" alt="cubear">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/combear">
+      <img src="images/pokes/combear.png" alt="combear">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/confabear">
+      <img src="images/pokes/confabear.png" alt="confabear">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/confabear-burst_(Pokémon)">
+      <img src="images/pokes/confabear-burst.png" alt="confabear-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/drakle">
+      <img src="images/pokes/drakle.png" alt="drakle">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/drakosis">
+      <img src="images/pokes/drakosis.png" alt="drakosis">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/drakorage">
+      <img src="images/pokes/drakorage.png" alt="drakorage">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/drakorage-burst_(Pokémon)">
+      <img src="images/pokes/drakorage-burst.png" alt="drakorage-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dripug">
+      <img src="images/pokes/dripug.png" alt="dripug">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/soakeros">
+      <img src="images/pokes/soakeros.png" alt="soakeros">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/hydrax">
+      <img src="images/pokes/hydrax.png" alt="hydrax">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/hydrax-burst_(Pokémon)">
+      <img src="images/pokes/hydrax-burst.png" alt="hydrax-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ledyba_(Pokémon)">
+      <img src="images/pokes/ledyba.png" alt="ledyba">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ledian_(Pokémon)">
+      <img src="images/pokes/ledian.png" alt="ledian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/hopibug">
+      <img src="images/pokes/hopibug.png" alt="hopibug">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/hooperflip">
+      <img src="images/pokes/hooperflip.png" alt="hooperflip">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/jumpafloo">
+      <img src="images/pokes/jumpafloo.png" alt="jumpafloo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/spinarak_(Pokémon)">
+      <img src="images/pokes/spinarak.png" alt="spinarak">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ariados_(Pokémon)">
+      <img src="images/pokes/ariados.png" alt="ariados">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/venipede_(Pokémon)">
+      <img src="images/pokes/venipede.png" alt="venipede">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/whirlipede_(Pokémon)">
+      <img src="images/pokes/whirlipede.png" alt="whirlipede">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scolipede_(Pokémon)">
+      <img src="images/pokes/scolipede.png" alt="scolipede">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/weedle_(Pokémon)">
+      <img src="images/pokes/weedle.png" alt="weedle">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kakuna_(Pokémon)">
+      <img src="images/pokes/kakuna.png" alt="kakuna">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/beedrill_(Pokémon)">
+      <img src="images/pokes/beedrill.png" alt="beedrill">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/caterpie_(Pokémon)">
+      <img src="images/pokes/caterpie.png" alt="caterpie">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/metapod_(Pokémon)">
+      <img src="images/pokes/metapod.png" alt="metapod">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/butterfree_(Pokémon)">
+      <img src="images/pokes/butterfree.png" alt="butterfree">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shuckle-zalian_(Pokémon)">
+      <img src="images/pokes/shuckle-zalian.png" alt="shuckle-zalian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/quakey">
+      <img src="images/pokes/quakey.png" alt="quakey">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/quakia">
+      <img src="images/pokes/quakia.png" alt="quakia">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/quakiot">
+      <img src="images/pokes/quakiot.png" alt="quakiot">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/spearow_(Pokémon)">
+      <img src="images/pokes/spearow.png" alt="spearow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/fearow_(Pokémon)">
+      <img src="images/pokes/fearow.png" alt="fearow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/hoothoot_(Pokémon)">
+      <img src="images/pokes/hoothoot.png" alt="hoothoot">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/noctowl_(Pokémon)">
+      <img src="images/pokes/noctowl.png" alt="noctowl">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ralts_(Pokémon)">
+      <img src="images/pokes/ralts.png" alt="ralts">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kirlia_(Pokémon)">
+      <img src="images/pokes/kirlia.png" alt="kirlia">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gardevoir_(Pokémon)">
+      <img src="images/pokes/gardevoir.png" alt="gardevoir">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gallade_(Pokémon)">
+      <img src="images/pokes/gallade.png" alt="gallade">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/abra_(Pokémon)">
+      <img src="images/pokes/abra.png" alt="abra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kadabra_(Pokémon)">
+      <img src="images/pokes/kadabra.png" alt="kadabra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/alakazam_(Pokémon)">
+      <img src="images/pokes/alakazam.png" alt="alakazam">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/posamal">
+      <img src="images/pokes/posamal.png" alt="posamal">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/poseghaust">
+      <img src="images/pokes/poseghaust.png" alt="poseghaust">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/rattata_(Pokémon)">
+      <img src="images/pokes/rattata.png" alt="rattata">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/raticate_(Pokémon)">
+      <img src="images/pokes/raticate.png" alt="raticate">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sentret_(Pokémon)">
+      <img src="images/pokes/sentret.png" alt="sentret">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/furret_(Pokémon)">
+      <img src="images/pokes/furret.png" alt="furret">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wooloo_(Pokémon)">
+      <img src="images/pokes/wooloo.png" alt="wooloo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dubwool_(Pokémon)">
+      <img src="images/pokes/dubwool.png" alt="dubwool">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/mareep_(Pokémon)">
+      <img src="images/pokes/mareep.png" alt="mareep">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/flaaffy_(Pokémon)">
+      <img src="images/pokes/flaaffy.png" alt="flaaffy">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ampharos_(Pokémon)">
+      <img src="images/pokes/ampharos.png" alt="ampharos">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/glameow_(Pokémon)">
+      <img src="images/pokes/glameow.png" alt="glameow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/purugly_(Pokémon)">
+      <img src="images/pokes/purugly.png" alt="purugly">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/purugly-burst">
+      <img src="images/pokes/purugly-burst.png" alt="purugly-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/pangaroo">
+      <img src="images/pokes/pangaroo.png" alt="pangaroo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/eevee_(Pokémon)">
+      <img src="images/pokes/eevee.png" alt="eevee">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/eevee-burst">
+      <img src="images/pokes/eevee-burst.png" alt="eevee-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/vaporeon_(Pokémon)">
+      <img src="images/pokes/vaporeon.png" alt="vaporeon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/jolteon_(Pokémon)">
+      <img src="images/pokes/jolteon.png" alt="jolteon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/flareon_(Pokémon)">
+      <img src="images/pokes/flareon.png" alt="flareon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/espeon_(Pokémon)">
+      <img src="images/pokes/espeon.png" alt="espeon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/umbreon_(Pokémon)">
+      <img src="images/pokes/umbreon.png" alt="umbreon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/leafeon_(Pokémon)">
+      <img src="images/pokes/leafeon.png" alt="leafeon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/glaceon_(Pokémon)">
+      <img src="images/pokes/glaceon.png" alt="glaceon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sylveon_(Pokémon)">
+      <img src="images/pokes/sylveon.png" alt="sylveon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pichu_(Pokémon)">
+      <img src="images/pokes/pichu.png" alt="pichu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pikachu_(Pokémon)">
+      <img src="images/pokes/pikachu.png" alt="pikachu">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/pikachu-burst">
+      <img src="images/pokes/pikachu-burst.png" alt="pikachu-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/raichu_(Pokémon)">
+      <img src="images/pokes/raichu.png" alt="raichu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cleffa_(Pokémon)">
+      <img src="images/pokes/cleffa.png" alt="cleffa">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/clefairy_(Pokémon)">
+      <img src="images/pokes/clefairy.png" alt="clefairy">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/clefable_(Pokémon)">
+      <img src="images/pokes/clefable.png" alt="clefable">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/timburr_(Pokémon)">
+      <img src="images/pokes/timburr.png" alt="timburr">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gurdurr_(Pokémon)">
+      <img src="images/pokes/gurdurr.png" alt="gurdurr">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/conkeldurr_(Pokémon)">
+      <img src="images/pokes/conkeldurr.png" alt="conkeldurr">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/yamask-centonian">
+      <img src="images/pokes/yamask-centonian.png" alt="yamask-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/bagrigus">
+      <img src="images/pokes/bagrigus.png" alt="bagrigus">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/throh_(Pokémon)">
+      <img src="images/pokes/throh.png" alt="throh">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sawk_(Pokémon)">
+      <img src="images/pokes/sawk.png" alt="sawk">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/munchlax_(Pokémon)">
+      <img src="images/pokes/munchlax.png" alt="munchlax">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/snorlax_(Pokémon)">
+      <img src="images/pokes/snorlax.png" alt="snorlax">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/buizel_(Pokémon)">
+      <img src="images/pokes/buizel.png" alt="buizel">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/floatzel_(Pokémon)">
+      <img src="images/pokes/floatzel.png" alt="floatzel">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/floatzel-burst">
+      <img src="images/pokes/floatzel-burst.png" alt="floatzel-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/arrokuda_(Pokémon)">
+      <img src="images/pokes/arrokuda.png" alt="arrokuda">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/barraskewda_(Pokémon)">
+      <img src="images/pokes/barraskewda.png" alt="barraskewda">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wishiwashi_(Pokémon)">
+      <img src="images/pokes/wishiwashi.png" alt="wishiwashi">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/lurish">
+      <img src="images/pokes/lurish.png" alt="lurish">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vicalure">
+      <img src="images/pokes/vicalure.png" alt="vicalure">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/magikarp_(Pokémon)">
+      <img src="images/pokes/magikarp.png" alt="magikarp">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gyarados_(Pokémon)">
+      <img src="images/pokes/gyarados.png" alt="gyarados">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/frillish_(Pokémon)">
+      <img src="images/pokes/frillish.png" alt="frillish">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/jellicent_(Pokémon)">
+      <img src="images/pokes/jellicent.png" alt="jellicent">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/carvanha_(Pokémon)">
+      <img src="images/pokes/carvanha.png" alt="carvanha">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sharpedo_(Pokémon)">
+      <img src="images/pokes/sharpedo.png" alt="sharpedo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/finizen_(Pokémon)">
+      <img src="images/pokes/finizen.png" alt="finizen">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/palafin_(Pokémon)">
+      <img src="images/pokes/palafin.png" alt="palafin">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/staryu_(Pokémon)">
+      <img src="images/pokes/staryu.png" alt="staryu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/starmie_(Pokémon)">
+      <img src="images/pokes/starmie.png" alt="starmie">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/luvdisc_(Pokémon)">
+      <img src="images/pokes/luvdisc.png" alt="luvdisc">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/horsea_(Pokémon)">
+      <img src="images/pokes/horsea.png" alt="horsea">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/seadra_(Pokémon)">
+      <img src="images/pokes/seadra.png" alt="seadra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kingdra_(Pokémon)">
+      <img src="images/pokes/kingdra.png" alt="kingdra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/corphish_(Pokémon)">
+      <img src="images/pokes/corphish.png" alt="corphish">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/crawdaunt_(Pokémon)">
+      <img src="images/pokes/crawdaunt.png" alt="crawdaunt">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/clampearl_(Pokémon)">
+      <img src="images/pokes/clampearl.png" alt="clampearl">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/huntail_(Pokémon)">
+      <img src="images/pokes/huntail.png" alt="huntail">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gorebyss_(Pokémon)">
+      <img src="images/pokes/gorebyss.png" alt="gorebyss">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wailmer_(Pokémon)">
+      <img src="images/pokes/wailmer.png" alt="wailmer">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wailord_(Pokémon)">
+      <img src="images/pokes/wailord.png" alt="wailord">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/wailord-burst">
+      <img src="images/pokes/wailord-burst.png" alt="wailord-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/relicanth_(Pokémon)">
+      <img src="images/pokes/relicanth.png" alt="relicanth">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/relicanth-burst">
+      <img src="images/pokes/relicanth-burst.png" alt="relicanth-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wingull_(Pokémon)">
+      <img src="images/pokes/wingull.png" alt="wingull">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pelipper_(Pokémon)">
+      <img src="images/pokes/pelipper.png" alt="pelipper">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wattrel_(Pokémon)">
+      <img src="images/pokes/wattrel.png" alt="wattrel">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kilowattrel_(Pokémon)">
+      <img src="images/pokes/kilowattrel.png" alt="kilowattrel">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gastly_(Pokémon)">
+      <img src="images/pokes/gastly.png" alt="gastly">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/haunter_(Pokémon)">
+      <img src="images/pokes/haunter.png" alt="haunter">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/gengar-centonian">
+      <img src="images/pokes/gengar-centonian.png" alt="gengar-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/jellian">
+      <img src="images/pokes/jellian.png" alt="jellian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/jellinuma">
+      <img src="images/pokes/jellinuma.png" alt="jellinuma">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/psyduck_(Pokémon)">
+      <img src="images/pokes/psyduck.png" alt="psyduck">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/golduck_(Pokémon)">
+      <img src="images/pokes/golduck.png" alt="golduck">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vampha">
+      <img src="images/pokes/vampha.png" alt="vampha">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vamphous">
+      <img src="images/pokes/vamphous.png" alt="vamphous">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/corsola_(Pokémon)">
+      <img src="images/pokes/corsola.png" alt="corsola">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/swirlicky">
+      <img src="images/pokes/swirlicky.png" alt="swirlicky">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/swolicky">
+      <img src="images/pokes/swolicky.png" alt="swolicky">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/woobat_(Pokémon)">
+      <img src="images/pokes/woobat.png" alt="woobat">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/swoobat_(Pokémon)">
+      <img src="images/pokes/swoobat.png" alt="swoobat">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/swoobat-burst">
+      <img src="images/pokes/swoobat-burst.png" alt="swoobat-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dwebble_(Pokémon)">
+      <img src="images/pokes/dwebble.png" alt="dwebble">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/crustle_(Pokémon)">
+      <img src="images/pokes/crustle.png" alt="crustle">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/clobabust">
+      <img src="images/pokes/clobabust.png" alt="clobabust">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/clobabash">
+      <img src="images/pokes/clobabash.png" alt="clobabash">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/drilbur_(Pokémon)">
+      <img src="images/pokes/drilbur.png" alt="drilbur">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/excadrill_(Pokémon)">
+      <img src="images/pokes/excadrill.png" alt="excadrill">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/rolycoly_(Pokémon)">
+      <img src="images/pokes/rolycoly.png" alt="rolycoly">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/carkol_(Pokémon)">
+      <img src="images/pokes/carkol.png" alt="carkol">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/coalossal_(Pokémon)">
+      <img src="images/pokes/coalossal.png" alt="coalossal">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/nosepass_(Pokémon)">
+      <img src="images/pokes/nosepass.png" alt="nosepass">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/probopass_(Pokémon)">
+      <img src="images/pokes/probopass.png" alt="probopass">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sableye_(Pokémon)">
+      <img src="images/pokes/sableye.png" alt="sableye">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/aron_(Pokémon)">
+      <img src="images/pokes/aron.png" alt="aron">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/lairon_(Pokémon)">
+      <img src="images/pokes/lairon.png" alt="lairon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/aggron_(Pokémon)">
+      <img src="images/pokes/aggron.png" alt="aggron">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/lunatone_(Pokémon)">
+      <img src="images/pokes/lunatone.png" alt="lunatone">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/bonsly_(Pokémon)">
+      <img src="images/pokes/bonsly.png" alt="bonsly">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sudowoodo_(Pokémon)">
+      <img src="images/pokes/sudowoodo.png" alt="sudowoodo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/diglett_(Pokémon)">
+      <img src="images/pokes/diglett.png" alt="diglett">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dugtrio_(Pokémon)">
+      <img src="images/pokes/dugtrio.png" alt="dugtrio">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dunsparce_(Pokémon)">
+      <img src="images/pokes/dunsparce.png" alt="dunsparce">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dudunsparce_(Pokémon)">
+      <img src="images/pokes/dudunsparce.png" alt="dudunsparce">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dudunsparce-burst">
+      <img src="images/pokes/dudunsparce-burst.png" alt="dudunsparce-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pineco_(Pokémon)">
+      <img src="images/pokes/pineco.png" alt="pineco">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/forretress_(Pokémon)">
+      <img src="images/pokes/forretress.png" alt="forretress">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/petilil_(Pokémon)">
+      <img src="images/pokes/petilil.png" alt="petilil">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/lilligant_(Pokémon)">
+      <img src="images/pokes/lilligant.png" alt="lilligant">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/teddiursa_(Pokémon)">
+      <img src="images/pokes/teddiursa.png" alt="teddiursa">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ursaring_(Pokémon)">
+      <img src="images/pokes/ursaring.png" alt="ursaring">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ursaluna_(Pokémon)">
+      <img src="images/pokes/ursaluna.png" alt="ursaluna">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/aipom_(Pokémon)">
+      <img src="images/pokes/aipom.png" alt="aipom">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ambipom_(Pokémon)">
+      <img src="images/pokes/ambipom.png" alt="ambipom">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/tadel">
+      <img src="images/pokes/tadel.png" alt="tadel">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dancifrog">
+      <img src="images/pokes/dancifrog.png" alt="dancifrog">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/sumatoad">
+      <img src="images/pokes/sumatoad.png" alt="sumatoad">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/hoppip_(Pokémon)">
+      <img src="images/pokes/hoppip.png" alt="hoppip">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/skiploom_(Pokémon)">
+      <img src="images/pokes/skiploom.png" alt="skiploom">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/jumpluff_(Pokémon)">
+      <img src="images/pokes/jumpluff.png" alt="jumpluff">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/riolu_(Pokémon)">
+      <img src="images/pokes/riolu.png" alt="riolu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/lucario_(Pokémon)">
+      <img src="images/pokes/lucario.png" alt="lucario">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/bandicoon">
+      <img src="images/pokes/bandicoon.png" alt="bandicoon">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/robicoon">
+      <img src="images/pokes/robicoon.png" alt="robicoon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/drifloon_(Pokémon)">
+      <img src="images/pokes/drifloon.png" alt="drifloon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/drifblim_(Pokémon)">
+      <img src="images/pokes/drifblim.png" alt="drifblim">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/tauros_(Pokémon)">
+      <img src="images/pokes/tauros.png" alt="tauros">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/tauros-burst">
+      <img src="images/pokes/tauros-burst.png" alt="tauros-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pansage_(Pokémon)">
+      <img src="images/pokes/pansage.png" alt="pansage">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/simisage_(Pokémon)">
+      <img src="images/pokes/simisage.png" alt="simisage">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/pansear_(Pokémon)">
+      <img src="images/pokes/pansear.png" alt="pansear">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/simisear_(Pokémon)">
+      <img src="images/pokes/simisear.png" alt="simisear">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/panpour_(Pokémon)">
+      <img src="images/pokes/panpour.png" alt="panpour">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/simipour_(Pokémon)">
+      <img src="images/pokes/simipour.png" alt="simipour">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sunkern_(Pokémon)">
+      <img src="images/pokes/sunkern.png" alt="sunkern">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sunflora_(Pokémon)">
+      <img src="images/pokes/sunflora.png" alt="sunflora">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/sunflora-burst">
+      <img src="images/pokes/sunflora-burst.png" alt="sunflora-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/grounsquatch">
+      <img src="images/pokes/grounsquatch.png" alt="grounsquatch">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/grounsquatch-burst">
+      <img src="images/pokes/grounsquatch-burst.png" alt="grounsquatch-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/budew_(Pokémon)">
+      <img src="images/pokes/budew.png" alt="budew">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/roselia_(Pokémon)">
+      <img src="images/pokes/roselia.png" alt="roselia">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/roserade_(Pokémon)">
+      <img src="images/pokes/roserade.png" alt="roserade">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/seedot_(Pokémon)">
+      <img src="images/pokes/seedot.png" alt="seedot">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/nuzleaf_(Pokémon)">
+      <img src="images/pokes/nuzleaf.png" alt="nuzleaf">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shiftry_(Pokémon)">
+      <img src="images/pokes/shiftry.png" alt="shiftry">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/shinja">
+      <img src="images/pokes/shinja.png" alt="shinja">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shroomish_(Pokémon)">
+      <img src="images/pokes/shroomish.png" alt="shroomish">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/breloom_(Pokémon)">
+      <img src="images/pokes/breloom.png" alt="breloom">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scyther_(Pokémon)">
+      <img src="images/pokes/scyther.png" alt="scyther">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scizor_(Pokémon)">
+      <img src="images/pokes/scizor.png" alt="scizor">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/kleavor_(Pokémon)">
+      <img src="images/pokes/kleavor.png" alt="kleavor">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/nincada_(Pokémon)">
+      <img src="images/pokes/nincada.png" alt="nincada">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ninjask_(Pokémon)">
+      <img src="images/pokes/ninjask.png" alt="ninjask">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shedinja_(Pokémon)">
+      <img src="images/pokes/shedinja.png" alt="shedinja">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/spinda_(Pokémon)">
+      <img src="images/pokes/spinda.png" alt="spinda">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/indeedee_(Pokémon)">
+      <img src="images/pokes/indeedee.png" alt="indeedee">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/audino_(Pokémon)">
+      <img src="images/pokes/audino.png" alt="audino">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/phanpy_(Pokémon)">
+      <img src="images/pokes/phanpy.png" alt="phanpy">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/donphan_(Pokémon)">
+      <img src="images/pokes/donphan.png" alt="donphan">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/delicrow">
+      <img src="images/pokes/delicrow.png" alt="delicrow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/tandemeows_(Pokémon)">
+      <img src="images/pokes/tandemeows.png" alt="tandemeows">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/meowshold_(Pokémon)">
+      <img src="images/pokes/meowshold.png" alt="meowshold">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/nacli_(Pokémon)">
+      <img src="images/pokes/nacli.png" alt="nacli">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/naclstack_(Pokémon)">
+      <img src="images/pokes/naclstack.png" alt="naclstack">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/garganacl_(Pokémon)">
+      <img src="images/pokes/garganacl.png" alt="garganacl">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/rollimolli">
+      <img src="images/pokes/rollimolli.png" alt="rollimolli">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/rollaslash">
+      <img src="images/pokes/rollaslash.png" alt="rollaslash">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/skarmory_(Pokémon)">
+      <img src="images/pokes/skarmory.png" alt="skarmory">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/rufflet_(Pokémon)">
+      <img src="images/pokes/rufflet.png" alt="rufflet">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/braviary_(Pokémon)">
+      <img src="images/pokes/braviary.png" alt="braviary">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/neboy">
+      <img src="images/pokes/neboy.png" alt="neboy">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/nebuman">
+      <img src="images/pokes/nebuman.png" alt="nebuman">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/snagsteel">
+      <img src="images/pokes/snagsteel.png" alt="snagsteel">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/abducsteel">
+      <img src="images/pokes/abducsteel.png" alt="abducsteel">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/hippopotas_(Pokémon)">
+      <img src="images/pokes/hippopotas.png" alt="hippopotas">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/hippowdon_(Pokémon)">
+      <img src="images/pokes/hippowdon.png" alt="hippowdon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cacnea_(Pokémon)">
+      <img src="images/pokes/cacnea.png" alt="cacnea">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cacturne_(Pokémon)">
+      <img src="images/pokes/cacturne.png" alt="cacturne">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/cacturne-burst">
+      <img src="images/pokes/cacturne-burst.png" alt="cacturne-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/capsakid_(Pokémon)">
+      <img src="images/pokes/capsakid.png" alt="capsakid">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scovillain_(Pokémon)">
+      <img src="images/pokes/scovillain.png" alt="scovillain">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/scovillain-burst">
+      <img src="images/pokes/scovillain-burst.png" alt="scovillain-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cubone_(Pokémon)">
+      <img src="images/pokes/cubone.png" alt="cubone">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/marowak_(Pokémon)">
+      <img src="images/pokes/marowak.png" alt="marowak">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/marowak-burst">
+      <img src="images/pokes/marowak-burst.png" alt="marowak-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sandile_(Pokémon)">
+      <img src="images/pokes/sandile.png" alt="sandile">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/krokorok_(Pokémon)">
+      <img src="images/pokes/krokorok.png" alt="krokorok">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/krookodile_(Pokémon)">
+      <img src="images/pokes/krookodile.png" alt="krookodile">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/krookodile-burst">
+      <img src="images/pokes/krookodile-burst.png" alt="krookodile-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/mudbray_(Pokémon)">
+      <img src="images/pokes/mudbray.png" alt="mudbray">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/mudsdale_(Pokémon)">
+      <img src="images/pokes/mudsdale.png" alt="mudsdale">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/silicobra_(Pokémon)">
+      <img src="images/pokes/silicobra.png" alt="silicobra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sandaconda_(Pokémon)">
+      <img src="images/pokes/sandaconda.png" alt="sandaconda">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/heatmor_(Pokémon)">
+      <img src="images/pokes/heatmor.png" alt="heatmor">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/torkoal_(Pokémon)">
+      <img src="images/pokes/torkoal.png" alt="torkoal">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/torkoal-burst">
+      <img src="images/pokes/torkoal-burst.png" alt="torkoal-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scraggy_(Pokémon)">
+      <img src="images/pokes/scraggy.png" alt="scraggy">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/scrafty_(Pokémon)">
+      <img src="images/pokes/scrafty.png" alt="scrafty">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/scrafty-centonian">
+      <img src="images/pokes/scrafty-centonian.png" alt="scrafty-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/croagunk_(Pokémon)">
+      <img src="images/pokes/croagunk.png" alt="croagunk">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/toxicroak_(Pokémon)">
+      <img src="images/pokes/toxicroak.png" alt="toxicroak">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/koffing_(Pokémon)">
+      <img src="images/pokes/koffing.png" alt="koffing">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/weezing_(Pokémon)">
+      <img src="images/pokes/weezing.png" alt="weezing">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/gulpin_(Pokémon)">
+      <img src="images/pokes/gulpin.png" alt="gulpin">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/swalot_(Pokémon)">
+      <img src="images/pokes/swalot.png" alt="swalot">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/swalot-burst">
+      <img src="images/pokes/swalot-burst.png" alt="swalot-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/poliwag_(Pokémon)">
+      <img src="images/pokes/poliwag.png" alt="poliwag">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/poliwhirl_(Pokémon)">
+      <img src="images/pokes/poliwhirl.png" alt="poliwhirl">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/poliwrath_(Pokémon)">
+      <img src="images/pokes/poliwrath.png" alt="poliwrath">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/poliwrath-burst">
+      <img src="images/pokes/poliwrath-burst.png" alt="poliwrath-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/politoed_(Pokémon)">
+      <img src="images/pokes/politoed.png" alt="politoed">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wooper_(Pokémon)">
+      <img src="images/pokes/wooper.png" alt="wooper">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/quagsire_(Pokémon)">
+      <img src="images/pokes/quagsire.png" alt="quagsire">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/yanma_(Pokémon)">
+      <img src="images/pokes/yanma.png" alt="yanma">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/yanmega_(Pokémon)">
+      <img src="images/pokes/yanmega.png" alt="yanmega">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/dewpider_(Pokémon)">
+      <img src="images/pokes/dewpider.png" alt="dewpider">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/araquanid_(Pokémon)">
+      <img src="images/pokes/araquanid.png" alt="araquanid">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/tympole_(Pokémon)">
+      <img src="images/pokes/tympole.png" alt="tympole">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/palpitoad_(Pokémon)">
+      <img src="images/pokes/palpitoad.png" alt="palpitoad">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/seismitoad_(Pokémon)">
+      <img src="images/pokes/seismitoad.png" alt="seismitoad">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shuppet_(Pokémon)">
+      <img src="images/pokes/shuppet.png" alt="shuppet">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/banette_(Pokémon)">
+      <img src="images/pokes/banette.png" alt="banette">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/trubbish_(Pokémon)">
+      <img src="images/pokes/trubbish.png" alt="trubbish">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/garbodor_(Pokémon)">
+      <img src="images/pokes/garbodor.png" alt="garbodor">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ditto_(Pokémon)">
+      <img src="images/pokes/ditto.png" alt="ditto">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/natu_(Pokémon)">
+      <img src="images/pokes/natu.png" alt="natu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/xatu_(Pokémon)">
+      <img src="images/pokes/xatu.png" alt="xatu">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/slowpoke_(Pokémon)">
+      <img src="images/pokes/slowpoke.png" alt="slowpoke">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/slowbro_(Pokémon)">
+      <img src="images/pokes/slowbro.png" alt="slowbro">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/slowking_(Pokémon)">
+      <img src="images/pokes/slowking.png" alt="slowking">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/slowking-burst">
+      <img src="images/pokes/slowking-burst.png" alt="slowking-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/rotom_(Pokémon)">
+      <img src="images/pokes/rotom.png" alt="rotom">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/castform_(Pokémon)">
+      <img src="images/pokes/castform.png" alt="castform">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/absol_(Pokémon)">
+      <img src="images/pokes/absol.png" alt="absol">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/charcadet_(Pokémon)">
+      <img src="images/pokes/charcadet.png" alt="charcadet">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/armarouge_(Pokémon)">
+      <img src="images/pokes/armarouge.png" alt="armarouge">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/ceruledge_(Pokémon)">
+      <img src="images/pokes/ceruledge.png" alt="ceruledge">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/seviper-centonian">
+      <img src="images/pokes/seviper-centonian.png" alt="seviper-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/zangoose-centonian">
+      <img src="images/pokes/zangoose-centonian.png" alt="zangoose-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/meditite_(Pokémon)">
+      <img src="images/pokes/meditite.png" alt="meditite">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/medicham_(Pokémon)">
+      <img src="images/pokes/medicham.png" alt="medicham">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/beldum_(Pokémon)">
+      <img src="images/pokes/beldum.png" alt="beldum">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/metang_(Pokémon)">
+      <img src="images/pokes/metang.png" alt="metang">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/metagross_(Pokémon)">
+      <img src="images/pokes/metagross.png" alt="metagross">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sneasel_(Pokémon)">
+      <img src="images/pokes/sneasel.png" alt="sneasel">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/weavile_(Pokémon)">
+      <img src="images/pokes/weavile.png" alt="weavile">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cryogonal_(Pokémon)">
+      <img src="images/pokes/cryogonal.png" alt="cryogonal">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cubchoo_(Pokémon)">
+      <img src="images/pokes/cubchoo.png" alt="cubchoo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/beartic_(Pokémon)">
+      <img src="images/pokes/beartic.png" alt="beartic">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cetoddle_(Pokémon)">
+      <img src="images/pokes/cetoddle.png" alt="cetoddle">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/cetitan_(Pokémon)">
+      <img src="images/pokes/cetitan.png" alt="cetitan">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/buneary-centonian">
+      <img src="images/pokes/buneary-centonian.png" alt="buneary-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/buneary-centonian">
+      <img src="images/pokes/buneary-centonian.png" alt="buneary-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/lopunny-centonian">
+      <img src="images/pokes/lopunny-centonian.png" alt="lopunny-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vanillite-centonian">
+      <img src="images/pokes/vanillite-centonian.png" alt="vanillite-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vanillish-centonian">
+      <img src="images/pokes/vanillish-centonian.png" alt="vanillish-centonian">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/vanillush">
+      <img src="images/pokes/vanillush.png" alt="vanillush">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/snover_(Pokémon)">
+      <img src="images/pokes/snover.png" alt="snover">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/abomasnow_(Pokémon)">
+      <img src="images/pokes/abomasnow.png" alt="abomasnow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/spheal_(Pokémon)">
+      <img src="images/pokes/spheal.png" alt="spheal">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/sealeo_(Pokémon)">
+      <img src="images/pokes/sealeo.png" alt="sealeo">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/walrein_(Pokémon)">
+      <img src="images/pokes/walrein.png" alt="walrein">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/snorunt_(Pokémon)">
+      <img src="images/pokes/snorunt.png" alt="snorunt">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/glalie_(Pokémon)">
+      <img src="images/pokes/glalie.png" alt="glalie">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/froslass_(Pokémon)">
+      <img src="images/pokes/froslass.png" alt="froslass">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/carbink_(Pokémon)">
+      <img src="images/pokes/carbink.png" alt="carbink">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/carbink-burst">
+      <img src="images/pokes/carbink-burst.png" alt="carbink-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/spiritomb_(Pokémon)">
+      <img src="images/pokes/spiritomb.png" alt="spiritomb">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/spiritomb-burst">
+      <img src="images/pokes/spiritomb-burst.png" alt="spiritomb-burst">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/jynx_(Pokémon)">
+      <img src="images/pokes/jynx.png" alt="jynx">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/swinub_(Pokémon)">
+      <img src="images/pokes/swinub.png" alt="swinub">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/piloswine_(Pokémon)">
+      <img src="images/pokes/piloswine.png" alt="piloswine">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/mamoswine_(Pokémon)">
+      <img src="images/pokes/mamoswine.png" alt="mamoswine">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/drampa_(Pokémon)">
+      <img src="images/pokes/drampa.png" alt="drampa">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/frigibax_(Pokémon)">
+      <img src="images/pokes/frigibax.png" alt="frigibax">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/arctibax_(Pokémon)">
+      <img src="images/pokes/arctibax.png" alt="arctibax">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/baxcalibur_(Pokémon)">
+      <img src="images/pokes/baxcalibur.png" alt="baxcalibur">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/bagon_(Pokémon)">
+      <img src="images/pokes/bagon.png" alt="bagon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/shelgon_(Pokémon)">
+      <img src="images/pokes/shelgon.png" alt="shelgon">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/salamence_(Pokémon)">
+      <img src="images/pokes/salamence.png" alt="salamence">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dracolarv">
+      <img src="images/pokes/dracolarv.png" alt="dracolarv">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dracoon">
+      <img src="images/pokes/dracoon.png" alt="dracoon">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/dracotar">
+      <img src="images/pokes/dracotar.png" alt="dracotar">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/snachoo">
+      <img src="images/pokes/snachoo.png" alt="snachoo">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/serpyro">
+      <img src="images/pokes/serpyro.png" alt="serpyro">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/pyrukobra">
+      <img src="images/pokes/pyrukobra.png" alt="pyrukobra">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wuriphant_(Pokémon)">
+      <img src="images/pokes/wuriphant.png" alt="wuriphant">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/wuriplow_(Pokémon)">
+      <img src="images/pokes/wuriplow.png" alt="wuriplow">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/tesakite_(Pokémon)">
+      <img src="images/pokes/tesakite.png" alt="tesakite">
+    </a>
+  
+    <a class="pokemon-bubble" href="https://bulbapedia.bulbagarden.net/wiki/caslatoar_(Pokémon)">
+      <img src="images/pokes/caslatoar.png" alt="caslatoar">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/naitu">
+      <img src="images/pokes/naitu.png" alt="naitu">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/pritu">
+      <img src="images/pokes/pritu.png" alt="pritu">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/deitu">
+      <img src="images/pokes/deitu.png" alt="deitu">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/jadris">
+      <img src="images/pokes/jadris.png" alt="jadris">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/cyberu5">
+      <img src="images/pokes/cyberu5.png" alt="cyberu5">
+    </a>
+  
+    <a class="pokemon-bubble" href="../pokemon/cizibear">
+      <img src="images/pokes/cizibear.png" alt="cizibear">
+    </a>
+  
+  </div>
+  
   
  
 
