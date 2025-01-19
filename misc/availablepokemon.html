@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PokéGems Wiki - Available Pokémon</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="../styles.css" />
+        <style>
+          body {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              padding: 20px;
+          }
+  
+          .pokemon-bubble {
+              width: 100px;
+              height: 100px;
+              margin: 10px;
+              border-radius: 50%;
+              background-color: #fff;
+              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: transform 0.2s;
+          }
+  
+          .pokemon-bubble:hover {
+              transform: scale(1.1);
+          }
+  
+          .pokemon-bubble img {
+              width: 80%;
+              height: auto;
+          }
+  
+          a {
+              text-decoration: none;
+          }
+      </style>
+    </head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="../images/logo.png" alt="PokéGems Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../pokemon">Pokémon</a></li>
+      <li><a href="../characters">Characters</a></li>
+      <li><a href="../misc">Misc.</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const entries = [
+        "cubear", "combear", "confabear", "confabear-burst", "drakle", "drakosis", "drakorage", "drakorage-burst", "dripug", "soakeros", "hydrax", "hydrax-burst", "ledyba", "ledian", "hopibug", "hooperflip", "jumpafloo", "spinarak", "ariados", "venipede", "whirlipede", "scolipede", "weedle", "kakuna", "beedrill", "caterpie", "metapod", "butterfree", "shuckle-zalian", "quakey", "quakia", "quakiot", "spearow", "fearow", "hoothoot", "noctowl", "ralts", "kirlia", "gardevoir", "gallade", "abra", "kadabra", "alakazam", "posamal", "poseghaust", "rattata", "raticate", "sentret", "furret", "wooloo", "dubwool", "mareep", "flaaffy", "ampharos", "glameow", "purugly", "purugly-burst", "pangaroo", "eevee", "eevee-burst", "vaporeon", "jolteon", "flareon", "espeon", "umbreon", "leafeon", "glaceon", "sylveon", "pichu", "pikachu", "pikachu-burst", "raichu", "cleffa", "clefairy", "clefable", "timburr", "gurdurr", "conkeldurr", "yamask-centonian", "bagrigus", "throh", "sawk", "munchlax", "snorlax", "buizel", "floatzel", "floatzel-burst", "arrokuda", "barraskewda", "wishiwashi", "lurish", "vicalure", "magikarp", "gyarados", "frillish", "jellicent", "carvanha", "sharpedo", "finizen", "palafin", "staryu", "starmie", "luvdisc", "horsea", "seadra", "kingdra", "corphish", "crawdaunt", "clampearl", "huntail", "gorebyss", "wailmer", "wailord", "wailord-burst", "relicanth", "relicanth-burst", "wingull", "pelipper", "wattrel", "kilowattrel", "gastly", "haunter", "gengar-centonian", "jellian", "jellinuma", "psyduck", "golduck", "vampha", "vamphous", "corsola", "swirlicky", "swolicky", "woobat", "swoobat", "swoobat-burst", "dwebble", "crustle", "clobabust", "clobabash", "drilbur", "excadrill", "rolycoly", "carkol", "coalossal", "nosepass", "probopass", "sableye", "aron", "lairon", "aggron", "lunatone", "bonsly", "sudowoodo", "diglett", "dugtrio", "dunsparce", "dudunsparce", "dudunsparce-burst", "pineco", "forretress", "petilil", "lilligant", "teddiursa", "ursaring", "ursaluna", "aipom", "ambipom", "tadel", "dancifrog", "sumatoad", "hoppip", "skiploom", "jumpluff", "riolu", "lucario", "bandicoon", "robicoon", "drifloon", "drifblim", "tauros", "tauros-burst", "pansage", "simisage", "pansear", "simisear", "panpour", "simipour", "sunkern", "sunflora", "sunflora-burst", "grounsquatch", "grounsquatch-burst", "budew", "roselia", "roserade", "seedot", "nuzleaf", "shiftry", "shinja", "shroomish", "breloom", "scyther", "scizor", "kleavor", "nincada", "ninjask", "shedinja", "spinda", "indeedee", "audino", "phanpy", "donphan", "delicrow", "tandemeows", "meowshold", "nacli", "naclstack", "garganacl", "rollimolli", "rollaslash", "skarmory", "rufflet", "braviary", "neboy", "nebuman", "snagsteel", "abducsteel", "hippopotas", "hippowdon", "cacnea", "cacturne", "cacturne-burst", "capsakid", "scovillain", "scovillain-burst", "cubone", "marowak", "marowak-burst", "sandile", "krokorok", "krookodile", "krookodile-burst", "mudbray", "mudsdale", "silicobra", "sandaconda", "heatmor", "torkoal", "torkoal-burst", "scraggy", "scrafty", "scrafty-centonian", "croagunk", "toxicroak", "koffing", "weezing", "gulpin", "swalot", "swalot-burst", "poliwag", "poliwhirl", "poliwrath", "poliwrath-burst", "politoed", "wooper", "quagsire", "yanma", "yanmega", "dewpider", "araquanid", "tympole", "palpitoad", "seismitoad", "shuppet", "banette", "trubbish", "garbodor", "ditto", "natu", "xatu", "slowpoke", "slowbro", "slowking", "slowking-burst", "rotom", "castform", "absol", "charcadet", "armarouge", "ceruledge", "seviper-centonian", "zangoose-centonian", "meditite", "medicham", "beldum", "metang", "metagross", "sneasel", "weavile", "cryogonal", "cubchoo", "beartic", "cetoddle", "cetitan", "buneary-centonian", "buneary-centonian", "lopunny-centonian", "vanillite-centonian", "vanillish-centonian", "vanillush", "snover", "abomasnow", "spheal", "sealeo", "walrein", "snorunt", "glalie", "froslass", "carbink", "carbink-burst", "spiritomb", "spiritomb-burst", "jynx", "swinub", "piloswine", "mamoswine", "drampa", "frigibax", "arctibax", "baxcalibur", "bagon", "shelgon", "salamence", "dracolarv", "dracoon", "dracotar", "snachoo", "serpyro", "pyrukobra", "wuriphant", "wuriplow", "tesakite", "caslatoar", "naitu", "pritu", "deitu", "jadris", "cyberu5", "cizibear"
+    ];
+
+    const container = document.body;
+
+    entries.forEach(entry => {
+        const bubble = document.createElement('a');
+        bubble.href = entry.includes("centonian") || entry.includes("-burst") || !/^[a-z]+$/.test(entry) ? `../pokemon/${entry.toLowerCase()}` : `https://bulbapedia.bulbagarden.net/wiki/${entry.charAt(0).toUpperCase() + entry.slice(1)}_(Pok%C3%A9mon)`;
+        bubble.className = 'pokemon-bubble';
+        const img = document.createElement('img');
+        img.src = `../images/${entry.toLowerCase()}.png`;
+        img.alt = entry;
+        bubble.appendChild(img);
+        container.appendChild(bubble);
+    });
+</script>
+  
+ 
+
+
+</body>
+</html>
