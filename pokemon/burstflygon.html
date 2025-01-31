@@ -26,15 +26,15 @@
     <div class="pokemon-entry">
         <!-- Pokémon Name and Artwork -->
         <h1 class="pokemon-name">Burst Flygon</h1>
-        <h3 class="pokemon-desc">The Flaming Intimidation Pokémon</h3>
+        <h3 class="pokemon-desc">The Mystic Bladed Pokémon</h3>
         <div class="pokemon-artwork">
             <img id="pokemon-artwork" src="../images/pokesHD/bursts/bflygon.png" alt="Pokémon Artwork">
         </div>
 
         <!-- Type Section -->
         <div class="pokemon-types">
-            <div class="type ground"></div>
-<div class="type fire"></div>
+            <div class="type dragon"></div>
+<div class="type steel"></div>
 
         </div>
 
@@ -42,7 +42,7 @@
             <!-- Pokedex Description Section -->
             <div class="pokedex-description">
               <h2>Pokédex Entry</h2>
-              <i><p>In Krookodile’s Burst Form, its tail ignites with bursts of fire like a muzzle flash. This fiery aura makes it an even more fearsome predator, intimidating enemies with both heat and ferocity.</p></i>
+              <i><p>In Flygon's Burst Form, its once-sandy exterior transforms into gleaming, razor-sharp blades that slice through the air with precision. Now grounded as a Dragon/Steel type, Burst Flygon channels ancient draconic power and industrial strength, using its newly adapted, metallic body to carve devastating paths through its foes.</p></i>
             </div>
 
             <!-- Stats Section -->
@@ -50,7 +50,7 @@
               <div class="pokemon-stat" id="stat-hp">
                 <div class="stat-labels">
                   <span>HP</span>
-                  <span class="stat-value" id="hp-value">105</span>
+                  <span class="stat-value" id="hp-value">80</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -59,7 +59,7 @@
               <div class="pokemon-stat" id="stat-atk">
                 <div class="stat-labels">
                   <span>Attack</span>
-                  <span class="stat-value" id="atk-value">130</span>
+                  <span class="stat-value" id="atk-value">120</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -68,7 +68,7 @@
               <div class="pokemon-stat" id="stat-def">
                 <div class="stat-labels">
                   <span>Defense</span>
-                  <span class="stat-value" id="def-value">100</span>
+                  <span class="stat-value" id="def-value">85</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -77,7 +77,7 @@
               <div class="pokemon-stat" id="stat-spatk">
                 <div class="stat-labels">
                   <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">35</span>
+                  <span class="stat-value" id="spatk-value">70</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -86,7 +86,7 @@
               <div class="pokemon-stat" id="stat-spdef">
                 <div class="stat-labels">
                   <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">60</span>
+                  <span class="stat-value" id="spdef-value">70</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -95,7 +95,7 @@
               <div class="pokemon-stat" id="stat-speed">
                 <div class="stat-labels">
                   <span>Speed</span>
-                  <span class="stat-value" id="speed-value">95</span>
+                  <span class="stat-value" id="speed-value">100</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -148,7 +148,7 @@
 
             <div class="pokemon-abilities">
                 <h2>Abilities</h2>
-                <ul><li>dryskin</li></ul>
+                <ul><li>levitate</li></ul>
             </div>
             <div class="pokemon-abilities">
                 <h2>Egg Groups</h2>
@@ -170,7 +170,7 @@
         <div class="move-options">
           <div class="move-category">
               <h3>Burst Moves</h3>
-              <ul><li>burst:firelash</li><li>burst:uturn</li><li>burst:flamecharge</li>
+              <ul><li>burst:zingzap</li><li>burst:ironhead</li><li>burst:shiftgear</li>
           </div>
       </div>
     </div>
@@ -194,12 +194,12 @@
         // Stats bar animation script
         document.addEventListener('DOMContentLoaded', () => {
             const stats = {
-                hp: 105,
-                atk: 130,
-                def: 100,
-                spatk: 35,
-                spdef: 60,
-                speed: 95,
+                hp: 80,
+                atk: 120,
+                def: 85,
+                spatk: 70,
+                spdef: 70,
+                speed: 100,
             };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {
