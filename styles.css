@@ -1069,9 +1069,10 @@ footer {
 
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 560px; /* Optional: Set a max width */
-  aspect-ratio: 16 / 9; /* Maintains the aspect ratio */
+  width: 80%; /* Adjust width as needed */
+  max-width: 900px; /* Increase max size */
+  margin: 0 auto; /* Centers the div */
+  aspect-ratio: 16 / 9; /* Ensures correct aspect ratio */
 }
 
 .video-container iframe {
@@ -1079,3 +1080,4 @@ footer {
   height: 100%;
   border: none;
 }
+
