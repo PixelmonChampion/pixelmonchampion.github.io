@@ -49,7 +49,7 @@
               <div class="pokemon-stat" id="stat-hp">
                 <div class="stat-labels">
                   <span>HP</span>
-                  <span class="stat-value" id="hp-value">25</span>
+                  <span class="stat-value" id="hp-value">30</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -58,7 +58,7 @@
               <div class="pokemon-stat" id="stat-atk">
                 <div class="stat-labels">
                   <span>Attack</span>
-                  <span class="stat-value" id="atk-value">55</span>
+                  <span class="stat-value" id="atk-value">15</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -67,7 +67,7 @@
               <div class="pokemon-stat" id="stat-def">
                 <div class="stat-labels">
                   <span>Defense</span>
-                  <span class="stat-value" id="def-value">20</span>
+                  <span class="stat-value" id="def-value">22</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -76,7 +76,7 @@
               <div class="pokemon-stat" id="stat-spatk">
                 <div class="stat-labels">
                   <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">15</span>
+                  <span class="stat-value" id="spatk-value">50</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -85,7 +85,7 @@
               <div class="pokemon-stat" id="stat-spdef">
                 <div class="stat-labels">
                   <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">20</span>
+                  <span class="stat-value" id="spdef-value">23</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -94,7 +94,7 @@
               <div class="pokemon-stat" id="stat-speed">
                 <div class="stat-labels">
                   <span>Speed</span>
-                  <span class="stat-value" id="speed-value">65</span>
+                  <span class="stat-value" id="speed-value">60</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -153,11 +153,81 @@
         <div class="move-options">
             <div class="move-category">
                 <h3>Level-Up Moves</h3>
-                <ul><li>1:splash</li><li>10:tackle</li><li>15:bite</li><li>25:endure</li><li>30:flail</li><li>40:dragondance</li></ul>
+                <ul>
+                  <li>1:splash</li>
+                  <li>10:tackle</li>
+                  <li>15:bite</li>
+                  <li>25:endure</li>
+                  <li>30:flail</li>
+                  <li>40:dragondance</li>
+                  </ul>
+                  
             </div>
             <div class="move-category">
                 <h3>TM/TR Moves</h3>
-                <ul></ul>
+                <ul>
+                  <li>tm:toxic</li>
+                  <li>tm:tackle</li>
+                  <li>tm:splash</li>
+                  <li>tm:bubble</li>
+                  <li>tm:bite</li>
+                  <li>tm:dragonbreath</li>
+                  <li>tm:aquajet</li>
+                  <li>tm:twister</li>
+                  <li>tm:scaryface</li>
+                  <li>tm:dragonpulse</li>
+                  <li>tm:bubblebeam</li>
+                  <li>tm:watergun</li>
+                  <li>tm:icebeam</li>
+                  <li>tm:blizzard</li>
+                  <li>tm:hyperbeam</li>
+                  <li>tm:rage</li>
+                  <li>tm:dragonrage</li>
+                  <li>tm:agility</li>
+                  <li>tm:rest</li>
+                  <li>tm:substitute</li>
+                  <li>tm:waterpulse</li>
+                  <li>tm:raindance</li>
+                  <li>tm:sleeptalk</li>
+                  <li>tm:mudslap</li>
+                  <li>tm:return</li>
+                  <li>tm:hail</li>
+                  <li>tm:taunt</li>
+                  <li>tm:endure</li>
+                  <li>tm:icywind</li>
+                  <li>tm:whirlpool</li>
+                  <li>tm:powdersnow</li>
+                  <li>tm:crunch</li>
+                  <li>tm:freezedry</li>
+                  <li>tm:surf</li>
+                  <li>tm:dracometeor</li>
+                  <li>tm:hiddenpower</li>
+                  <li>tm:headbutt</li>
+                  <li>tm:aquatail</li>
+                  <li>tm:irontail</li>
+                  <li>tm:dragontail</li>
+                  <li>tm:tailslap</li>
+                  <li>tm:scaleshot</li>
+                  <li>tm:protect</li>
+                  <li>tm:frustration</li>
+                  <li>tm:aerialace</li>
+                  <li>tm:facade</li>
+                  <li>tm:secretpower</li>
+                  <li>tm:firefang</li>
+                  <li>tm:icefang</li>
+                  <li>tm:thunderfang</li>
+                  <li>tm:poisonfang</li>
+                  <li>tm:psychicfangs</li>
+                  <li>tm:superfang</li>
+                  <li>tm:extremespeed</li>
+                  <li>tm:foulplay</li>
+                  <li>tm:brine</li>
+                  <li>tm:chillingwater</li>
+                  <li>tm:hydrocannon</li>
+                  <li>tm:hydropump</li>
+                  <li>tm:muddywater</li>
+                  <li>tm:scald</li>
+                  </ul>                  
             </div>
             <div class="move-category">
                 <h3>Egg Moves</h3>
@@ -189,12 +259,12 @@
         // Stats bar animation script
         document.addEventListener('DOMContentLoaded', () => {
             const stats = {
-                hp: 25,
-                atk: 55,
-                def: 20,
-                spatk: 15,
-                spdef: 20,
-                speed: 65,
+                hp: 30,
+                atk: 15,
+                def: 22,
+                spatk: 50,
+                spdef: 23,
+                speed: 60,
             };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {

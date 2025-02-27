@@ -49,7 +49,7 @@
               <div class="pokemon-stat" id="stat-hp">
                 <div class="stat-labels">
                   <span>HP</span>
-                  <span class="stat-value" id="hp-value">41</span>
+                  <span class="stat-value" id="hp-value">44</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -76,7 +76,7 @@
               <div class="pokemon-stat" id="stat-spatk">
                 <div class="stat-labels">
                   <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">63</span>
+                  <span class="stat-value" id="spatk-value">62</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -85,7 +85,7 @@
               <div class="pokemon-stat" id="stat-spdef">
                 <div class="stat-labels">
                   <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">45</span>
+                  <span class="stat-value" id="spdef-value">43</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -94,7 +94,7 @@
               <div class="pokemon-stat" id="stat-speed">
                 <div class="stat-labels">
                   <span>Speed</span>
-                  <span class="stat-value" id="speed-value">66</span>
+                  <span class="stat-value" id="speed-value">64</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -139,7 +139,7 @@
 
             <div class="pokemon-abilities">
                 <h2>Abilities</h2>
-                <ul><li>blaze</li><li>h:sheerforce</li></ul>
+                <ul><li>blaze</li><li>h:multiscale</li></ul>
             </div>
             <div class="pokemon-abilities">
                 <h2>Egg Groups</h2>
@@ -197,12 +197,12 @@
         // Stats bar animation script
         document.addEventListener('DOMContentLoaded', () => {
             const stats = {
-                hp: 41,
+                hp: 44,
                 atk: 46,
                 def: 50,
-                spatk: 63,
-                spdef: 45,
-                speed: 66,
+                spatk: 62,
+                spdef: 43,
+                speed: 64,
             };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {

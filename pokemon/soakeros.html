@@ -50,7 +50,7 @@
               <div class="pokemon-stat" id="stat-hp">
                 <div class="stat-labels">
                   <span>HP</span>
-                  <span class="stat-value" id="hp-value">56</span>
+                  <span class="stat-value" id="hp-value">59</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -59,7 +59,7 @@
               <div class="pokemon-stat" id="stat-atk">
                 <div class="stat-labels">
                   <span>Attack</span>
-                  <span class="stat-value" id="atk-value">80</span>
+                  <span class="stat-value" id="atk-value">76</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -68,7 +68,7 @@
               <div class="pokemon-stat" id="stat-def">
                 <div class="stat-labels">
                   <span>Defense</span>
-                  <span class="stat-value" id="def-value">70</span>
+                  <span class="stat-value" id="def-value">76</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -77,7 +77,7 @@
               <div class="pokemon-stat" id="stat-spatk">
                 <div class="stat-labels">
                   <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">58</span>
+                  <span class="stat-value" id="spatk-value">45</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -86,7 +86,7 @@
               <div class="pokemon-stat" id="stat-spdef">
                 <div class="stat-labels">
                   <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">61</span>
+                  <span class="stat-value" id="spdef-value">74</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -95,7 +95,7 @@
               <div class="pokemon-stat" id="stat-speed">
                 <div class="stat-labels">
                   <span>Speed</span>
-                  <span class="stat-value" id="speed-value">85</span>
+                  <span class="stat-value" id="speed-value">75</span>
                 </div>
                 <div class="stat-bar-container">
                   <div class="stat-bar"></div>
@@ -140,7 +140,7 @@
 
             <div class="pokemon-abilities">
                 <h2>Abilities</h2>
-                <ul><li>torrent</li><li>h:waterveil</li></ul>
+                <ul><li>torrent</li><li>h:shielddust</li></ul>
             </div>
             <div class="pokemon-abilities">
                 <h2>Egg Groups</h2>
@@ -198,12 +198,12 @@
         // Stats bar animation script
         document.addEventListener('DOMContentLoaded', () => {
             const stats = {
-                hp: 56,
-                atk: 80,
-                def: 70,
-                spatk: 58,
-                spdef: 61,
-                speed: 85,
+                hp: 59,
+                atk: 76,
+                def: 76,
+                spatk: 45,
+                spdef: 74,
+                speed: 75,
             };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {
