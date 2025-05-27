@@ -12,7 +12,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,7 +77,7 @@ body {
 .search-bar button {
   margin-left: 0.5rem;
   padding: 0.8rem;
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   color: white;
   border: none;
   border-radius: 4px;
@@ -130,7 +130,7 @@ body {
 
 .stylized-button {
   padding: 0.6rem;
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -165,7 +165,7 @@ body {
 /* Styling for individual buttons */
 .misc-button {
   display: block;
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -178,7 +178,7 @@ body {
 }
 
 .misc-button:hover {
-  background-color: #502c2c;
+  background-color: #35502c;
   transform: scale(1.05);
 }
 
@@ -396,7 +396,7 @@ footer {
 
 .pokemon-entry #gif-toggle {
   align-self:flex-end;
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   color: white;
   width: 30px;
   height: 30px;
@@ -638,7 +638,7 @@ footer {
 
 /* Move Toggle Button */
 .pokemon-entry .move-toggle {
-  background-color: DarkRed;
+  background-color: DarkOliveGreen;
   color: white;
   border: none;
   border-radius: 50%;
@@ -725,7 +725,7 @@ footer {
 .pokemon-evolutions h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: DarkRed;
+  color: DarkOliveGreen;
 }
 
 .evolution-chain {
@@ -744,7 +744,7 @@ footer {
 .evolution-stage img {
   width: 80px;
   height: 80px;
-  border: 2px solid DarkRed;
+  border: 2px solid DarkOliveGreen;
   border-radius: 50%;
   background-color: #2a2a2a;
 }
@@ -752,12 +752,12 @@ footer {
 .evolution-stage p {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: DarkRed;
+  color: DarkOliveGreen;
 }
 
 .evolution-arrow {
   font-size: 1.5rem;
-  color: DarkRed;
+  color: DarkOliveGreen;
   margin-bottom: 33.5px;
 }
 
@@ -797,7 +797,7 @@ footer {
 .pokemon-abilities h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: DarkRed;
+  color: DarkOliveGreen;
 }
 
 .pokemon-abilities ul {
@@ -822,7 +822,7 @@ footer {
 .pokemon-location h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: DarkRed;
+  color: DarkOliveGreen;
 }
 
 .pokemon-location p {
@@ -921,14 +921,14 @@ footer {
   padding: 20px;
   position: fixed;
   height: 100%;
-  border-right: 2px solid DarkRed; /* Add a blue border for separation */
+  border-right: 2px solid DarkOliveGreen; /* Add a blue border for separation */
 }
 
 .character-image img {
   width: 100%;
   max-width: 250px;
   border-radius: 8px;
-  border: 3px solid DarkRed; /* Highlighted with blue border */
+  border: 3px solid DarkOliveGreen; /* Highlighted with blue border */
   background-color: #1a1a1a; /* Inner background */
 }
 
@@ -944,7 +944,7 @@ footer {
   height: 50px;
   background-color: #1a1a1a;
   border-radius: 50%;
-  border: 2px solid DarkRed;
+  border: 2px solid DarkOliveGreen;
   overflow: hidden; /* Ensures the image stays within the bubble */
   display: flex;
   justify-content: center;
@@ -984,7 +984,7 @@ footer {
 .character-right h1 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: DarkRed; /* Use blue for headings */
+  color: DarkOliveGreen; /* Use blue for headings */
 }
 
 .character-right p {
@@ -994,7 +994,7 @@ footer {
 }
 
 .character-right a {
-  color: DarkRed;
+  color: DarkOliveGreen;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -1042,7 +1042,7 @@ footer {
   height: 50px;
   background-color: #1a1a1a;
   border-radius: 50%;
-  border: 2px solid DarkRed;
+  border: 2px solid DarkOliveGreen;
   overflow: hidden;
   display: flex;
   justify-content: center;
