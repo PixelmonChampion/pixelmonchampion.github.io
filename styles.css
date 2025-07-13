@@ -1081,3 +1081,8 @@ footer {
   border: none;
 }
 
+.news-img {
+  border-radius: 10px;
+  outline: 2px solid DarkOliveGreen;
+  outline-offset: 4px; /* Optional: pushes outline away from image */
+}
