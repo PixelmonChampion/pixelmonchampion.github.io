@@ -89,6 +89,10 @@ body {
   transform: scale(1.1); /* Expand on hover */
 }
 
+.search-bar input:focus {
+  box-shadow: 0 0 5px DarkOliveGreen;
+}
+
 /* Search Results Popup */
 .search-results {
   position: absolute;
@@ -1087,9 +1091,3 @@ footer {
   outline-offset: 4px; /* Optional: pushes outline away from image */
 }
 
-.search-bar input:focus {
-  outline: 2px solid DarkOliveGreen; /* or your site's main color */
-  box-shadow: 0 0 5px DarkOliveGreen;
-  background-color: #1a1a1a; /* optional: matches your theme background */
-  color: white;              /* optional: ensure text is visible */
-}
