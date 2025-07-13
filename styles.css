@@ -1086,3 +1086,10 @@ footer {
   outline: 2px solid DarkOliveGreen;
   outline-offset: 4px; /* Optional: pushes outline away from image */
 }
+
+.search-bar input:focus {
+  outline: 2px solid DarkOliveGreen; /* or your site's main color */
+  box-shadow: 0 0 5px DarkOliveGreen;
+  background-color: #1a1a1a; /* optional: matches your theme background */
+  color: white;              /* optional: ensure text is visible */
+}
