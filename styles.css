@@ -1090,14 +1090,10 @@ footer {
 }
 
 .news-img {
-  display: flex;
-  justify-content: center; /* centers the image horizontally */
-}
-
-.news-img img {
   border-radius: 10px;
   outline: 2px solid #7c2721;
-  outline-offset: 4px;
+  outline-offset: 4px; /* Optional: pushes outline away from image */
+  display: flex;
+  justify-content: center;
 }
-
 
