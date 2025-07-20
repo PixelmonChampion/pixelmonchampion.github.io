@@ -1091,8 +1091,7 @@ footer {
 
 .news-img {
   display: flex;
-  justify-content: center;
-  align-items: center; /* Optional: centers vertically if container has height */
+  justify-content: center; /* centers the image horizontally */
 }
 
 .news-img img {
@@ -1100,4 +1099,5 @@ footer {
   outline: 2px solid #7c2721;
   outline-offset: 4px;
 }
+
 
