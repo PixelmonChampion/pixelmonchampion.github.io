@@ -1092,13 +1092,11 @@ footer {
 .news-img {
   display: flex;
   justify-content: center;
-}
-
-.news-img img {
   border-radius: 10px;
   outline: 2px solid #7c2721;
   outline-offset: 4px;
 }
+
 
 
 
