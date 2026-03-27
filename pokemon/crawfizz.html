@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Crawfizz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo.png" alt="PokeFrontiers Logo" />
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../pokemon">Pokémon</a></li>
+            <li><a href="../characters">Characters</a></li>
+            <li><a href="../misc">Misc.</a></li>
+        </ul>
+    </nav>
+
+    <div class="pokemon-entry">
+
+        <!-- Name -->
+        <h1 class="pokemon-name">Crawfizz</h1>
+        <h3 class="pokemon-desc">The Crawfish Pokémon</h3>
+
+        <!-- Artwork -->
+        <div class="pokemon-artwork">
+            <img id="pokemon-artwork" src="../images/pokesHD/004crawfizz.png" alt="Crawfizz Artwork">
+        </div>
+
+        <!-- Types -->
+        <div class="pokemon-types">
+            <div class="type water"></div>
+        </div>
+
+        <div class="pokemon-container">
+
+            <!-- Dex Entry -->
+            <div class="pokedex-description">
+                <h2>Pokédex Entry</h2>
+                <i><p>Crawfizz like to scuttle along riverbanks, blowing tiny bubbles that pop with fizzy sounds. Children enjoy following the trails it leaves behind.</p></i>
+            </div>
+
+            <!-- Stats -->
+            <div class="pokemon-stats">
+
+                <div class="pokemon-stat" id="stat-hp">
+                    <div class="stat-labels"><span>HP</span><span class="stat-value">50</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-atk">
+                    <div class="stat-labels"><span>Attack</span><span class="stat-value">60</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-def">
+                    <div class="stat-labels"><span>Defense</span><span class="stat-value">60</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-spatk">
+                    <div class="stat-labels"><span>Special Attack</span><span class="stat-value">50</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-spdef">
+                    <div class="stat-labels"><span>Special Defense</span><span class="stat-value">45</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-speed">
+                    <div class="stat-labels"><span>Speed</span><span class="stat-value">45</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Evolutions + Info -->
+        <div class="abilities-location-container">
+
+            <!-- Evolutions -->
+            <div class="pokemon-evolutions">
+                <h2>Evolutions</h2>
+                <div class="evolution-chain">
+                    <div class="evolution-stage">
+                        <a href="../pokemon/crawfizz">
+                            <img src="../images/pokesHD/004crawfizz.png">
+                            <p>Stage 1</p>
+                        </a>
+                    </div>
+                </div>
+                <i><p>Crawfizz evolves at level 18</p></i>
+            </div>
+
+            <!-- Abilities -->
+            <div class="pokemon-abilities">
+                <h2>Abilities</h2>
+                <ul>
+                    <li>Torrent</li>
+                    <li>Shell Armor (Hidden)</li>
+                </ul>
+            </div>
+
+            <!-- Egg Groups -->
+            <div class="pokemon-abilities">
+                <h2>Egg Groups</h2>
+                <ul>
+                    <li>Water 1</li>
+                    <li>Water 3</li>
+                </ul>
+            </div>
+
+            <!-- Location -->
+            <div class="pokemon-location">
+                <h2>Location Data</h2>
+                <p>Monsai Frontier - Rivers and Coastal Areas</p>
+                <p>Monsai Frontier - Foraged Eggs</p>
+            </div>
+
+        </div>
+
+        <!-- Moves -->
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+
+            <div class="move-options">
+
+                <!-- Level Up -->
+                <div class="move-category">
+                    <h3>Level-Up Moves</h3>
+                    <ul>
+                        <li>1:tackle</li>
+                        <li>1:bubble</li>
+                        <li>4:leer</li>
+                        <li>7:harden</li>
+                        <li>10:rocksmash</li>
+                        <li>13:watergun</li>
+                        <li>16:metalclaw</li>
+                        <li>19:protect</li>
+                        <li>22:bubblebeam</li>
+                        <li>25:rocktomb</li>
+                        <li>28:aquajet</li>
+                        <li>31:irondefense</li>
+                        <li>34:crabhammer</li>
+                    </ul>
+                </div>
+
+                <!-- TM/TR -->
+                <div class="move-category">
+                    <h3>TM/TR Moves</h3>
+                    <ul>
+                        <li>tm:waterpulse</li>
+                        <li>tm:icebeam</li>
+                        <li>tm:thunderbolt</li>
+                        <li>tm:substitute</li>
+                        <li>tm:facade</li>
+                        <li>tm:icywind</li>
+                        <li>tm:irontail</li>
+                        <li>tm:dive</li>
+                        <li>tm:explosion</li>
+                        <li>tm:stealthrock</li>
+                    </ul>
+                </div>
+
+                <!-- Egg -->
+                <div class="move-category">
+                    <h3>Egg Moves</h3>
+                    <ul>
+                        <li>egg:knockoff</li>
+                        <li>egg:mudshot</li>
+                        <li>egg:counter</li>
+                        <li>egg:brine</li>
+                        <li>egg:smokescreen</li>
+                    </ul>
+                </div>
+
+                <!-- Tutor -->
+                <div class="move-category">
+                    <h3>Tutor Moves</h3>
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = { hp:50, atk:60, def:60, spatk:50, spdef:45, speed:45 };
+            const maxStat = 255;
+            Object.entries(stats).forEach(([key, value]) => {
+                const bar = document.querySelector(`#stat-${key} .stat-bar`);
+                bar.style.width = `${(value / maxStat) * 100}%`;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Maskin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo.png" alt="PokeFrontiers Logo" />
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../pokemon">Pokémon</a></li>
+            <li><a href="../characters">Characters</a></li>
+            <li><a href="../misc">Misc.</a></li>
+        </ul>
+    </nav>
+
+    <div class="pokemon-entry">
+
+        <!-- Name -->
+        <h1 class="pokemon-name">Maskin</h1>
+        <h3 class="pokemon-desc">The Wolverine Pokémon</h3>
+
+        <!-- Artwork -->
+        <div class="pokemon-artwork">
+            <img id="pokemon-artwork" src="../images/pokesHD/001maskin.png" alt="Maskin Artwork">
+        </div>
+
+        <!-- Types -->
+        <div class="pokemon-types">
+            <div class="type grass"></div>
+        </div>
+
+        <div class="pokemon-container">
+
+            <!-- Dex Entry -->
+            <div class="pokedex-description">
+                <h2>Pokédex Entry</h2>
+                <i><p>Maskin’s head is covered in soft, leaf-green fur that resembles a mask. Despite its cute demeanor, it is fearless and quick-tempered.</p></i>
+            </div>
+
+            <!-- Stats -->
+            <div class="pokemon-stats">
+
+                <div class="pokemon-stat" id="stat-hp">
+                    <div class="stat-labels"><span>HP</span><span class="stat-value">50</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-atk">
+                    <div class="stat-labels"><span>Attack</span><span class="stat-value">65</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-def">
+                    <div class="stat-labels"><span>Defense</span><span class="stat-value">55</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-spatk">
+                    <div class="stat-labels"><span>Special Attack</span><span class="stat-value">40</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-spdef">
+                    <div class="stat-labels"><span>Special Defense</span><span class="stat-value">50</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+                <div class="pokemon-stat" id="stat-speed">
+                    <div class="stat-labels"><span>Speed</span><span class="stat-value">50</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Evolutions + Info -->
+        <div class="abilities-location-container">
+
+            <!-- Evolutions -->
+            <div class="pokemon-evolutions">
+                <h2>Evolutions</h2>
+                <div class="evolution-chain">
+                    <div class="evolution-stage">
+                        <a href="../pokemon/maskin">
+                            <img src="../images/pokesHD/001maskin.png">
+                            <p>Stage 1</p>
+                        </a>
+                    </div>
+                </div>
+                <i><p>Maskin evolves at level 17</p></i>
+            </div>
+
+            <!-- Abilities -->
+            <div class="pokemon-abilities">
+                <h2>Abilities</h2>
+                <ul>
+                    <li>Overgrow</li>
+                    <li>Guts (Hidden)</li>
+                </ul>
+            </div>
+
+            <!-- Egg Groups -->
+            <div class="pokemon-abilities">
+                <h2>Egg Groups</h2>
+                <ul>
+                    <li>Field</li>
+                    <li>Monster</li>
+                </ul>
+            </div>
+
+            <!-- Location -->
+            <div class="pokemon-location">
+                <h2>Location Data</h2>
+                <p>Monsai Frontier - Forests</p>
+                <p>Monsai Frontier - Foraged Eggs</p>
+            </div>
+
+        </div>
+
+        <!-- Moves -->
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+
+            <div class="move-options">
+
+                <!-- Level Up -->
+                <div class="move-category">
+                    <h3>Level-Up Moves</h3>
+                    <ul>
+                        <li>1:tackle</li>
+                        <li>1:growl</li>
+                        <li>4:leafage</li>
+                        <li>7:leer</li>
+                        <li>10:bite</li>
+                        <li>13:razorleaf</li>
+                        <li>16:furyswipes</li>
+                        <li>19:leechseed</li>
+                        <li>22:feintattack</li>
+                        <li>25:slash</li>
+                        <li>28:growth</li>
+                        <li>31:energyball</li>
+                        <li>34:crunch</li>
+                    </ul>
+                </div>
+
+                <!-- TM/TR -->
+                <div class="move-category">
+                    <h3>TM/TR Moves</h3>
+                    <ul>
+                        <li>tm:bodyslam</li>
+                        <li>tm:leechlife</li>
+                        <li>tm:energyball</li>
+                        <li>tm:substitute</li>
+                        <li>tm:facade</li>
+                        <li>tm:icywind</li>
+                        <li>tm:crunch</li>
+                        <li>tm:taunt</li>
+                        <li>tm:darkpulse</li>
+                        <li>tm:seedbomb</li>
+                        <li>tm:foulplay</li>
+                        <li>tm:lowsweep</li>
+                    </ul>
+                </div>
+
+                <!-- Egg -->
+                <div class="move-category">
+                    <h3>Egg Moves</h3>
+                    <ul>
+                        <li>egg:pursuit</li>
+                        <li>egg:spite</li>
+                        <li>egg:suckerpunch</li>
+                        <li>egg:vinewhip</li>
+                        <li>egg:faketears</li>
+                    </ul>
+                </div>
+
+                <!-- Tutor -->
+                <div class="move-category">
+                    <h3>Tutor Moves</h3>
+                    <ul>
+                        <li>None</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = { hp:50, atk:65, def:55, spatk:40, spdef:50, speed:50 };
+            const maxStat = 255;
+            Object.entries(stats).forEach(([key, value]) => {
+                const bar = document.querySelector(`#stat-${key} .stat-bar`);
+                bar.style.width = `${(value / maxStat) * 100}%`;
+            });
+        });
+    </script>
+
+</body>
+</html>
