@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Pokémon Drops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        /* Table Styling for Wiki feel */
+        .drops-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .drops-table th, .drops-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .drops-table th {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #64ffda; /* PokéFrontiers accent color */
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .drops-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .type-badge {
+            font-weight: 600;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="../images/logo.png" alt="PokéFrontiers Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../pokemon">Pokémon</a></li>
+      <li><a href="../characters">Characters</a></li>
+      <li><a href="../misc">Misc.</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <div class="newsfeed-container">
+        <h2>Pokémon Generic Drops</h2>           
+        <div class="newsfeed-box" style="padding: 20px;">
+            <p>Every Pokémon on the frontier has a chance to drop generic items based on their elemental typing. Below is the current drop table for all primary types.</p>
+            
+            <table class="drops-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Common Drops</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="type-badge">Grass</td><td>Wheat Seeds, Stick, Sugar, Magenta Dye</td></tr>
+                    <tr><td class="type-badge">Fire</td><td>Charcoal, Purple Dye, White Dye, Cyan Dye</td></tr>
+                    <tr><td class="type-badge">Water</td><td>Sand, Emerald, Brown Dye, Purple Dye</td></tr>
+                    <tr><td class="type-badge">Fighting</td><td>Leather, Gunpowder, Brown Dye, Brown Dye</td></tr>
+                    <tr><td class="type-badge">Psychic</td><td>Magenta Dye, Light Blue Dye, White Dye, Magenta Dye</td></tr>
+                    <tr><td class="type-badge">Poison</td><td>Gunpowder, Yellow Dye, Stone, Charcoal</td></tr>
+                    <tr><td class="type-badge">Dragon</td><td>Diamond, Light Blue Dye, Lime Dye, Orange Dye</td></tr>
+                    <tr><td class="type-badge">Ghost</td><td>Black Dye, Honeycomb, Flint, Light Gray Dye</td></tr>
+                    <tr><td class="type-badge">Dark</td><td>Dirt, Iron Ingot, Copper Ingot, Medicinal leak</td></tr>
+                    <tr><td class="type-badge">Ground</td><td>Pink Dye, Gold Ingot, Leather, Medicinal leak</td></tr>
+                    <tr><td class="type-badge">Fairy</td><td>Feather, Gunpowder, Iron Ingot</td></tr>
+                    <tr><td class="type-badge">Flying</td><td>Stone, Gold Ingot, Glass</td></tr>
+                    <tr><td class="type-badge">Normal</td><td>Redstone, Ice, Stick</td></tr>
+                    <tr><td class="type-badge">Rock</td><td>String, Wood Log, Gray Dye</td></tr>
+                    <tr><td class="type-badge">Electric</td><td>Snowball, Gunpowder, Glass</td></tr>
+                    <tr><td class="type-badge">Bug</td><td>Iron Ingot, Emerald, Blue Dye</td></tr>
+                    <tr><td class="type-badge">Ice</td><td>Red Dye, Charcoal, Red Dye</td></tr>
+                    <tr><td class="type-badge">Steel</td><td>Light Blue Dye, Flint, Pink Dye</td></tr>
+                </tbody>
+            </table>
+
+            <div class="news-item" style="margin-top: 30px;">
+                <p><i><strong>Page Author:</strong> Ozzy</i></p>
+            </div>                                                                                                                                   
+        </div>
+    </div>  
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
+  </footer>
+</body>
+</html>
