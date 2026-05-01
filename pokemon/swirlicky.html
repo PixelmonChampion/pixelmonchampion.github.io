@@ -1,209 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokéFrontiers Wiki - Swirlicky</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <img src="../images/logo.png" alt="PokeFrontiers Logo" />
-            </a>
+<style>
+    /* Web Layout Styling */
+    .evolution-web-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .evo-row {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .evo-center-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .evo-node {
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .evo-node:hover {
+        transform: scale(1.05);
+    }
+
+    .evo-node img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .evo-node.center-pkmn img {
+        width: 110px;
+        height: 110px;
+        border: 2px solid #64ffda;
+        border-radius: 50%;
+        background: rgba(100, 255, 218, 0.1);
+        padding: 10px;
+    }
+
+    .evo-node p {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .evo-label {
+        font-size: 0.75rem;
+        color: #888;
+        display: block;
+    }
+</style>
+
+<!-- Pokémon Evolutions Section -->
+<div class="pokemon-evolutions">
+    <h2>Evolutions</h2>
+    <div class="evolution-web-container">
+        <!-- Top Branch -->
+        <div class="evo-row">
+            <div class="evo-node">
+                <a href="../pokemon/cloylicky">
+                    <img src="../images/pokesHD/cloylicky.png" alt="Cloylicky">
+                    <p>Cloylicky</p>
+                </a>
+            </div>
+            <div class="evo-node">
+                <a href="../pokemon/driplicky">
+                    <img src="../images/pokesHD/driplicky.png" alt="Driplicky">
+                    <p>Driplicky</p>
+                </a>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="../pokemon">Pokémon</a></li>
-            <li><a href="../characters">Characters</a></li>
-            <li><a href="../misc">Misc.</a></li>
-        </ul>
-    </nav>
 
-    <div class="pokemon-entry">
-        <!-- Pokémon Name and Artwork -->
-        <h1 class="pokemon-name">Swirlicky</h1>
-        <h3 class="pokemon-desc">The Lizard Pokémon</h3>
-        <div class="pokemon-artwork">
-            <img id="pokemon-artwork" src="../images/pokesHD/022swirlicky.png" alt="Pokémon Artwork">
-        </div>
-
-        <!-- Type Section -->
-        <div class="pokemon-types">
-            <div class="type normal"></div>
-
-        </div>
-
-        <div class="pokemon-container">
-            <!-- Pokedex Description Section -->
-            <div class="pokedex-description">
-              <h2>Pokédex Entry</h2>
-              <i><p>Swirlicky is a peculiar lizard Pokémon with a long tongue that it uses to lick objects, its dna is unstable.</p></i>
+        <!-- Center Branch -->
+        <div class="evo-center-row">
+            <div class="evo-node">
+                <a href="../pokemon/searlicky">
+                    <img src="../images/pokesHD/searlicky.png" alt="Searlicky">
+                    <p>Searlicky</p>
+                </a>
             </div>
-
-            <!-- Stats Section -->
-            <div class="pokemon-stats">
-              <div class="pokemon-stat" id="stat-hp">
-                <div class="stat-labels">
-                  <span>HP</span>
-                  <span class="stat-value" id="hp-value">80</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-              <div class="pokemon-stat" id="stat-atk">
-                <div class="stat-labels">
-                  <span>Attack</span>
-                  <span class="stat-value" id="atk-value">70</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-              <div class="pokemon-stat" id="stat-def">
-                <div class="stat-labels">
-                  <span>Defense</span>
-                  <span class="stat-value" id="def-value">40</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-              <div class="pokemon-stat" id="stat-spatk">
-                <div class="stat-labels">
-                  <span>Special Attack</span>
-                  <span class="stat-value" id="spatk-value">50</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-              <div class="pokemon-stat" id="stat-spdef">
-                <div class="stat-labels">
-                  <span>Special Defense</span>
-                  <span class="stat-value" id="spdef-value">55</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-              <div class="pokemon-stat" id="stat-speed">
-                <div class="stat-labels">
-                  <span>Speed</span>
-                  <span class="stat-value" id="speed-value">75</span>
-                </div>
-                <div class="stat-bar-container">
-                  <div class="stat-bar"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="abilities-location-container">
-              <!-- Pokémon Evolutions Section -->
-              <div class="pokemon-evolutions">
-                <h2>Evolutions</h2>
-                <div class="evolution-chain">
-                    <div class="evolution-stage">
-                       <a href="../pokemon/swirlicky">
-                        <img src="../images/pokes/022swirlicky.png" alt="First Evolution">
-                        <p>Stage 1</p>
-                      </a>
-                    </div>
-                    <div class="evolution-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                    <div class="evolution-stage">
-                      <a href="../pokemon/swolicky">
-                        <img src="../images/pokes/023swolicky.png" alt="Second Evolution">
-                        <p>Stage 2</p>
-                      </a>
-                    </div>
-
-                </div>
-                <i><p>Swirlicky evolves from high friendship knowing a poison move</p></i>
-            </div>
-
-            <div class="pokemon-abilities">
-                <h2>Abilities</h2>
-                <ul><li>flavorprofile</li></ul>
-            </div>
-            <div class="pokemon-abilities">
-                <h2>Egg Groups</h2>
-                <ul><li>monster</li><li>field</li></ul>
-            </div>
-            <div class="pokemon-location">
-                <h2>Location Data</h2>
-                <p>Astral Rifts in the Monsai Frontier</p>
-                <p>Astral Cave</p>
-            </div>
-          </div>
-
-          <!-- Move List Section -->
             
-    <div class="move-list">
-        <span class="move-label">MOVES</span>
-        <button class="move-toggle">
-            <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="move-options">
-            <div class="move-category">
-                <h3>Level-Up Moves</h3>
-                <ul><li>1:mudslap</li><li>7:lick</li><li>10:quickattack</li><li>14:supersonic</li><li>15:bind</li><li>18:encore</li><li>21:knockoff</li><li>26:bodyslam</li><li>29:hypnosis</li><li>33:bounce</li><li>38:copycat</li><li>40:screech</li><li>44:hypervoice</li><li>50:powerwhip</li></ul>
+            <!-- THE CENTER PIECE -->
+            <div class="evo-node center-pkmn">
+                <a href="../pokemon/swirlicky">
+                    <img src="../images/pokes/022swirlicky.png" alt="Swirlicky">
+                    <p>Swirlicky</p>
+                    <span class="evo-label">Base Stage</span>
+                </a>
             </div>
-            <div class="move-category">
-                <h3>TM/TR Moves</h3>
-                <ul><li>tm:thunderwave</li><li>tm:lightscreen</li><li>tm:safeguard</li><li>tm:rest</li><li>tm:rockslide</li><li>tm:thief</li><li>tm:snore</li><li>tm:protect</li><li>tm:charm</li><li>tm:attract</li><li>tm:raindance</li><li>tm:sunnyday</li><li>tm:hail</li><li>tm:facade</li><li>tm:swift</li><li>tm:helpinghand</li><li>tm:imprison</li><li>tm:weatherball</li><li>tm:rocktomb</li><li>tm:bounce</li><li>tm:mudshot</li><li>tm:rockblast</li><li>tm:payback</li><li>tm:guardswap</li><li>tm:wonderroom</li><li>tm:magicroom</li><li>tm:round</li><li>tm:retaliate</li><li>tm:bulldoze</li><li>tm:stompingtantrum</li><li>tm:workup</li><li>tm:toxic</li><li>tm:hiddenpower</li><li>tm:icebeam</li><li>tm:frustration</li><li>tm:thunderbolt</li><li>tm:earthquake</li><li>tm:return</li><li>tm:doubleteam</li><li>tm:flamethrower</li><li>tm:echoedvoice</li><li>tm:recycle</li><li>tm:stoneedge</li><li>tm:gyroball</li><li>tm:swordsdance</li><li>tm:psychup</li><li>tm:grassknot</li><li>tm:sleeptalk</li><li>tm:substitute</li><li>tm:surf</li><li>tm:confide</li><li>tm:secretpower</li><li>tm:flash</li><li>tm:rocksmash</li><li>tm:irontail</li><li>tm:endure</li><li>tm:captivate</li><li>tm:headbutt</li><li>tm:curse</li><li>tm:rollout</li><li>tm:defensecurl</li><li>tm:bodyslam</li><li>tm:takedown</li><li>tm:doubleedge</li><li>tm:mimic</li><li>tm:bide</li><li>tm:metronome</li><li>tm:skullbash</li><li>tm:triattack</li></ul>
+
+            <div class="evo-node">
+                <a href="../pokemon/voltlicky">
+                    <img src="../images/pokesHD/voltlicky.png" alt="Voltlicky">
+                    <p>Voltlicky</p>
+                </a>
             </div>
-            <div class="move-category">
-                <h3>Egg Moves</h3>
-                <ul><li>egg:ancientpower</li><li>egg:slackoff</li><li>egg:amnesia</li><li>egg:encore</li><li>egg:supersonic</li></ul>
-            </div>
-            <div class="move-category">
-                <h3>Tutor Moves</h3>
-                <ul><li>tutor:afteryou</li><li>tutor:aquatail</li><li>tutor:bind</li><li>tutor:bounce</li><li>tutor:covet</li><li>tutor:earthpower</li><li>tutor:endeavor</li><li>tutor:healbell</li><li>tutor:helpinghand</li><li>tutor:hypervoice</li><li>tutor:ironhead</li><li>tutor:irontail</li><li>tutor:knockoff</li><li>tutor:lastresort</li><li>tutor:magicroom</li><li>tutor:recycle</li><li>tutor:snore</li><li>tutor:stompingtantrum</li><li>tutor:terrainpulse</li><li>tutor:trick</li><li>tutor:uproar</li><li>tutor:wonderroom</li><li>tutor:zenheadbutt</li></ul>
+        </div>
+
+        <!-- Bottom Branch -->
+        <div class="evo-row">
+            <div class="evo-node">
+                <a href="../pokemon/swolicky">
+                    <img src="../images/pokes/023swolicky.png" alt="Swolicky">
+                    <p>Swolicky</p>
+                </a>
             </div>
         </div>
     </div>
-    
-
-          </div>
-
-
-
-
-    <script>
-        // Toggle dropdown for moves
-        document.addEventListener('DOMContentLoaded', function() {
-            const moveToggle = document.querySelector('.move-toggle');
-            const moveOptions = document.querySelector('.move-options');
-            moveToggle.addEventListener('click', function() {
-                moveOptions.classList.toggle('active');
-            });
-        });
-
-        // Stats bar animation script
-        document.addEventListener('DOMContentLoaded', () => {
-            const stats = {
-                hp: 80,
-                atk: 70,
-                def: 40,
-                spatk: 50,
-                spdef: 55,
-                speed: 75,
-            };
-            const maxStat = 255;
-            Object.entries(stats).forEach(([key, value]) => {
-                const statBar = document.querySelector(`#stat-${key} .stat-bar`);
-                const statValue = (value / maxStat) * 100;
-                statBar.style.width = `${statValue}%`;
-            });
-        });
-    </script>
-</body>
-</html>
+    <hr>
+    <i><p style="text-align: center;">Swirlicky's unstable DNA allows it to reach various forms depending on its environment and bond.</p></i>
+</div>
