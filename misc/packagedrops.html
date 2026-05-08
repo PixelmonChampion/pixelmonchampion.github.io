@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Pelipper Package Item Drops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+<style>
+        body { background-color: #121212; color: #e0e0e0; font-family: 'Inter', sans-serif; margin: 0; }
+        .loot-container { width: 90%; max-width: 1100px; margin: 40px auto; background-color: #1f1f1f; border-radius: 10px; padding: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); }
+        .drop-header { text-align: center; margin-bottom: 40px; }
+        .drop-header h1 { color: #ffffff; font-size: 2.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .package-section-title { color: #ffffff; font-size: 1.8rem; margin: 40px 0 20px 0; border-bottom: 2px solid #333; padding-bottom: 10px; text-transform: uppercase; }
+        
+        /* Filter Tabs */
+        .filter-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab { padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; background: #2a2a2a; color: #999; border: 2px solid transparent; }
+        
+        /* All Items Hover & Active */
+        .tab:hover[data-rarity="all"], 
+        .tab.active[data-rarity="all"] { border-color: #7c2721; color: white; background: rgba(124, 39, 33, 0.15); }
+        
+        /* Common Hover & Active */
+        .tab:hover[data-rarity="common"], 
+        .tab.active[data-rarity="common"] { border-color: #4caf50; background: rgba(76, 175, 80, 0.15); color: #81c784; }
+        
+        /* Rare Hover & Active */
+        .tab:hover[data-rarity="rare"], 
+        .tab.active[data-rarity="rare"] { border-color: #55acee; background: rgba(85, 172, 238, 0.15); color: #80d8ff; }
+        
+        /* Legendary Hover & Active */
+        .tab:hover[data-rarity="legendary"], 
+        .tab.active[data-rarity="legendary"] { border-color: #ffac33; background: rgba(255, 172, 51, 0.15); color: #ffd180; }
+        
+        /* Mythical Hover & Active */
+        .tab:hover[data-rarity="mythical"], 
+        .tab.active[data-rarity="mythical"] { border-color: #a64dff; background: rgba(166, 77, 255, 0.15); color: #ea80fc; }
+
+        /* Grid & Items */
+        .loot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .loot-item { display: flex; background: #2a2a2a; border-radius: 8px; padding: 15px; align-items: center; gap: 15px; border-left: 5px solid #444; transition: all 0.3s ease; }
+        .loot-item:hover { transform: translateY(-5px); background: #333; }
+
+        .loot-item.common { border-left-color: #2e7d32; }
+        .loot-item.common:hover { border-left-color: #4caf50; box-shadow: 0 0 15px rgba(76, 175, 80, 0.3); background: #2d3e2d; }
+        .loot-item.rare { border-left-color: #1976d2; }
+        .loot-item.rare:hover { border-left-color: #55acee; box-shadow: 0 0 15px rgba(85, 172, 238, 0.3); background: #283646; }
+        .loot-item.legendary { border-left-color: #e65100; }
+        .loot-item.legendary:hover { border-left-color: #ffac33; box-shadow: 0 0 15px rgba(255, 172, 51, 0.3); background: #413526; }
+        .loot-item.mythical { border-left-color: #7b1fa2; }
+        .loot-item.mythical:hover { border-left-color: #a64dff; box-shadow: 0 0 15px rgba(166, 77, 255, 0.3); background: #352846; }
+
+        /* Placeholder Style */
+        .none-placeholder { opacity: 0.5; cursor: default; }
+
+        .item-icon { width: 48px; height: 48px; background: #1a1a1a; border-radius: 6px; padding: 4px; image-rendering: pixelated; object-fit: contain; }
+        .item-info { display: flex; flex-direction: column; }
+        .item-name { font-weight: bold; font-size: 1rem; color: white; }
+        .rarity-tag { font-size: 0.7rem; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; width: fit-content; margin-top: 6px; font-weight: bold; }
+        
+        .tag-common { background: #2e7d32; color: white; }
+        .tag-rare { background: #1976d2; color: white; }
+        .tag-legendary { background: #e65100; color: white; }
+        .tag-mythical { background: #7b1fa2; color: white; }
+
+        @media (max-width: 600px) { .loot-grid { grid-template-columns: 1fr; } .drop-header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/"><img src="../images/logo.png" alt="Logo" /></a></div>
+        <ul class="nav-links">
+            <li><a href="pokemon">Pokémon</a></li>
+            <li><a href="characters">Characters</a></li>
+            <li><a href="misc">Misc.</a></li>
+        </ul>
+    </nav>
+
+    <div class="loot-container">
+        <div class="drop-header">
+            <h1>Pelipper Package Item Drops</h1>
+            <p><i>"A Delivery Pelipper brought you a Package..."</i></p>
+        </div>
+
+        <div class="filter-tabs">
+            <div class="tab active" data-rarity="all">All Items</div>
+            <div class="tab" data-rarity="common">Common</div>
+            <div class="tab" data-rarity="rare">Rare</div>
+            <div class="tab" data-rarity="legendary">Legendary</div>
+            <div class="tab" data-rarity="mythical">Mythical</div>
+        </div>
+
+        <h2 class="package-section-title">Regular Package</h2>
+        <div class="loot-grid" id="regularGrid">
+            <!-- Placeholders: These will be hidden when "All Items" is selected -->
+            <div class="loot-item common" data-rarity="common"><img src="../images/items/poke_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Poké Ball</span><span class="rarity-tag tag-common">Common</span></div></div>
+            <div class="loot-item common" data-rarity="common"><img src="../images/items/exp_candy_xs.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Exp. Candy XS</span><span class="rarity-tag tag-common">Common</span></div></div>
+            <!-- Rare -->
+            <div class="loot-item rare" data-rarity="rare"><img src="../images/items/ancient_poke_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ancient Poké Ball</span><span class="rarity-tag tag-rare">Rare</span></div></div>
+            <div class="loot-item rare" data-rarity="rare"><img src="../images/items/ancient_great_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ancient Great Ball</span><span class="rarity-tag tag-rare">Rare</span></div></div>
+            <div class="loot-item rare" data-rarity="rare"><img src="../images/items/pp_up.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">PP Up</span><span class="rarity-tag tag-rare">Rare</span></div></div>
+            <div class="loot-item rare" data-rarity="rare"><img src="../images/items/rare_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Rare Candy</span><span class="rarity-tag tag-rare">Rare</span></div></div>
+
+            <!-- Legendary -->
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/health_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Health Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/mighty_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Mighty Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/tough_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Tough Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/smart_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Smart Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/courage_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Courage Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/quick_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Quick Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/absorb_bulb.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Absorb Bulb</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/quick_claw.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Quick Claw</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/focus_band.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Focus Band</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/binding_band.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Binding Band</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/big_root.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Big Root</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/covert_cloak.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Covert Cloak</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/utility_umbrella.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Utility Umbrella</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/black_belt.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Black Belt</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/black_glasses.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Black Glasses</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/bright_powder.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Bright Powder</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/charcoal_stick.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Charcoal Stick</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/dragon_fang.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Dragon Fang</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/fairy_feather.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Fairy Feather</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/hard_stone.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Hard Stone</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/light_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Light Ball</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/magnet.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Magnet</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/miracle_seed.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Miracle Seed</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/mystic_water.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Mystic Water</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/never_melt_ice.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Never-Melt Ice</span><span class="rarity-tag tag-legendary">Legendary/span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/poison_barb.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Poison Barb</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/sharp_beak.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Sharp Beak</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/silk_scarf.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Silk Scarf</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/silver_powder.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Silver Powder</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/soft_sand.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Soft Sand</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/spell_tag.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Spell Tag</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/twisted_spoon.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Twisted Spoon</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+
+            <!-- Mythical -->
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/exp_candy_m.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Exp. Candy M</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/pp_max.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">PP Max</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/master_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Master Ball</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/ability_patch.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ability Patch</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/ability_capsule.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ability Capsule</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/exp_candy_l.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Exp. Candy L</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+        </div>
+
+        <h2 class="package-section-title">Special Package</h2>
+        <div class="loot-grid" id="specialGrid">
+            <!-- Placeholders: These will be hidden when "All Items" is selected -->
+            <div class="loot-item common none-placeholder" data-rarity="common"><img src="../images/items/blank.png" class="item-icon"><div class="item-info"><span class="item-name">None..</span><span class="rarity-tag tag-common">Common</span></div></div>
+            <div class="loot-item rare none-placeholder" data-rarity="rare"><img src="../images/items/blank.png" class="item-icon"><div class="item-info"><span class="item-name">None..</span><span class="rarity-tag tag-rare">Rare</span></div></div>
+            
+             <!-- Legendary -->
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/health_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Health Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/mighty_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Mighty Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/tough_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Tough Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/smart_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Smart Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/courage_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Courage Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/quick_candy.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Quick Candy</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/absorb_bulb.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Absorb Bulb</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/quick_claw.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Quick Claw</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/focus_band.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Focus Band</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/binding_band.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Binding Band</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/big_root.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Big Root</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/covert_cloak.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Covert Cloak</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/utility_umbrella.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Utility Umbrella</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/black_belt.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Black Belt</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/black_glasses.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Black Glasses</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/bright_powder.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Bright Powder</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/charcoal_stick.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Charcoal Stick</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/dragon_fang.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Dragon Fang</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/fairy_feather.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Fairy Feather</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/hard_stone.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Hard Stone</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/light_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Light Ball</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/magnet.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Magnet</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/miracle_seed.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Miracle Seed</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/mystic_water.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Mystic Water</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/never_melt_ice.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Never-Melt Ice</span><span class="rarity-tag tag-legendary">Legendary/span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/poison_barb.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Poison Barb</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/sharp_beak.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Sharp Beak</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/silk_scarf.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Silk Scarf</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/silver_powder.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Silver Powder</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/soft_sand.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Soft Sand</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/spell_tag.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Spell Tag</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+            <div class="loot-item legendary" data-rarity="legendary"><img src="../images/items/twisted_spoon.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Twisted Spoon</span><span class="rarity-tag tag-legendary">Legendary</span></div></div>
+
+            <!-- Mythical Items -->
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/exp_candy_m.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Exp. Candy M</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/pp_max.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">PP Max</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/master_ball.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Master Ball</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/ability_patch.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ability Patch</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/ability_capsule.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Ability Capsule</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/exp_candy_l.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Exp. Candy L</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_weight.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Weight</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_bracer.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Bracer</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_belt.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Belt</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_lens.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Lens</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_band.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Band</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+            <div class="loot-item mythical" data-rarity="mythical"><img src="../images/items/power_anklet.png" class="item-icon" onerror="this.src='../images/items/default.png'"><div class="item-info"><span class="item-name">Power Anklet</span><span class="rarity-tag tag-mythical">Mythical</span></div></div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; color: #666;">&copy; 2026 PokéFrontiers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initializing view: Hide placeholders on load if "All" is active
+        window.onload = () => { filterDrops('all'); };
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                filterDrops(tab.getAttribute('data-rarity'));
+            });
+        });
+
+        function filterDrops(filter) {
+            document.querySelectorAll('.loot-item').forEach(item => {
+                const itemRarity = item.getAttribute('data-rarity');
+                const isPlaceholder = item.classList.contains('none-placeholder');
+
+                if (filter === 'all') {
+                    // Show all real items, but hide "None.." placeholders
+                    item.style.display = isPlaceholder ? 'none' : 'flex';
+                } else {
+                    // Show placeholders AND real items only if they match the rarity
+                    item.style.display = (itemRarity === filter) ? 'flex' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
