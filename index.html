@@ -5,10 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokéFrontiers Wiki</title>
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ==========================================================================
+       MODERN DUAL-PANE NEWS ENGINE & HUB
+       ========================================================================== */
+    .news-hub-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto 4rem auto;
+    }
+
+    .news-hub-title {
+      grid-column: 1 / -1;
+      font-size: 1.5rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin: 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #7c2721;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Left Pane: Featured / Static Announcements */
+    .featured-news-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .news-card {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      border-left: 5px solid #7c2721;
+    }
+
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .news-header h3 {
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .news-meta {
+      font-size: 0.8rem;
+      color: #888;
+      text-align: right;
+    }
+
+    .news-meta span {
+      display: block;
+    }
+
+    .news-body {
+      color: #e0e0e0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .news-body p {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .media-container {
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      aspect-ratio: 16 / 9;
+    }
+
+    .media-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Right Pane: Live Discord Feed Tracker */
+    .live-feed-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .live-feed-header {
+      background-color: #5865F2; /* Discord Blurple */
+      color: white;
+      padding: 12px 15px;
+      border-radius: 8px 8px 0 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pulse-indicator {
+      width: 8px;
+      height: 8px;
+      background-color: #23a55a; /* Discord Green */
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 8px #23a55a;
+      animation: live-pulse 1.5s infinite alternate;
+    }
+
+    @keyframes live-pulse {
+      from { opacity: 0.4; box-shadow: 0 0 2px #23a55a; }
+      to { opacity: 1; box-shadow: 0 0 12px #23a55a; }
+    }
+
+    .live-feed-box {
+      background-color: #111111;
+      border: 1px solid #2a2a2a;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 0; /* Cleared out internal padding safely to fill iframe cleanly */
+      height: 540px; /* Locked to perfectly align with media container boundaries */
+      overflow: hidden;
+    }
+
+    /* Responsive Breakdown Modules */
+    @media (max-width: 900px) {
+      .news-hub-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .live-feed-box {
+        height: 400px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
@@ -45,33 +197,54 @@
       </a>
     </div>
 
-    <!-- Newsfeed Section -->
-    <div class="newsfeed-container">
-      <h2>Latest News</h2>
-      <div class="newsfeed-box">
-        <div class="news-item" id="news1">
-          <h3>PokéFrontiers - Update</h3>
-          
-          <p>
-            Hey everyone! My name is Ozzy I originally was one of the developers here on PokéFrontiers, due to some personal things going on, the original Owner Pokélithic had to step away.. He handed everything over to me so PokéFrontiers would actually release and now I'm now here taking his place to make it happen! On a much happier note I'm excited to say we are very close to our first beta and we will be annoucing that very soon! Below is a grand reveal of some of the stuff you will encounter!!
-          </p>
+    <!-- TWO-COLUMN NEWS HUB -->
+    <div class="news-hub-wrapper">
+      <h2 class="news-hub-title"><i class="fas fa-newspaper" style="color: #7c2721;"></i> News Feed</h2>
 
-          <!-- Embedded video -->
-          <div class="news-image">
-            <iframe 
-              width="100%" 
-              height="550"
-              src="https://www.youtube.com/embed/XvqG59ddZLs"
-              title="PokéFrontiers Update Video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="news-img">
-            </iframe>
+      <!-- Pinned News Feed Entries -->
+      <div class="featured-news-pane">
+        <div class="news-card">
+          <div class="news-header">
+            <h3>PokéFrontiers Open Beta Launch</h3>
+            <div class="news-meta">
+              <span style="font-weight: bold; color: #ffffff;">Author: Ozzy</span>
+              <span>May 17, 2026</span>
+            </div>
           </div>
+          <div class="news-body">
+<p>
+The PokéFrontiers open beta is officially live, and we're so excited to finally open the server up to everyone! Not only is the wiki fully updated, you can jump in right now and embark on your own journey through Monsai. There is a ton to discover, find, and craft in our first frontier. Don't forget to join our discord to stay up to date on everything!!
+</p>
+            
+            <div class="media-container">
+              <iframe 
+                src="https://www.youtube.com/embed/Afk4gnWt-2k"
+                title="PokéFrontiers Update Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            
+          </div>
+        </div>
+      </div>
 
-          <p><i><strong>Author:</strong> Ozzy</i></p>
-        </div>        
+      <!-- Live Operations Terminal Pane -->
+      <div class="live-feed-pane">
+        <div class="live-feed-header">
+          <span><i class="fa-brands fa-discord"></i> Discord Updates</span>
+          <span class="pulse-indicator"></span>
+        </div>
+        <div class="live-feed-box" id="discord-live-feed">
+          <!-- FIXED: Integrated real-time dynamic rendering stream connected to your live IDs -->
+          <iframe 
+            src="https://e.widgetbot.io/channels/1373341632325353562/1373348739518824680" 
+            height="100%" 
+            width="100%" 
+            frameborder="0"
+            style="background-color: #111111;">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -89,30 +262,82 @@
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
 
-    // Simulated page list
     const pages = [
-  { name: "Pokémon", url: "pokemon" },
-  { name: "Characters", url: "characters" },
-  { name: "Misc.", url: "misc" },
-  { name: "Maskin", url: "pokemon/maskin" },
-  { name: "Magbeat", url: "pokemon/magbeat" },
-  { name: "Crawfizz", url: "pokemon/crawfizz" },
-  { name: "Vhysedeer", url: "pokemon/vhysedeer" },
-  { name: "???", url: "misc/%3F%3F%3F" },
-  { name: "FAQ", url: "misc/faq" },  
-  { name: "Pokémon Drops", url: "misc/pokemondrops" },  
-  { name: "How to Play?", url: "misc/howtoplay" }, 
-  { name: "Monsai", url: "misc/monsai" }
-];
+      { name: "Pokémon", url: "pokemon" },
+      { name: "Characters", url: "characters" },
+      { name: "Misc.", url: "misc" },
+      { name: "Maskin", url: "pokemon/maskin" },
+      { name: "Maskief", url: "pokemon/maskief" },
+      { name: "Bandimask", url: "pokemon/bandimask" },
+      { name: "Crawfizz", url: "pokemon/crawfizz" },
+      { name: "Crawapix", url: "pokemon/crawapix" },
+      { name: "Crustadrill", url: "pokemon/crustadrill" },
+      { name: "Magbeat", url: "pokemon/magbeat" },
+      { name: "Chordbeat", url: "pokemon/chordbeat" },
+      { name: "Strumbeat", url: "pokemon/strumbeat" },
+      { name: "Bibivire", url: "pokemon/bibivire" },
+      { name: "Searlicky", url: "pokemon/searlicky" },
+      { name: "Voltlicky", url: "pokemon/voltlicky" },
+      { name: "Driplicky", url: "pokemon/driplicky" },
+      { name: "Cloylicky", url: "pokemon/cloylicky" },
+      { name: "Vhysedeer", url: "pokemon/vhysedeer" },
+      { name: "Monsian Bidoof", url: "pokemon/bidoof-monsai" },
+      { name: "Astral Venusaur", url: "pokemon/astral-venusaur" },
+      { name: "Astral Charizard", url: "pokemon/astral-charizard" },
+      { name: "Astral Blastoise", url: "pokemon/astral-blastoise" },
+      { name: "Astral Ludicolo", url: "pokemon/astral-ludicolo" },
+      { name: "Astral Cryogonal", url: "pokemon/astral-cryogonal" },
+      { name: "Astral Lucario", url: "pokemon/astral-lucario" },
+      { name: "Astral Forretress", url: "pokemon/astral-forretress" },
+      { name: "Astral Aerodactyl", url: "pokemon/astral-aerodactyl" },
+      { name: "Astral Maractus", url: "pokemon/astral-maractus" },
+      { name: "Astral Munchlax", url: "pokemon/astral-munchlax" },
+      { name: "Astral Afflicted Keldeo", url: "pokemon/astral-afflicted-keldeo" },
+      { name: "Quakey", url: "pokemon/quakey" },
+      { name: "Quakia", url: "pokemon/quakia" },
+      { name: "Quakiot", url: "pokemon/quakiot" },
+      { name: "Swirlicky", url: "pokemon/swirlicky" },
+      { name: "Swolicky", url: "pokemon/swolicky" },
+      { name: "Grounsquatch", url: "pokemon/grounsquatch" },
+      { name: "Rollimolli", url: "pokemon/rollimolli" },
+      { name: "Rollaslash", url: "pokemon/rollaslash" },
+      { name: "Neboy", url: "pokemon/neboy" },
+      { name: "Nebuman", url: "pokemon/nebuman" },
+      { name: "Scout Master Snag", url: "characters/scout-master-snag" },
+      { name: "Assistant Westly", url: "characters/assistant-westly" },
+      { name: "Warden Maxx", url: "characters/warden-maxx" },
+      { name: "Warden Hilbert", url: "characters/warden-hilbert" },
+      { name: "Warden Albany", url: "characters/warden-albany" },
+      { name: "Hermit Silas", url: "characters/hermit-silas" },
+      { name: "Crafter Emmet", url: "characters/crafter-emmet" },
+      { name: "Nurse Joy", url: "characters/nurse-joy" },
+      { name: "Sheriff Rowans", url: "characters/sheriff-rowans" },
+      { name: "Trapper Gideon", url: "characters/trapper-gideon" },
+      { name: "Elixir Specialist Bart", url: "characters/elixir-specialist-bart" },
+      { name: "PokéCard Dealer William", url: "characters/pokecard-dealer-william" },
+      { name: "Train Attendants", url: "characters/train-attendants" },
+      { name: "Egg Exchange Breeders", url: "characters/egg-exchange-breeders" },
+      { name: "Pokémart Clerks", url: "characters/pokemart-clerks" },
+      { name: "Berry Stand Clerks", url: "characters/berry-stand-clerks" },
+      { name: "Bandit Brigade Grunts", url: "characters/bandit-brigade-grunts" },
+      { name: "Bandit Brigade ??????", url: "misc/%3F%3F%3F" },
+      { name: "Wranglers", url: "characters/wranglers" },
+      { name: "Rogue Rangers", url: "characters/rogue-rangers" },
+      { name: "Wandering Duelist", url: "characters/wandering-duelist" },
+      { name: "Nomad", url: "characters/nomad" },
+      { name: "Miner", url: "characters/miner" },  
+      { name: "FAQ", url: "misc/faq" },  
+      { name: "Pokémon Drops", url: "misc/pokemondrops" },  
+      { name: "How to Play?", url: "misc/howtoplay" }, 
+      { name: "Monsai", url: "misc/monsai" }
+    ];
 
-
-    // Handle dynamic search
     searchInput.addEventListener("input", function () {
       const query = searchInput.value.toLowerCase().trim();
-      searchResults.innerHTML = ""; // Clear previous results
+      searchResults.innerHTML = "";
 
       if (query === "") {
-        searchResults.style.display = "none"; // Hide results if input is empty
+        searchResults.style.display = "none";
         return;
       }
 
@@ -135,10 +360,9 @@
         searchResults.appendChild(noResultItem);
       }
 
-      searchResults.style.display = "block"; // Show results
+      searchResults.style.display = "block";
     });
 
-    // Hide results when clicking outside the search bar
     document.addEventListener("click", function (event) {
       if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
         searchResults.style.display = "none";

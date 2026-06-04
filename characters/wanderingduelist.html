@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Wandering Duelist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .profile-wrapper { width: 90%; max-width: 1100px; margin: 4rem auto 6rem auto; box-sizing: border-box; }
+        .profile-card { display: grid; grid-template-columns: 320px 1fr; background-color: #1f1f1f; border-radius: 10px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); border-left: 5px solid #ffac33; overflow: hidden; }
+        .profile-left { background-color: #181818; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; border-right: 1px solid #2d2d2d; }
+        .profile-image-frame { width: 200px; height: 200px; background-color: #111111; border-radius: 8px; border: 1px solid #333; display: flex; justify-content: center; align-items: center; margin-bottom: 25px; overflow: hidden; }
+        .profile-image-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .pool-header-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #ffb74d; font-weight: 700; margin: 0 0 15px 0; }
+        .combat-pool-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 260px; }
+        .pool-slot { background-color: #111111; border: 1px solid #2d2d2d; border-radius: 6px; aspect-ratio: 1; display: flex; justify-content: center; align-items: center; padding: 4px; }
+        .pool-slot img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; }
+        .profile-right { padding: 45px; display: flex; flex-direction: column; justify-content: flex-start; }
+        .profile-header-group { border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .profile-header-group h1 { font-size: 2.4rem; color: #ffffff; margin: 0 0 6px 0; font-weight: 700; }
+        .profile-classification { font-size: 0.9rem; color: #ffb74d; text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; }
+        .news-meta { font-size: 0.8rem; color: #888; text-align: right; line-height: 1.4; }
+        .profile-body { font-size: 1.05rem; line-height: 1.75; color: #cccccc; margin: 0; }
+        @media (max-width: 850px) { .profile-card { grid-template-columns: 1fr; } .profile-left { border-right: none; border-bottom: solid 1px #2d2d2d; } .profile-right { padding: 30px 20px; } .profile-header-group { flex-direction: column; gap: 10px; } .news-meta { text-align: left; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/"><img src="../images/logo.png" alt="PokéFrontiers Logo" /></a></div>
+        <ul class="nav-links">
+            <li><a href="../pokemon">Pokémon</a></li>
+            <li><a href="../characters">Characters</a></li>
+            <li><a href="../misc">Misc.</a></li>
+        </ul>
+    </nav>
+    <div class="profile-wrapper">
+        <div class="profile-card">
+            <div class="profile-left">
+                <div class="profile-image-frame"><img src="../images/chars/wanderingduelist.png" alt="Wandering Duelist"></div>
+                <p class="pool-header-tag">Encounter Pool (12)</p>
+                <div class="combat-pool-grid">
+                    <div class="pool-slot"><img src="../images/pokes/448.png" onerror="this.src='../images/pokes/000.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/475.png" onerror="this.src='../images/pokes/000.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/865.png" onerror="this.src='../images/pokes/000.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                    <div class="pool-slot"><img src="../images/pokes/000.png" onerror="this.src='../images/items/default.png'"></div>
+                </div>
+            </div>
+            <div class="profile-right">
+                <div class="profile-header-group">
+                    <div>
+                        <h1>Wandering Duelist</h1>
+                        <div class="profile-classification">Trainer Class Pool (Male Only)</div>
+                    </div>
+                    <div class="news-meta">
+                        <span style="font-weight: bold; color: #ffffff;">Author: Ozzy</span><br/>
+                        <span>May 25, 2026</span>
+                    </div>
+                </div>
+                <div class="profile-body">
+                    <p>Stoic and nomadic, they are constantly searching across the frontier for a worthy opponent to test their inner spirit. They love quiet thought, intense training, and traveling across territories with nothing holding them back.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><p style="text-align: center; padding: 20px; color: #666;">&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
+</body>
+</html>

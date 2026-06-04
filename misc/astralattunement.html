@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokéFrontiers Wiki - Astral Attunement</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    /* ==========================================================================
+       VHYSEDEER THEMED ASTRAL ATTUNEMENT MECHANIC SYSTEM
+       ========================================================================== */
+    .gimmick-header-art {
+      width: 100%;
+      max-width: 1200px;
+      height: 300px;
+      background-color: #1c0f30; 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.6) 50%);
+      border: 5px solid #5e2491; /* Vhysedeer signature deep violet frame */
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 8px 16px rgba(0, 0, 0, 0.7);
+      padding: 20px;
+    }
+
+    .gimmick-title {
+      font-size: 2.5rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+    }
+
+    .gimmick-subtitle {
+      font-size: 1.1rem;
+      color: #d8b4fe;
+      font-style: italic;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 3rem;
+    }
+
+    .info-card {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-card h2 {
+      font-size: 1.3rem;
+      color: #a855f7; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .info-card p {
+      line-height: 1.6;
+      color: #e0e0e0;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .affliction-warning-box {
+      background-color: rgba(94, 36, 145, 0.15);
+      border-left: 4px solid #a855f7;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .affliction-warning-box h4 {
+      margin: 0 0 8px 0;
+      color: #e9d5ff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+    }
+
+    .manifest-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .manifest-table th, .manifest-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+
+    .manifest-table th {
+      color: #a855f7;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .manifest-table tr:hover {
+      background-color: rgba(168, 85, 247, 0.03);
+    }
+
+    .registry-section {
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 4rem;
+    }
+
+    .registry-section h2 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 2px solid #5e2491;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .astral-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .astral-card {
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      padding: 20px;
+      border-top: 4px solid #5e2491;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .astral-card:hover {
+      transform: translateY(-5px);
+      border-color: #c084fc;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+    }
+
+    .astral-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+    }
+
+    .astral-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .astral-card p {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .astral-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .astral-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <img src="../images/logo.png" alt="PokeFrontiers Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../pokemon">Pokémon</a></li>
+      <li><a href="../characters">Characters</a></li>
+      <li><a href="../misc">Misc.</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content" style="display: flex; flex-direction: column; align-items: center; padding-top: 3rem;">
+
+    <!-- Gimmick Hero Board -->
+    <div class="gimmick-header-art">
+      <h1 class="gimmick-title">Astral Attunement</h1>
+      <p class="gimmick-subtitle">The Wild Resonance of Vhysedeer</p>
+    </div>
+
+    <!-- Mechanics Breakdown Grid -->
+    <div class="info-grid">
+      <div class="info-card">
+        <h2>The Frontier Phenomenon</h2>
+        <p>
+          Deep within the untamed wilds of the frontier, a mystical atmospheric shift tears across the land. This phenomenon is caused entirely by <strong>Vhysedeer</strong>, a legendary protector who prides itself on shielding nature from harm. In its awakened state, Vhysedeer has been granted the ability to conjure up astral planes, shifting back and forth from our reality and altering the elements themselves. 
+        </p>
+        <p>
+          The process of channeling this power is known as <strong>Astral Attunement</strong>. Only certain rare Pokémon natively carry the unique ability required to undergo this physical transformation: <strong>Astral Alignment</strong>. When they undergo attunement, their features surge with an ultra-saturated, vibrant color matching their primary type. In the heat of battle, this celestial rhythm sharpens their natural focus, <strong>gaining a beneficial stat boost at the end of their first turn in battle</strong>.
+        </p>
+
+        <h2>The Trial of the Blessed</h2>
+        <p>
+          The energy given off by these altered creatures is far too volatile for an ordinary trainer to handle. Only a <strong>Blessed Trainer</strong> has the spiritual strength required to command an astral variant. To earn this right, a scout must brave the frontier and complete a strenuous task for vhysedeer:
+        </p>
+        <p>
+          First, you must track down and defeat an, empowered <strong>Astral Boss</strong> from an Astral Rift. By proving your strength in battle, you are granted a sacred artifact known as the <strong>Astral Relic</strong>. Only with this relic in hand are you blessed to guide and battle alongside these powerful variants.
+        </p>
+        <p>
+          Because of this grueling trial, the legendary <strong>Wardens of Monsai</strong> are currently the only figures in the region who command astral Pokémon, having bested the ancient bosses and proved their right to use the gimmick long before you as the player arrived!
+        </p>
+        
+        <h2>A Perilous Toll: Astral Affliction</h2>
+        <p>
+          Unlocking the secrets of alignment carries a severe and dangerous risk for the most formidable creatures of the frontier.
+        </p>
+        <div class="affliction-warning-box">
+          <h4>⚠️ Local Legends of The Affliction</h4>
+          <p>
+            When an immensely powerful Pokémon (such as ancient <strong>Legends, elusive Mythicals, or prideful Starter companions)</strong> attempt to absorb this power without full compatibility, they succumb to <strong>Astral Affliction</strong>.
+          </p>
+          <p>
+            When a Pokémon cannot fully absorb astral energy, it will become astral afflicted. The astral energy becomes too powerful for the Pokémon to withstand and it starts to cause major distress and violent torment whilst changing slightly.
+          </p>
+        </div>
+
+        <h2>Journeying the Astral Plane</h2>
+        <p>
+          Finding these rare variants requires stepping beyond the boundaries of our world. By challenging an aligned Pokémon in the wild or seeking out a rift, trainers can teleport straight to the source of the anomaly: <strong>The Astral Plane</strong>. This hidden dimension isolates rare wild creatures carrying the alignment trait across three distinct territories:
+        </p>
+        
+        <table class="manifest-table">
+          <thead>
+            <tr>
+              <th>Territory</th>
+              <th>Environment Profile</th>
+              <th>Wild Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Astral Plains</strong></td>
+              <td>Open Wild Fields</td>
+              <td>A wide expanse where rare, wild variants gather under the open stars.</td>
+            </tr>
+            <tr>
+              <td><strong>Astral Forest</strong></td>
+              <td>Thick, Resonant Woods</td>
+              <td>A dense woodland where trees and foliage pulse with raw elemental energy.</td>
+            </tr>
+            <tr>
+              <td><strong>Astral Cave</strong></td>
+              <td>Subterranean Crystal Tunnels</td>
+              <td>Deep rock caverns rich in ancient minerals and hidden celestial spirits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quick Lore Reference Table -->
+      <div class="info-card" style="border-left: 4px solid #5e2491;">
+        <h2>Quick Astral Summary</h2>
+        <p><strong>Phenomenon Source:</strong> Vhysedeer</p>
+        <p><strong>Gimmick Name:</strong> Astral Attunement</p>
+        <p><strong>Required Ability:</strong> Astral Alignment</p>
+        <p><strong>Ability effect:</strong> Boosts a beneficial stat at the end of the first turn in battle.</p>
+        <p><strong>Key Requirements to use:</strong> The Astral Relic and Astral Alignment</p>
+        <p><strong>Blessed Astral Users:</strong> The Wardens of Monsai</p>
+        <p><strong>A Potential Risk of Astrals:</strong> Astral Affliction</p>
+        <p><strong>Ability effect:</strong> Drastically Boosts a beneficial stat and drastically lowers a random stat at the end of the first turn in battle.</p>
+      </div>
+    </div>
+
+    <!-- Known Astral Variant Directory -->
+    <div class="registry-section">
+      <h2>Registered Astral Variants</h2>
+      <div class="astral-grid">
+        
+        <!-- Venusaur -->
+        <a href="../pokemon/astral-venusaur" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_venusaur.png" alt="Astral Venusaur" onerror="this.src='../images/pokesHD/003.png'">
+          <h3>Astral Venusaur</h3>
+          <p>Astral Venusaur strives under the starlight, drawing unseen energy into the bulb on its back.</p>
+        </a>
+
+        <!-- Charizard -->
+        <a href="../pokemon/astral-charizard" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_charizard.png" alt="Astral Charizard" onerror="this.src='../images/pokesHD/006.png'">
+          <h3>Astral Charizard</h3>
+          <p>When Astral Charizard roars constellations seem to flicker overhead. Its wings leave trails of cosmic fire.</p>
+        </a>
+
+        <!-- Blastoise -->
+        <a href="../pokemon/astral-blastoise" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_blastoise.png" alt="Astral Blastoise" onerror="this.src='../images/pokesHD/009.png'">
+          <h3>Astral Blastoise</h3>
+          <p>Observers claim they can see entire galaxies within Astral Blastoise's shell.</p>
+        </a>
+
+        <!-- Maractus -->
+        <a href="../pokemon/astral-maractus" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_maractus.png" alt="Astral Maractus" onerror="this.src='../images/pokesHD/556.png'">
+          <h3>Astral Maractus</h3>
+          <p>Astral Maractus's body glows with rhythmic light of a solar flare, scattering stardust with every movement.</p>
+        </a>
+
+        <!-- Forretress -->
+        <a href="../pokemon/astral-forretress" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_forretress.png" alt="Astral Forretress" onerror="this.src='../images/pokesHD/205.png'">
+          <h3>Astral Forretress</h3>
+          <p>Within Astral Forretress's shell lies a dense, swirling vortex that mimics the gravitational pull of a collapsed planet.</p>
+        </a>
+
+        <!-- Lucario -->
+        <a href="../pokemon/astral-lucario" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_lucario.png" alt="Astral Lucario" onerror="this.src='../images/pokesHD/448.png'">
+          <h3>Astral Lucario</h3>
+          <p>Astral Lucario's body now a harsh crimson, channels the focused heat and intensity of a dying red giant.</p>
+        </a>
+
+        <!-- Aerodactyl -->
+        <a href="../pokemon/astral-aerodactyl" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_aerodactyl.png" alt="Astral Aerodactyl" onerror="this.src='../images/pokesHD/142.png'">
+          <h3>Astral Aerodactyl</h3>
+          <p>Astral Aerodactyl's wings now reflect the jagged silhouette of a prehistoric constellation!</p>
+        </a>
+
+        <!-- Ludicolo -->
+        <a href="../pokemon/astral-ludicolo" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_ludicolo.png" alt="Astral Ludicolo" onerror="this.src='../images/pokesHD/272.png'">
+          <h3>Astral Ludicolo</h3>
+          <p>Astral Ludicolo loves to dance beneath the stars, drawing power from celestial rhythms.</p>
+        </a>
+
+        <!-- Cryogonal -->
+        <a href="../pokemon/astral-cryogonal" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_cryogonal.png" alt="Astral Cryogonal" onerror="this.src='../images/pokesHD/615.png'">
+          <h3>Astral Cryogonal</h3>
+          <p>Astral Cryogonal's crystalline body can refract starlight into dazzling auroras that shimmer across the night sky.</p>
+        </a>
+
+        <!-- Munchlax -->
+        <a href="../pokemon/astral-munchlax" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_munchlax.png" alt="Astral Munchlax" onerror="this.src='../images/pokesHD/446.png'">
+          <h3>Astral Munchlax</h3>
+          <p>Astral Munchlax's appetite has grown tremendously and now it can cosume an entire planet if it would like!</p>
+        </a>
+
+        <!-- Keldeo -->
+        <a href="../pokemon/astral-afflicted-keldeo" class="astral-card">
+          <img src="../images/pokesHD/astrals/astral_keldeo.png" alt="Astral Afflicted Keldeo" onerror="this.src='../images/pokesHD/647.png'">
+          <h3>Astral Afflicted Keldeo</h3>
+          <p>Unable to fully absorb Astral energy, this proud creature succumbed to Astral Affliction. Flooded with far more raw energy from the cosmos than its body can safely withstand, it now wanders and stumbles through the wilderness of Monsai in violent torment, throwing off agonizing ripples of psychic pressure that warp the air around it.</p>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
+  </footer>
+</body>
+</html>

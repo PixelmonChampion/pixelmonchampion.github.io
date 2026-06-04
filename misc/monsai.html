@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PokéFrontiers Wiki - Monsai</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="../styles.css" />
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Monsai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        /* ==========================================================================
+           MONSAI FRONTIER LOG MASTER LAYOUT
+           ========================================================================== */
+        .frontier-hub-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .gazette-card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            border-left: 5px solid #7c2721; /* Signature Frontier Crimson Bezel */
+        }
+
+        /* Perfect Mirror of the Homepage News Header Architecture */
+        .gazette-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .gazette-header h3 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-meta {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        .news-meta span {
+            display: block;
+        }
+
+        .media-container {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a2a;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gazette-body {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .gazette-body p {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .gazette-card { padding: 20px; }
+            .gazette-header { flex-direction: column; gap: 8px; }
+            .news-meta { text-align: left; }
+        }
+    </style>
+</head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
@@ -23,26 +106,37 @@
     </ul>
   </nav>
 
-    <!-- HIGHLIGHT Section -->
+  <!-- Main Content Layout -->
+  <div class="main-content">
+      <div class="frontier-hub-wrapper">
+          
+          <div class="gazette-card">
+              
+              <!-- Clean Header Module Match -->
+              <div class="gazette-header">
+                  <h3>Monsai</h3>
+                  <div class="news-meta">
+                      <span style="font-weight: bold; color: #ffffff;">Author: Ozzy</span>
+                      <span>May 17, 2026</span>
+                  </div>
+              </div>
+                  
+              <div class="media-container">
+                  <img src="../images/monsaifrontier.png" alt="The Monsai Frontier Expanse" class="news-img" width="100%" height="550">
+              </div>
 
-            <!-- Feed Section -->
-             <div class="main-content">
-            <div class="newsfeed-container">          
-                <div class="newsfeed-box" style="padding: 10px;">
-                              <div class="news-image">
-            <img src="../images/monsaifrontier.png" alt="PokéFrontiers Update" width=100% height="550" class="news-img">
-          </div>  
-       
-                <div class="news-item" id="news1">
-                    <i><h3>Monsai</h3></i>
-                    <p>
-                        The Monsai region is one of our untamed regions, called a frontier! It is heavily inspired by the wide-open landscapes of Montana and the spirit of the American Wild West, Monsai offers a bold departure from traditional regions. Here, there is no established League, only wilderness, mystery, and the thrill of forging your own path. Exploration is at the heart of Monsai’s identity. As a newly charted region, it’s a land of opportunity and risk, where many trainers try to make their mark. Every mountain, canyon trail, and ruin hold the promise of discovery (whether it’s a new species of Pokémon, a buried legend, or a secret long lost to time). Settlements across Monsai are sparse and self-sufficient, often named after hardy plants, pioneer folklore, or natural landmarks. Technology is very minimal and rustic, with survival depending more on grit, bonds with Pokémon, and clever use of the land than on fancy gadgets or global systems. Each outpost or homestead you encounter tells a story of settlers before and of the wild creatures that share the frontier. Whether you're a Scout looking to chart the unknown, a Wrangler rounding up wild Pokémon, or a wanderer chasing legends, the Monsai region is yours to explore. No two journeys are the same because in Monsai, the path isn't given... it's made.
-                    </p>
-                    <p><i><strong>Author:</strong> Ozzy</i></p>
-                </div>
-            </div>
-        </div>  
- </div>
+              <!-- Consolidated Single Continuous Text Stream Block -->
+              <div class="gazette-body">
+                  <p>
+                      The Monsai region is one of our untamed regions, called a frontier! It is heavily inspired by the wide-open landscapes of Montana and the spirit of the American Wild West, Monsai offers a bold departure from traditional regions. Here, there is no established League, only wilderness, mystery, and the thrill of forging your own path. Exploration is at the heart of Monsai’s identity. As a newly charted region, it’s a land of opportunity and risk, where many trainers try to make their mark. Every mountain, canyon trail, and ruin hold the promise of discovery (whether it’s a new species of Pokémon, a buried legend, or a secret long lost to time). Technology across the monsian settlements is very minimal and rustic, with survival depending more on grit, bonds with Pokémon, and clever use of the land than on fancy gadgets or global systems. Each outpost or homestead you encounter tells a story of settlers before and of the wild creatures that share the frontier. Whether looking to chart the unknown, round up wild Pokémon, or chase legends, the Monsai region is yours to explore. No two journeys are the same because in Monsai, the path isn't given... it's made.
+                  </p>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>

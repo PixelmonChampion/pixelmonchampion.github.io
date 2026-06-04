@@ -32,7 +32,7 @@
 
         <!-- Artwork -->
         <div class="pokemon-artwork">
-            <img id="pokemon-artwork" src="../images/pokesHD/007magbeat.png" alt="Magbeat Artwork">
+            <img id="pokemon-artwork" src="../images/pokesHD/magbeat.png" alt="Magbeat Artwork">
         </div>
 
         <!-- Types -->
@@ -93,11 +93,29 @@
                 <div class="evolution-chain">
                     <div class="evolution-stage">
                         <a href="../pokemon/magbeat">
-                            <img src="../images/pokesHD/007magbeat.png">
+                            <img src="../images/pokesHD/magbeat.png">
                             <p>Stage 1</p>
                         </a>
                     </div>
-
+                                        <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="evolution-stage">
+                      <a href="../pokemon/chordbeat">
+                        <img src="../images/pokesHD/chordbeat.png" alt="Second Evolution">
+                        <p>Stage 2</p>
+                      </a>
+                    </div>
+                    <div class="evolution-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="evolution-stage">
+                      <a href="../pokemon/strumbeat">
+                        <img src="../images/pokesHD/strumbeat.png" alt="Third Evolution">
+                        <p>Stage 3</p>
+                      </a>
+                    </div>
+                
                 </div>
                 <i><p>Magbeat evolves at level 16</p></i>
             </div>
@@ -199,7 +217,9 @@
         </div>
 
     </div>
-
+    <footer>
+        <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
+    </footer>
     <script>
         document.querySelector('.move-toggle').addEventListener('click', function() {
             document.querySelector('.move-options').classList.toggle('active');

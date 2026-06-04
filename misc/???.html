@@ -1,19 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PokéFrontiers Wiki - ???</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="../styles.css" />
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - ???</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        /* ==========================================================================
+           WIKI STUB STYLING (COMING SOON / UNDER DEVELOPMENT)
+           ========================================================================== */
+        .stub-wrapper {
+            width: 100%;
+            max-width: 900px;
+            margin: 4rem auto 6rem auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .stub-card {
+            background-color: #1f1f1f;
+            border-left: 5px solid #7c2721; /* Signature Frontier Crimson */
+            border-radius: 8px;
+            padding: 45px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Perfect Mirror of the Homepage News Header Architecture */
+        .stub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .stub-header h3 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .news-meta {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        .news-meta span {
+            display: block;
+        }
+
+        /* Interactive Silhouette Guessing Module */
+        .mini-game-container {
+            background-color: #111111;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px auto;
+            max-width: 450px;
+        }
+
+        .game-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffb74d; /* Amber highlight */
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .game-subtitle {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .silhouette-box {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Background spinning accent */
+        .silhouette-box::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed rgba(124, 39, 33, 0.4);
+            border-radius: 50%;
+            animation: spin 12s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .silhouette-box i {
+            font-size: 3.5rem;
+            color: #1f1f1f;
+            z-index: 2;
+            filter: drop-shadow(0 0 10px rgba(124, 39, 33, 0.6));
+            transition: color 0.3s ease;
+        }
+
+        /* Input Interaction Styles */
+        .guess-input {
+            width: 100%;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 4px;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .guess-input:focus {
+            border-color: #7c2721;
+            outline: none;
+        }
+
+        .guess-input:disabled {
+            opacity: 0.6;
+            color: #888;
+        }
+
+        .game-action-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .game-btn {
+            background-color: #7c2721;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .game-btn:hover {
+            background-color: #a63229;
+        }
+
+        .game-btn.secondary {
+            background-color: #2a2a2a;
+            border: 1px solid #333;
+            color: #ffffff;
+        }
+
+        .game-btn.secondary:hover {
+            background-color: #333;
+            border-color: #444;
+        }
+
+        .game-feedback {
+            font-size: 0.85rem;
+            margin-top: 15px;
+            min-height: 38px;
+            font-weight: 600;
+            line-height: 1.4;
+            padding: 0 10px;
+        }
+
+        .stub-body {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .stub-body p {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .nav-fallback-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #333;
+        }
+
+        .nav-fallback-btn:hover {
+            background-color: #111111;
+            border-color: #7c2721;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .stub-card { padding: 30px 20px; }
+            .stub-header { flex-direction: column; gap: 10px; }
+            .news-meta { text-align: left; }
+        }
+    </style>
+</head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
       <a href="/">
-        <img src="../images/logo.png" alt="PokeFrontiers Logo" />
+        <img src="../images/logo.png" alt="PokéFrontiers Logo" />
       </a>
     </div>
     <ul class="nav-links">
@@ -23,28 +244,184 @@
     </ul>
   </nav>
 
-    <!-- HIGHLIGHT Section -->
+  <!-- Main Content Layout -->
+  <div class="main-content">
+      <div class="stub-wrapper">
+          
+          <div class="stub-card">
+              
+              <!-- Meta header mirrors homepage author styles with unknown date -->
+              <div class="stub-header">
+                  <h3>This Section is Under construction</h3>
+                  <div class="news-meta">
+                      <span style="font-weight: bold; color: #ffffff;">Author: Ozzy</span>
+                      <span>Unknown Date</span>
+                  </div>
+              </div>
 
+              <!-- Simplified text description per request -->
+              <div class="stub-body">
+                  <p>
+                      page under construction...
+                  </p>
+              </div>
 
-            <!-- Feed Section -->
-             <div class="main-content">
-            <div class="newsfeed-container">          
-                <div class="newsfeed-box" style="padding: 10px;"> 
-       
-                <div class="news-item" id="news1">
-                    <i><h3>What is this page?</h3></i>
-                    <p>
-                        This is our coming soon page. The content you clicked on is still being developed and will be releasing later on. Navigate using the navbar above to return to our normal pages!
-                    </p>
-                    <p><i><strong>
-                      Author:</strong> Ozzy</i></p>
-                </div>
-            </div>
-        </div>  
- </div>
+              <!-- Expanded Mini-Game Block with dynamic Pokédex hints & reset loop mechanics -->
+              <div class="mini-game-container">
+                  <div class="game-title">Who's That Pokémon?</div>
+                  <div id="gameSubtitle" class="game-subtitle">Check this out while you wait!</div>
+                  <div class="silhouette-box">
+                      <i id="gameIcon" class="fas fa-question"></i>
+                  </div>
+                  <input type="text" id="guessInput" class="guess-input" placeholder="Guess the frontier species...">
+                  <div class="game-action-row">
+                      <button id="guessButton" class="game-btn">Submit Guess</button>
+                      <button id="tryAgainButton" class="game-btn secondary" style="display: none;">Try Again</button>
+                      <button id="nextButton" class="game-btn secondary" style="display: none;">Next Entry</button>
+                  </div>
+                  <div id="gameFeedback" class="game-feedback">Obtaining frontier data file...</div>
+              </div>
+
+              <div class="stub-body">
+                  <a href="/" class="nav-fallback-btn">
+                      <i class="fas fa-home"></i> Return to Homepage
+                  </a>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
   </footer>
+
+  <!-- Mini-Game Engine Logic -->
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // Official frontier dataset for random entry selection loops
+          const database = [
+              { name: "maskin", desc: "Its head is covered in soft, leaf-green fur that resembles a mask. Despite its cute demeanor, it is fearless and quick-tempered." },
+              { name: "maskief", desc: "Clever and coordinated, it works in small groups of other Pokémon to outmaneuver its opponents, using its smoke screen as its main tool of distraction." },
+              { name: "bandimask", desc: "Known as the Outlaw Pokémon, it guards territories with sharp instincts and ruthless precision. Its glare alone is enough to stop trespassers cold." },
+              { name: "magbeat", desc: "It chirps in rhythmic patterns that resemble simple songs. It practices constantly, stamping its feet to keep tempo even when alone." },
+              { name: "chordbeat", desc: "Its fiery steps are sharp and full of flair. With a confident sway and dazzling footwork, it uses its flame harp to overwhelm opponents." },
+              { name: "strumbeat", desc: "It dominates the spotlight with its blazing vocals and magnetic stage presence. Each chord strumed erupts in a cascade of fire." },
+              { name: "crawfizz", desc: "It likes to scuttle along riverbanks, blowing tiny bubbles that pop with fizzy sounds that children enjoy following." },
+              { name: "crawapix", desc: "Its love of its pickaxe-like claws pushes it to constantly mine raw ore or attack anything it deems to be a regional threat." },
+              { name: "crustadrill", desc: "Its massive, spiral claws can bore cleanly through bedrock. It anchors itself firmly before unleashing crushing strikes." },
+              { name: "bibivire", desc: "It stores electricity within its stiff fur, which can be violently dispersed directly into the air or down into the ground." },
+              { name: "searlicky", desc: "Its tongue always burns with an intense heat. It will caramelized berries for other Pokémon as a blazing apology." },
+              { name: "voltlicky", desc: "Its body is always crackling with high voltage. A single touch from its surface can numb a foe instantly." },
+              { name: "driplicky", desc: "Its long tongue drips with cool, mineral-rich water, which it expertly uses to blow floating bubbles." },
+              { name: "cloylicky", desc: "Always completely satisfied, it tends to lounge around, but do not underestimate it as it is actually a clever and powerful Pokémon." },
+              { name: "vhysedeer", desc: "It loves to share its wisdom of nature with other species and prides itself on protecting any nature or Pokémon from harm." },
+              { name: "quakey", desc: "A flightless bird Pokémon with a habit of pecking at dirt and running away from danger rather than facing it directly." },
+              { name: "quakia", desc: "It loves to flaunt its flying skills, often bragging to other Pokémon, which frequently leads it into precarious situations." },
+              { name: "quakiot", desc: "An agile, fast Pokémon with wingbeats so quiet that they are said to move faster than sound itself." },
+              { name: "swirlicky", desc: "A peculiar lizard Pokémon with an unstable DNA structure and a long tongue that it uses to lick objects." },
+              { name: "swolicky", desc: "It suffers from nausea due to the immense size of its tongue, which is dangerously acidic and capable of melting objects in one touch." },
+              { name: "grounsquatch", desc: "An elusive and timid Pokémon that enjoys hiding. Those who successfully befriend it are said to receive good luck." },
+              { name: "neboy", desc: "A cosmic Pokémon said to come from a galaxy with a swirling nebula. It understands the core mysteries of the world." },
+              { name: "nebuman", desc: "The evolved form of Neboy and protector of the cosmos. It can harness raw cosmic energy to dominate its foes." },
+              { name: "rollimolli", desc: "A playful armadillo Pokémon that uses its spherical body to tumble across terrain at reasonable speeds." },
+              { name: "rollaslash", desc: "Known for its agility and ability to spin rapidly while delivering razor-sharp slashes to opponents." }
+          ];
+
+          let currentEntry = null;
+          let autoResetTimeout = null;
+          
+          const guessInput = document.getElementById('guessInput');
+          const guessButton = document.getElementById('guessButton');
+          const tryAgainButton = document.getElementById('tryAgainButton');
+          const nextButton = document.getElementById('nextButton');
+          const gameFeedback = document.getElementById('gameFeedback');
+          const gameIcon = document.getElementById('gameIcon');
+
+          function loadNewEntry() {
+              // Clear inputs and active timers
+              clearTimeout(autoResetTimeout);
+              guessInput.value = '';
+              guessInput.disabled = false;
+              guessButton.style.display = 'inline-block';
+              tryAgainButton.style.display = 'none';
+              nextButton.style.display = 'none';
+              
+              // Reset icons back to normal states
+              gameIcon.className = 'fas fa-question';
+              gameIcon.style.color = '#1f1f1f';
+
+              // Pull index randomly from database bounds
+              currentEntry = database[Math.floor(Math.random() * database.length)];
+              
+              // Load text parameters using PokéDex Entry label
+              gameFeedback.style.color = '#cccccc';
+              gameFeedback.innerHTML = `<strong>PokéDex Entry:</strong> "${currentEntry.desc}"`;
+          }
+
+          function resetForRetry() {
+              guessInput.value = '';
+              guessInput.disabled = false;
+              guessButton.style.display = 'inline-block';
+              tryAgainButton.style.display = 'none';
+              
+              gameIcon.className = 'fas fa-question';
+              gameIcon.style.color = '#1f1f1f';
+              
+              gameFeedback.style.color = '#cccccc';
+              gameFeedback.innerHTML = `<strong>PokéDex Entry:</strong> "${currentEntry.desc}"`;
+              guessInput.focus();
+          }
+
+          guessButton.addEventListener('click', () => {
+              const cleanGuess = guessInput.value.toLowerCase().trim().replace('-monsai', '').trim();
+              
+              if (cleanGuess === '') {
+                  return;
+              }
+
+              if (cleanGuess === currentEntry.name) {
+                  gameFeedback.style.color = '#4caf50';
+                  gameFeedback.innerText = `Correct! That entry belongs to ${currentEntry.name.charAt(0).toUpperCase() + currentEntry.name.slice(1)}.`;
+                  gameIcon.className = 'fas fa-check-circle';
+                  gameIcon.style.color = '#7c2721';
+                  
+                  // Clean form management
+                  guessInput.disabled = true;
+                  guessButton.style.display = 'none';
+                  tryAgainButton.style.display = 'none';
+                  nextButton.style.display = 'inline-block';
+
+                  // Automatically schedule card swap refresh after 8 seconds of victory display idle
+                  autoResetTimeout = setTimeout(loadNewEntry, 8000);
+              } else {
+                  gameFeedback.style.color = '#f44336';
+                  gameFeedback.innerText = `Incorrect guess. That description profile does not match. Try reading the entry values again!`;
+                  gameIcon.className = 'fas fa-times-circle';
+                  gameIcon.style.color = '#f44336';
+                  
+                  // Disable fields and switch to Try Again mode
+                  guessInput.disabled = true;
+                  guessButton.style.display = 'none';
+                  tryAgainButton.style.display = 'inline-block';
+              }
+          });
+
+          // Action button listeners
+          nextButton.addEventListener('click', loadNewEntry);
+          tryAgainButton.addEventListener('click', resetForRetry);
+
+          guessInput.addEventListener('keypress', (e) => {
+              if (e.key === 'Enter' && !guessInput.disabled) {
+                  guessButton.click();
+              }
+          });
+
+          // Bootstrap first engine initialization pass on loading layout lifecycle completes
+          loadNewEntry();
+      });
+  </script>
 </body>
 </html>

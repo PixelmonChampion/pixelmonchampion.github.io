@@ -4,8 +4,58 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokéFrontiers Wiki - Characters</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ==========================================================================
+       BANDIT BRIGADE BOSS GLITCH CARD EFFECTS
+       ========================================================================== */
+    .boss-card {
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s, height 0.2s;
+      /* ENFORCED RESIZING: Overrides any restricted master dimensions cleanly */
+      height: auto !important; 
+      min-height: max-content !important;
+    }
+
+    /* Target styles trigger ONLY on active cursor hover engagement states */
+    .boss-card:hover {
+      border-color: #ffb74d !important; /* Frontier Amber highlight */
+      box-shadow: 0 0 15px rgba(255, 183, 77, 0.3);
+    }
+
+    /* Anchor wrapper optimization logic layout rule adjustment */
+    .boss-card a {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 10px 5px; /* Clean tracking padding boundaries */
+      text-decoration: none;
+    }
+
+    .glitch-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 700;
+      color: #888888; /* Neutral color state when inactive */
+      letter-spacing: -0.5px;
+      display: block; 
+      white-space: normal; /* Permits clean wrap behavior on tight grids */
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.3;
+      width: 100%;
+    }
+
+    .boss-card:hover .glitch-text {
+      color: #ffb74d; /* Switches cleanly to amber on hover */
+      text-shadow: 0 0 4px rgba(255, 183, 77, 0.4);
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -25,84 +75,149 @@
 
   <!-- Main Content -->
   <div class="main-content">
-<i><h1>Characters</h1></i>
+    <i><h1>Characters</h1></i>
 
     <!-- Character List -->
     <div class="character-list">
       
       <!-- Row 1 -->
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/scoutmaster.png" alt="scoutmaster" /><br/>???</a>
+        <a href="scoutmastersnag"><img src="images/chars/scoutmaster.png" alt="scoutmaster" /><br/>Scout Master Snag</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/scoutmasterassistant.png" alt="???" /><br/>???</a>
+        <a href="assistantwestly"><img src="images/chars/scoutmasterassistant.png" alt="???" /><br/>Assistant Westly</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/trapper.png" alt="thetrapper" /><br/>???</a>
+        <a href="wardenmaxx"><img src="images/chars/rival.png" alt="???" /><br/>Warden Maxx</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/hermit.png" alt="???" /><br/>???</a>
+        <a href="wardenhilbert"><img src="images/chars/wardenhilbert.png" alt="???" /><br/>Warden Hilbert</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/rival.png" alt="???" /><br/>???</a>
+        <a href="wardenalbany"><img src="images/chars/wardenalbany.png" alt="???" /><br/>Warden Albany</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/crafter.png" alt="???" /><br/>???</a>
+        <a href="hermitsilas"><img src="images/chars/hermit.png" alt="???" /><br/>Hermit Silas</a>
       </div>
 
       <!-- Row 2 -->
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/joy.png" alt="???" /><br/>???</a>
+        <a href="crafteremmet"><img src="images/chars/crafter.png" alt="???" /><br/>Crafter Emmet</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/chars/mart.png" alt="???" /><br/>???</a>
+        <a href="nursejoy"><img src="images/chars/joy.png" alt="???" /><br/>Nurse Joy</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="sheriffrowans"><img src="images/chars/mart.png" alt="???" /><br/>Sheriff Rowans</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="trappergideon"><img src="images/chars/trapper.png" alt="thetrapper" /><br/>Trapper Gideon</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="elixirspecialistbart"><img src="images/chars/elixir.png" alt="???" /><br/>Elixir Specialist Bart</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="pokecarddealerwilliam"><img src="images/chars/carddealer.png" alt="???" /><br/>PokéCard Dealer William</a>
       </div>
 
       <!-- Row 3 -->
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="trainattendants"><img src="images/chars/trainattendants.png" alt="???" /><br/>Train Attendants</a>
+      </div>   
+      <div class="character-card">
+        <a href="eggexchangebreeders"><img src="images/chars/breeders.png" alt="???" /><br/>Egg Exchange Breeders</a>
       </div>
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
-      </div>
+        <a href="pokemartclerks"><img src="images/chars/clerks.png" alt="???" /><br/>Pokémart Clerks</a>
+      </div>            
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
-      </div>
+        <a href="berrystandclerks"><img src="images/chars/berryclerks.png" alt="???" /><br/>Berry Stand Clerks</a>
+      </div>           
       <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+        <a href="banditbrigadegrunts"><img src="images/chars/bandits.png" alt="???" /><br/>Bandit Brigade Grunts</a>
       </div>
-      <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
-      </div>
-      <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
-      </div>
-      <!-- Row 4 -->
-      <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
-      </div>
-      <div class="character-card">
-        <a href="misc/%3F%3F%3F"><img src="images/pokes/000.png" alt="???" /><br/>???</a>
+      
+      <!-- Target Highlight Boss Card Module -->
+      <div class="character-card boss-card">
+        <a href="misc/%3F%3F%3F">
+          <img src="images/chars/banditbrigadeleader.png" alt="???" />
+          <span id="bossGlitchText" class="glitch-text">Bandit Brigade ???? ????</span>
+        </a>
       </div>
 
+      <!-- Row 4 -->
+      <div class="character-card">
+        <a href="wranglers"><img src="images/chars/wranglers.png" alt="???" /><br/>Wranglers</a>
+      </div>
+      <div class="character-card">
+        <a href="roguerangers"><img src="images/chars/roguerangers.png" alt="???" /><br/>Rogue Rangers</a>
+      </div>
+      <div class="character-card">
+        <a href="wanderingduelist"><img src="images/chars/wanderingduelist.png" alt="???" /><br/>Wandering Duelist</a>
+      </div>
+      <div class="character-card">
+        <a href="nomad"><img src="images/chars/nomad.png" alt="???" /><br/>Nomad</a>
+      </div>
+      <div class="character-card">
+        <a href="miner"><img src="images/chars/miner.png" alt="???" /><br/>Miner</a>
+      </div>            
+      <div class="character-card">
+        <img src="images/pokesHD/invis.png" alt="Blank" />
+      </div> 
 
     </div>
   </div>
-    <!-- Footer -->
+  
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
   </footer>
+
+  <!-- Fixed-Width Mono Matrix Scramble Script Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const targetText = "Bandit Brigade Boss Cade"; // Exactly 25 Characters long
+        const maskedText = "Bandit Brigade ???? ????"; // Exactly 25 Characters long
+        const textElement = document.getElementById('bossGlitchText');
+        
+        // Matrix terminal code block symbols to run through during conversion
+        const matrixSymbols = "10//_[]<>#X-+=¥$@";
+        let loopInterval = null;
+
+        function runMatrixGlitch(finalGoalString) {
+            let cycles = 0;
+            clearInterval(loopInterval);
+
+            loopInterval = setInterval(() => {
+                textElement.innerText = finalGoalString.split('')
+                    .map((char, index) => {
+                        if (index < cycles) {
+                            return finalGoalString[index];
+                        }
+                        if (char === ' ') return ' ';
+                        
+                        return matrixSymbols[Math.floor(Math.random() * matrixSymbols.length)];
+                    })
+                    .join('');
+
+                if (cycles >= finalGoalString.length) {
+                    clearInterval(loopInterval);
+                }
+                cycles += 1;
+            }, 30);
+        }
+
+        const triggerParent = textElement.closest('.boss-card');
+        
+        triggerParent.addEventListener('mouseenter', () => {
+            runMatrixGlitch(targetText);
+        });
+
+        triggerParent.addEventListener('mouseleave', () => {
+            clearInterval(loopInterval);
+            textElement.innerText = maskedText;
+        });
+    });
+  </script>
 </body>
 </html>
