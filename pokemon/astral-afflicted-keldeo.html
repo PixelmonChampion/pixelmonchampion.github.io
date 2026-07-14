@@ -73,9 +73,28 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Moves Section -->
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Available Moves</h3>
+                    <ul>
+                        <li>1:expandingforce</li>
+                        <li>1:powerswap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
     <script>
+        // Move Toggle Script
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
         document.addEventListener('DOMContentLoaded', () => {
             const stats = { hp: 91, atk: 145, def: 80, spatk: 60, spdef: 80, speed: 124 };
             const maxStat = 255;

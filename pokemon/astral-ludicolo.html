@@ -72,9 +72,28 @@
             </div>
 
         </div>
+                <!-- Moves Section -->
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Available Moves</h3>
+                    <ul>
+                        <li>1:psychocut</li>
+                        <li>1:extrasensory</li>
+                        <li>1:trickroom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
     <script>
+                // Move Toggle Script
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
         document.addEventListener('DOMContentLoaded', () => {
             const stats = { hp:90, atk:70, def:85, spatk:125, spdef:110, speed:50 };
             const maxStat = 255;

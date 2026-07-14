@@ -12,6 +12,8 @@
         .pokemon-abilities, .pokemon-location { text-align: left; }
         .pokemon-abilities ul { padding-left: 0; display: flex; flex-direction: column; align-items: flex-start; }
         .pokemon-abilities ul li { width: 100%; box-sizing: border-box; }
+        
+
     </style>
 </head>
 <body>
@@ -65,16 +67,39 @@
                 </div>
             </div>
         </div>
+
         <div class="abilities-location-container">
             <div class="pokemon-abilities">
                 <h2>Abilities</h2>
                 <ul><li>Astral Alignment</li></ul>
             </div>
-
         </div>
+
+        <!-- Moves Section -->
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Available Moves</h3>
+                    <ul>
+                        <li>1:psychicfangs</li>
+                        <li>1:psychic</li>
+                        <li>1:powertrick</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
     <script>
+        // Move Toggle Script
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
+
+        // Stats Animation
         document.addEventListener('DOMContentLoaded', () => {
             const stats = { hp:80, atk:105, def:65, spatk:100, spdef:70, speed:130 };
             const maxStat = 255;
