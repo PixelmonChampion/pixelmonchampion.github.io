@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Burst Floatzel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .abilities-location-container { width: 100%; max-width: 1200px; box-sizing: border-box; gap: 2rem; }
+        .pokemon-abilities, .pokemon-location { text-align: left; }
+        .pokemon-abilities ul { padding-left: 0; display: flex; flex-direction: column; align-items: flex-start; }
+        .pokemon-abilities ul li { width: 100%; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/"><img src="../images/logo.png" alt="PokeFrontiers Logo" /></a></div>
+        <ul class="nav-links">
+            <li><a href="../pokemon">Pokémon</a></li>
+            <li><a href="../characters">Characters</a></li>
+            <li><a href="../misc">Misc.</a></li>
+        </ul>
+    </nav>
+    <div class="pokemon-entry">
+        <h1 class="pokemon-name">Burst Floatzel</h1>
+        <h3 class="pokemon-desc">The Relaxed Sea Weasel Pokémon</h3>
+        <div class="pokemon-artwork">
+            <img id="pokemon-artwork" src="../images/pokesHD/bursts/bfloatzel.png" alt="Burst Floatzel">
+        </div>
+        <div class="pokemon-types">
+            <div class="type water"></div>
+            <div class="type normal"></div>
+        </div>
+        <div class="pokemon-container">
+            <div class="pokedex-description">
+                <h2>Pokédex Entry</h2>
+                <i><p>In Floatzel’s Burst Form, it reclines on its own personal flotation device reflecting its relaxed nature. Despite its laid-back demeanor, it can spring into action with surprising speed and precision.</p></i>
+            </div>
+            <div class="pokemon-stats">
+                <div class="pokemon-stat" id="stat-hp">
+                    <div class="stat-labels"><span>HP</span><span class="stat-value">85</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+                <div class="pokemon-stat" id="stat-atk">
+                    <div class="stat-labels"><span>Attack</span><span class="stat-value">105</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+                <div class="pokemon-stat" id="stat-def">
+                    <div class="stat-labels"><span>Defense</span><span class="stat-value">80</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+                <div class="pokemon-stat" id="stat-spatk">
+                    <div class="stat-labels"><span>Special Attack</span><span class="stat-value">60</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+                <div class="pokemon-stat" id="stat-spdef">
+                    <div class="stat-labels"><span>Special Defense</span><span class="stat-value">80</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+                <div class="pokemon-stat" id="stat-speed">
+                    <div class="stat-labels"><span>Speed</span><span class="stat-value">115</span></div>
+                    <div class="stat-bar-container"><div class="stat-bar"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="abilities-location-container">
+            <div class="pokemon-abilities">
+                <h2>Abilities</h2>
+                <ul><li>tintedlens</li></ul>
+            </div>
+        </div>
+
+
+    </div>
+    <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
+    <script>
+        document.querySelector('.move-toggle').addEventListener('click', function() {
+            document.querySelector('.move-options').classList.toggle('active');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = { hp:85, atk:105, def:80, spatk:60, spdef:80, speed:115 };
+            const maxStat = 255;
+            Object.entries(stats).forEach(([key, value]) => {
+                const bar = document.querySelector(`#stat-${key} .stat-bar`);
+                if(bar) setTimeout(() => { bar.style.width = `${(value / maxStat) * 100}%`; }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
