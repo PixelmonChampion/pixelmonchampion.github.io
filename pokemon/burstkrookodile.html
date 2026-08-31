@@ -76,16 +76,15 @@
 
     </div>
     <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
-    <script>
-        document.querySelector('.move-toggle').addEventListener('click', function() {
-            document.querySelector('.move-options').classList.toggle('active');
-        });
+<script>
+
+
         document.addEventListener('DOMContentLoaded', () => {
             const stats = { hp:105, atk:130, def:100, spatk:35, spdef:60, speed:95 };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {
                 const bar = document.querySelector(`#stat-${key} .stat-bar`);
-                if(bar) setTimeout(() => { bar.style.width = `${(value / maxStat) * 100}%`; }, 100);
+                if(bar) bar.style.width = `${(value / maxStat) * 100}%`;
             });
         });
     </script>
