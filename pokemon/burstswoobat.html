@@ -77,7 +77,13 @@
     </div>
     <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
     <script>
-
+const toggleBtn = document.querySelector('.move-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                const moveOpts = document.querySelector('.move-options');
+                if (moveOpts) moveOpts.classList.toggle('active');
+            });
+        }
         document.addEventListener('DOMContentLoaded', () => {
             const stats = { hp:67, atk:57, def:70, spatk:117, spdef:70, speed:144 };
             const maxStat = 255;
