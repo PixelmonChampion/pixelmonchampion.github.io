@@ -40,19 +40,19 @@
             </div>
             <div class="pokemon-stats">
                 <div class="pokemon-stat" id="stat-hp">
-                    <div class="stat-labels"><span>HP</span><span class="stat-value">95</span></div>
+                    <div class="stat-labels"><span>HP</span><span class="stat-value">105</span></div>
                     <div class="stat-bar-container"><div class="stat-bar"></div></div>
                 </div>
                 <div class="pokemon-stat" id="stat-atk">
-                    <div class="stat-labels"><span>Attack</span><span class="stat-value">75</span></div>
+                    <div class="stat-labels"><span>Attack</span><span class="stat-value">60</span></div>
                     <div class="stat-bar-container"><div class="stat-bar"></div></div>
                 </div>
                 <div class="pokemon-stat" id="stat-def">
-                    <div class="stat-labels"><span>Defense</span><span class="stat-value">80</span></div>
+                    <div class="stat-labels"><span>Defense</span><span class="stat-value">110</span></div>
                     <div class="stat-bar-container"><div class="stat-bar"></div></div>
                 </div>
                 <div class="pokemon-stat" id="stat-spatk">
-                    <div class="stat-labels"><span>Special Attack</span><span class="stat-value">100</span></div>
+                    <div class="stat-labels"><span>Special Attack</span><span class="stat-value">105</span></div>
                     <div class="stat-bar-container"><div class="stat-bar"></div></div>
                 </div>
                 <div class="pokemon-stat" id="stat-spdef">
@@ -69,7 +69,7 @@
         <div class="abilities-location-container">
             <div class="pokemon-abilities">
                 <h2>Abilities</h2>
-                <ul><li>oblivious</li></ul>
+                <ul><li>psychicsurge</li></ul>
             </div>
         </div>
 
@@ -79,7 +79,7 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            const stats = { hp:95, atk:75, def:80, spatk:100, spdef:110, speed:30 };
+            const stats = { hp:105, atk:60, def:110, spatk:105, spdef:110, speed:30 };
             const maxStat = 255;
             Object.entries(stats).forEach(([key, value]) => {
                 const bar = document.querySelector(`#stat-${key} .stat-bar`);
