@@ -201,8 +201,35 @@
     <div class="news-hub-wrapper">
       <h2 class="news-hub-title"><i class="fas fa-newspaper" style="color: #7c2721;"></i> News Feed</h2>
 
-      <!-- Pinned News Feed Entries -->
+
+<!-- Pinned News Feed Entries -->
       <div class="featured-news-pane">
+        
+        <!-- v1.1 Rocket's Recon Update -->
+        <div class="news-card">
+          <div class="news-header">
+            <h3>PokéFrontiers Rocket's Recon</h3>
+            <div class="news-meta">
+              <span style="font-weight: bold; color: #ffffff;">Author: Ozzy</span>
+              <span>Oct 11, 2026</span>
+            </div>
+          </div>
+          <div class="news-body">
+<p>
+              <strong>PokéFrontiers Rocket's Recon</strong> is officially here for the spooky season! Based on your feedback, we've split our major title updates into faster, more manageable chunks, but we definitely aren't skimping on the content. 
+            </p>
+            <p>
+              Get ready to dress up <i>in your favorite spooky cosmetics</i> and beat down the original evil team, in Monsai's very first Post-Game story! Dive in to uncover new lore, see what's coming next, and piece together exactly where this adventure fits into Monsai.
+            </p>
+            <p>/redeem <strong>halloween2026</strong> - for a <i>special</i> Spooky mystery gift!</p>
+            <!-- FIXED: Tightly hugs the image without forcing an aspect ratio -->
+            <div style="display: flex; justify-content: center; padding: 10px; margin-top: 15px;">
+              <img src="images/rocket.png" alt="PokéFrontiers Rocket's Recon" class="news-img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- v1.0 Launch Update -->
         <div class="news-card">
           <div class="news-header">
             <h3>PokéFrontiers Launch</h3>
@@ -212,11 +239,15 @@
             </div>
           </div>
           <div class="news-body">
-<p>
-The PokéFrontiers <strong>v1.0</strong> Full Release is officially here, and we're so excited to finally show what we have been working on to everyone! Not only is the wiki fully updated, but you can jump in right now and continue your journey through Monsai. There is a ton to discover, find, and craft in this update. We are also hard at work shifting everything to Cobblemon 1.8 and developing our first major title updates, v1.1 and v1.2. Be sure to check out our teaser roadmap trailer below for a sneak peek! And one of our final things we want to mention is our first upcoming doubles tourney (in the Monsai National format) coming very soon! Don't forget to join our Discord to check out the v1.0 changelog and learn how to support the server as an Investor!
-</p>
+            <p>
+              The PokéFrontiers <strong>v1.0</strong> Full Release is officially here, and we're so excited to finally show what we have been working on to everyone! Not only is the wiki fully updated, but you can jump in right now and continue your journey through Monsai. There is a ton to discover, find, and craft in this update. 
+            </p>
+            <p>
+              We are also hard at work shifting everything to Cobblemon 1.8 and developing our first major title updates, v1.1 and v1.2. Be sure to check out our teaser roadmap trailer below for a sneak peek! And one of our final things we want to mention is our first upcoming doubles tourney (in the Monsai National format) coming very soon! Don't forget to join our Discord to check out the v1.0 changelog and learn how to support the server as an Investor!
+            </p>
             
-            <div class="media-container">
+            <!-- FIXED: Uses your CSS .video-container class to properly format the 16:9 iframe -->
+            <div class="video-container" style="margin-top: 15px;">
               <iframe 
                 src="https://www.youtube.com/embed/-WOv83iEWeQ?si=hOlx89PKvZUKEM-T"
                 title="PokéFrontiers Update Video"
@@ -227,6 +258,7 @@ The PokéFrontiers <strong>v1.0</strong> Full Release is officially here, and we
             
           </div>
         </div>
+        
       </div>
 
       <!-- Live Operations Terminal Pane -->
@@ -263,91 +295,98 @@ The PokéFrontiers <strong>v1.0</strong> Full Release is officially here, and we
     const searchResults = document.getElementById("searchResults");
 
 const pages = [
-      { name: "Pokémon", url: "pokemon" },
-      { name: "Characters", url: "characters" },
-      { name: "Misc.", url: "misc" },
-      { name: "Maskin", url: "pokemon/maskin" },
-      { name: "Maskief", url: "pokemon/maskief" },
-      { name: "Bandimask", url: "pokemon/bandimask" },
-      { name: "Crawfizz", url: "pokemon/crawfizz" },
-      { name: "Crawapix", url: "pokemon/crawapix" },
-      { name: "Crustadrill", url: "pokemon/crustadrill" },
-      { name: "Magbeat", url: "pokemon/magbeat" },
-      { name: "Chordbeat", url: "pokemon/chordbeat" },
-      { name: "Strumbeat", url: "pokemon/strumbeat" },
-      { name: "Bibivire", url: "pokemon/bibivire" },
-      { name: "Searlicky", url: "pokemon/searlicky" },
-      { name: "Voltlicky", url: "pokemon/voltlicky" },
-      { name: "Driplicky", url: "pokemon/driplicky" },
-      { name: "Cloylicky", url: "pokemon/cloylicky" },
-      { name: "Vhysedeer", url: "pokemon/vhysedeer" },
-      { name: "Monsian Bidoof", url: "pokemon/monsian-bidoof" },
-      { name: "Astral Venusaur", url: "pokemon/astral-venusaur" },
-      { name: "Astral Charizard", url: "pokemon/astral-charizard" },
-      { name: "Astral Blastoise", url: "pokemon/astral-blastoise" },
-      { name: "Astral Ludicolo", url: "pokemon/astral-ludicolo" },
-      { name: "Astral Cryogonal", url: "pokemon/astral-cryogonal" },
-      { name: "Astral Lucario", url: "pokemon/astral-lucario" },
-      { name: "Astral Forretress", url: "pokemon/astral-forretress" },
-      { name: "Astral Aerodactyl", url: "pokemon/astral-aerodactyl" },
-      { name: "Astral Maractus", url: "pokemon/astral-maractus" },
-      { name: "Astral Munchlax", url: "pokemon/astral-munchlax" },
-      { name: "Astral Afflicted Keldeo", url: "pokemon/astral-afflicted-keldeo" },
-      { name: "Burst Ledian", url: "pokemon/burstledian" },
-      { name: "Burst Krookodile", url: "pokemon/burstkrookodile" },
-      { name: "Burst Pikachu", url: "pokemon/burstpikachu" },
-      { name: "Burst Flygon", url: "pokemon/burstflygon" },
-      { name: "Burst Torkoal", url: "pokemon/bursttorkoal" },
-      { name: "Burst Floatzel", url: "pokemon/burstfloatzel" },
-      { name: "Burst Scovillain", url: "pokemon/burstscovillain" },
-      { name: "Burst Tauros", url: "pokemon/bursttauros" },
-      { name: "Burst Poliwrath", url: "pokemon/burstpoliwrath" },
-      { name: "Burst Eevee", url: "pokemon/bursteevee" },
-      { name: "Burst Slowking", url: "pokemon/burstslowking" },
-      { name: "Burst Marowak", url: "pokemon/burstmarowak" },
-      { name: "Burst Sunflora", url: "pokemon/burstsunflora" },
-      { name: "Burst Swoobat", url: "pokemon/burstswoobat" },
-      { name: "Burst Swalot", url: "pokemon/burstswalot" },
-      { name: "Burst Cacturne", url: "pokemon/burstcacturne" },
-      { name: "Burst Grounsquatch", url: "pokemon/burstgrounsquatch" },
-      { name: "Quakey", url: "pokemon/quakey" },
-      { name: "Quakia", url: "pokemon/quakia" },
-      { name: "Quakiot", url: "pokemon/quakiot" },
-      { name: "Swirlicky", url: "pokemon/swirlicky" },
-      { name: "Swolicky", url: "pokemon/swolicky" },
-      { name: "Grounsquatch", url: "pokemon/grounsquatch" },
-      { name: "Rollimolli", url: "pokemon/rollimolli" },
-      { name: "Rollaslash", url: "pokemon/rollaslash" },
-      { name: "Neboy", url: "pokemon/neboy" },
-      { name: "Nebuman", url: "pokemon/nebuman" },
-      { name: "Scout Master Snag", url: "characters/scoutmastersnag" },
-      { name: "Assistant Westly", url: "characters/assistantwestly" },
-      { name: "Warden Maxx", url: "characters/wardenmaxx" },
-      { name: "Warden Hilbert", url: "characters/wardenhilbert" },
-      { name: "Warden Albany", url: "characters/wardenalbany" },
-      { name: "Hermit Silas", url: "characters/hermitsilas" },
-      { name: "Crafter Emmet", url: "characters/crafteremmet" },
-      { name: "Nurse Joy", url: "characters/nursejoy" },
-      { name: "Sheriff Rowans", url: "characters/sheriffrowans" },
-      { name: "Trapper Gideon", url: "characters/trappergideon" },
-      { name: "Elixir Specialist Bart", url: "characters/elixirspecialistbert" },
-      { name: "PokéCard Dealer William", url: "characters/pokecarddealerwilliam" },
-      { name: "Train Attendants", url: "characters/trainattendants" },
-      { name: "Egg Exchange Breeders", url: "characters/eggexchangebreeders" },
-      { name: "Pokémart Clerks", url: "characters/pokemartclerks" },
-      { name: "Berry Stand Clerks", url: "characters/berrystandclerks" },
-      { name: "Bandit Brigade Grunts", url: "characters/banditbrigadegrunts" },
-      { name: "Bandit Brigade ??????", url: "misc/%3F%3F%3F" },
-      { name: "Wranglers", url: "characters/wranglers" },
-      { name: "Rogue Rangers", url: "characters/roguerangers" },
-      { name: "Wandering Duelist", url: "characters/wanderingduelist" },
-      { name: "Nomad", url: "characters/nomad" },
-      { name: "Miner", url: "characters/miner" },  
-      { name: "FAQ", url: "misc/faq" },  
-      { name: "Pokémon Drops", url: "misc/pokemondrops" },  
-      { name: "How to Play?", url: "misc/howtoplay" }, 
-      { name: "Monsai", url: "misc/monsai" }
-    ];
+  { name: "Pokémon", url: "pokemon" },
+  { name: "Characters", url: "characters" },
+  { name: "Misc.", url: "misc" },
+  { name: "Maskin", url: "pokemon/maskin" },
+  { name: "Maskief", url: "pokemon/maskief" },
+  { name: "Bandimask", url: "pokemon/bandimask" },
+  { name: "Crawfizz", url: "pokemon/crawfizz" },
+  { name: "Crawapix", url: "pokemon/crawapix" },
+  { name: "Crustadrill", url: "pokemon/crustadrill" },
+  { name: "Magbeat", url: "pokemon/magbeat" },
+  { name: "Chordbeat", url: "pokemon/chordbeat" },
+  { name: "Strumbeat", url: "pokemon/strumbeat" },
+  { name: "Bibivire", url: "pokemon/bibivire" },
+  { name: "Polimend", url: "pokemon/polimend" },
+  { name: "Caramellish", url: "pokemon/caramellish" },
+  { name: "Searlicky", url: "pokemon/searlicky" },
+  { name: "Voltlicky", url: "pokemon/voltlicky" },
+  { name: "Driplicky", url: "pokemon/driplicky" },
+  { name: "Cloylicky", url: "pokemon/cloylicky" },
+  { name: "Maxew", url: "pokemon/maxew" },
+  { name: "Elyxure", url: "pokemon/elyxure" },
+  { name: "Hexorus", url: "pokemon/hexorus" },
+  { name: "Vhysedeer", url: "pokemon/vhysedeer" },
+  { name: "Monsian Bidoof", url: "pokemon/monsian-bidoof" },
+  { name: "Monsian Meowth", url: "pokemon/monsian-meowth" },
+  { name: "Monsian Persian", url: "pokemon/monsian-persian" },
+  { name: "Astral Venusaur", url: "pokemon/astral-venusaur" },
+  { name: "Astral Charizard", url: "pokemon/astral-charizard" },
+  { name: "Astral Blastoise", url: "pokemon/astral-blastoise" },
+  { name: "Astral Ludicolo", url: "pokemon/astral-ludicolo" },
+  { name: "Astral Cryogonal", url: "pokemon/astral-cryogonal" },
+  { name: "Astral Lucario", url: "pokemon/astral-lucario" },
+  { name: "Astral Forretress", url: "pokemon/astral-forretress" },
+  { name: "Astral Aerodactyl", url: "pokemon/astral-aerodactyl" },
+  { name: "Astral Maractus", url: "pokemon/astral-maractus" },
+  { name: "Astral Munchlax", url: "pokemon/astral-munchlax" },
+  { name: "Astral Afflicted Keldeo", url: "pokemon/astral-afflicted-keldeo" },
+  { name: "Burst Ledian", url: "pokemon/burstledian" },
+  { name: "Burst Krookodile", url: "pokemon/burstkrookodile" },
+  { name: "Burst Pikachu", url: "pokemon/burstpikachu" },
+  { name: "Burst Flygon", url: "pokemon/burstflygon" },
+  { name: "Burst Torkoal", url: "pokemon/bursttorkoal" },
+  { name: "Burst Floatzel", url: "pokemon/burstfloatzel" },
+  { name: "Burst Scovillain", url: "pokemon/burstscovillain" },
+  { name: "Burst Tauros", url: "pokemon/bursttauros" },
+  { name: "Burst Poliwrath", url: "pokemon/burstpoliwrath" },
+  { name: "Burst Eevee", url: "pokemon/bursteevee" },
+  { name: "Burst Slowking", url: "pokemon/burstslowking" },
+  { name: "Burst Marowak", url: "pokemon/burstmarowak" },
+  { name: "Burst Sunflora", url: "pokemon/burstsunflora" },
+  { name: "Burst Swoobat", url: "pokemon/burstswoobat" },
+  { name: "Burst Swalot", url: "pokemon/burstswalot" },
+  { name: "Burst Cacturne", url: "pokemon/burstcacturne" },
+  { name: "Burst Grounsquatch", url: "pokemon/burstgrounsquatch" },
+  { name: "Quakey", url: "pokemon/quakey" },
+  { name: "Quakia", url: "pokemon/quakia" },
+  { name: "Quakiot", url: "pokemon/quakiot" },
+  { name: "Swirlicky", url: "pokemon/swirlicky" },
+  { name: "Swolicky", url: "pokemon/swolicky" },
+  { name: "Grounsquatch", url: "pokemon/grounsquatch" },
+  { name: "Rollimolli", url: "pokemon/rollimolli" },
+  { name: "Rollaslash", url: "pokemon/rollaslash" },
+  { name: "Neboy", url: "pokemon/neboy" },
+  { name: "Nebuman", url: "pokemon/nebuman" },
+  { name: "Scout Master Snag", url: "characters/scoutmastersnag" },
+  { name: "Assistant Westly", url: "characters/assistantwestly" },
+  { name: "Warden Maxx", url: "characters/wardenmaxx" },
+  { name: "Warden Hilbert", url: "characters/wardenhilbert" },
+  { name: "Warden Albany", url: "characters/wardenalbany" },
+  { name: "Hermit Silas", url: "characters/hermitsilas" },
+  { name: "Crafter Emmet", url: "characters/crafteremmet" },
+  { name: "Nurse Joy", url: "characters/nursejoy" },
+  { name: "Sheriff Rowans", url: "characters/sheriffrowans" },
+  { name: "Trapper Gideon", url: "characters/trappergideon" },
+  { name: "Elixir Specialist Bart", url: "characters/elixirspecialistbert" },
+  { name: "PokéCard Dealer William", url: "characters/pokecarddealerwilliam" },
+  { name: "Train Attendants", url: "characters/trainattendants" },
+  { name: "Egg Exchange Breeders", url: "characters/eggexchangebreeders" },
+  { name: "Pokémart Clerks", url: "characters/pokemartclerks" },
+  { name: "Berry Stand Clerks", url: "characters/berrystandclerks" },
+  { name: "Bandit Brigade Grunts", url: "characters/banditbrigadegrunts" },
+  { name: "Bandit Brigade ??????", url: "misc/%3F%3F%3F" },
+  { name: "Wranglers", url: "characters/wranglers" },
+  { name: "Rogue Rangers", url: "characters/roguerangers" },
+  { name: "Wandering Duelist", url: "characters/wanderingduelist" },
+  { name: "Nomad", url: "characters/nomad" },
+  { name: "Miner", url: "characters/miner" },  
+  { name: "FAQ", url: "misc/faq" },  
+  { name: "Pokémon Drops", url: "misc/pokemondrops" },  
+  { name: "How to Play?", url: "misc/howtoplay" }, 
+  { name: "Monsai", url: "misc/monsai" }
+];
 
     searchInput.addEventListener("input", function () {
       const query = searchInput.value.toLowerCase().trim();

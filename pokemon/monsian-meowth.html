@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Monsian Meowth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+    <nav class="navbar"><div class="logo"><a href="/"><img src="../images/logo.png" alt="PokeFrontiers Logo" /></a></div><ul class="nav-links"><li><a href="../pokemon">Pokémon</a></li><li><a href="../characters">Characters</a></li><li><a href="../misc">Misc.</a></li></ul></nav>
+    <div class="pokemon-entry">
+        <h1 class="pokemon-name">Monsian Meowth</h1>
+        <h3 class="pokemon-desc">The Scratch Cat Pokémon</h3>
+        <div class="pokemon-artwork"><img id="pokemon-artwork" src="../images/pokesHD/regionals/meowthM.png" alt="Monsian Meowth Artwork"></div>
+        <div class="pokemon-types"><div class="type normal"></div><div class="type psychic"></div></div>
+        <div class="pokemon-container">
+            <div class="pokedex-description">
+                <h2>Pokédex Entry</h2>
+                <i><p>It uses its personality, whit and latent psychic powers to demand respect from anyone who crosses its path. Monsian Meowth can often be seen naping amonst the ruins of Monsai.</p></i>
+            </div>
+            <div class="pokemon-stats">
+                <div class="pokemon-stat" id="stat-hp"><div class="stat-labels"><span>HP</span><span class="stat-value">40</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-atk"><div class="stat-labels"><span>Attack</span><span class="stat-value">40</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-def"><div class="stat-labels"><span>Defense</span><span class="stat-value">35</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-spatk"><div class="stat-labels"><span>Special Attack</span><span class="stat-value">45</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-spdef"><div class="stat-labels"><span>Special Defense</span><span class="stat-value">40</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-speed"><div class="stat-labels"><span>Speed</span><span class="stat-value">90</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+            </div>
+        </div>
+        
+        <div class="abilities-location-container">
+            <div class="pokemon-evolutions">
+                <h2>Evolutions</h2>
+                <div class="evolution-chain">
+                    <div class="evolution-stage">
+                        <a href="../pokemon/monsian-meowth"><img src="../images/pokesHD/regionals/meowthM.png" alt="Monsian Meowth"><p>Stage 1</p></a>
+                    </div>
+                    <div class="evolution-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="evolution-stage">
+                        <a href="../pokemon/monsian-persian"><img src="../images/pokesHD/regionals/persianM.png" alt="Monsian Persian"><p>Stage 2</p></a>
+                    </div>
+                </div>
+                <i><p>Monsian Meowth evolves at level 28.</p></i>
+            </div>
+            <div class="pokemon-abilities">
+                <h2>Abilities</h2>
+                <ul><li>Pickup</li><li>Sand Rush</li><li>Technician (Hidden)</li></ul>
+            </div>
+            <div class="pokemon-location">
+                <h2>Location Data</h2>
+                <p>Monsian Desert</p>
+            </div>
+        </div>
+
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Level-Up Moves</h3>
+                    <ul><li>1:payday</li><li>1:tailwhip</li><li>1:psywave</li><li>10:mudslap</li><li>13:hypnosis</li><li>17:faketears</li><li>22:psybeam</li><li>27:calmmind</li><li>30:roleplay</li><li>34:psychic</li><li>37:charm</li><li>40:screech</li><li>48:moonblast</li></ul>
+                </div>
+                <div class="move-category">
+                    <h3>TR/TM Moves</h3>
+                    <ul><li>tm:protect</li><li>tm:rest</li><li>tm:sleeptalk</li><li>tm:substitute</li><li>tm:facade</li><li>tm:calmmind</li><li>tm:psychic</li><li>tm:psyshock</li><li>tm:psybeam</li><li>tm:shadowball</li><li>tm:dazzlinggleam</li><li>tm:thunderbolt</li><li>tm:shockwave</li><li>tm:swift</li><li>tm:mudshot</li><li>tm:icywind</li><li>tm:taunt</li><li>tm:torment</li><li>tm:nastyplot</li><li>tm:thunderwave</li><li>tm:trick</li><li>tm:thief</li><li>tm:sandstorm</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
+    <script>
+        document.querySelector('.move-toggle').addEventListener('click', function() { document.querySelector('.move-options').classList.toggle('active'); });
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = { hp:40, atk:40, def:35, spatk:45, spdef:40, speed:90 };
+            const maxStat = 255;
+            Object.entries(stats).forEach(([key, value]) => { const bar = document.querySelector(`#stat-${key} .stat-bar`); if(bar) bar.style.width = `${(value / maxStat) * 100}%`; });
+        });
+    </script>
+</body>
+</html>

@@ -4,8 +4,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokéFrontiers Wiki - Pokémon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    /* Prevent page shift if a scrollbar appears/disappears */
+    body {
+      overflow-y: scroll; 
+    }
+
+    /* Themed Tab Container - Centered */
+    .tab-container {
+      display: flex;
+      justify-content: center; /* Centers the tabs */
+      margin: 30px auto 20px auto;
+      gap: 20px;
+      width: 100%; 
+      max-width: 1400px; 
+      padding: 0 20px;
+    }
+    
+    /* Themed Buttons (Matches .pokemon-card / .misc-button) */
+    .tab-button {
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      border: 2px solid #444;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 40px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      border-radius: 8px;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Hover State */
+    .tab-button:hover {
+      background-color: #2a2a2a;
+      border-color: #7c2721;
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+    
+    /* Active State (Matches your theme's primary red #7c2721) */
+    .tab-button.active {
+      background-color: #7c2721;
+      color: #ffffff;
+      border-color: #7c2721;
+      box-shadow: none; /* Shadow removed when selected */
+      transform: translateY(2px); /* Gives a satisfying 'pressed-in' effect */
+    }
+    
+    /* Smooth Slide & Fade Content Animation */
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: slideFadeUp 0.4s ease forwards;
+    }
+    
+    .tab-content.active-content {
+      display: block;
+    }
+    
+    @keyframes slideFadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -22,292 +93,318 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
-<div class="main-content">
-   <i><h1>Monsai PokéDex</h1></i>
-
-    <!-- Pokémon List -->
-    <div class="pokemon-list">
-      
-      <!-- Row 1 --> 
-      <div class="pokemon-card">
-        <a href="pokemon/maskin"><img src="images/pokesHD/maskin.png" alt="Maskin" /><br/>Maskin</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/maskief"><img src="images/pokesHD/maskief.png" alt="Maskief" /><br/>Maskief</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/bandimask"><img src="images/pokesHD/bandimask.png" alt="Bandimask" /><br/>Bandimask</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/crawfizz"><img src="images/pokesHD/crawfizz.png" alt="Crawfizz" /><br/>Crawfizz</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/crawapix"><img src="images/pokesHD/crawapix.png" alt="Crawapix" /><br/>Crawapix</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/crustadrill"><img src="images/pokesHD/crustadrill.png" alt="Crustadrill" /><br/>Crustadrill</a>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="pokemon-card">
-        <a href="pokemon/magbeat"><img src="images/pokesHD/magbeat.png" alt="Magbeat" /><br/>Magbeat</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/chordbeat"><img src="images/pokesHD/chordbeat.png" alt="Chordbeat" /><br/>Chordbeat</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/strumbeat"><img src="images/pokesHD/strumbeat.png" alt="Strumbeat" /><br/>Strumbeat</a>
-      </div>
-
-      <div class="pokemon-card">
-          <a href="pokemon/bibivire"><img src="images/pokesHD/bibivire.png" alt="Bibivire" /><br/>Bibivire</a>
-      </div>
-
-
-<div class="pokemon-card">
-    <a href="pokemon/searlicky">
-        <img src="images/pokesHD/searlicky.png" alt="Searlicky" />
-        <br/>Searlicky
-    </a>
-</div>
-
-
-<div class="pokemon-card">
-    <a href="pokemon/voltlicky">
-        <img src="images/pokesHD/voltlicky.png" alt="Voltlicky" />
-        <br/>Voltlicky
-    </a>
-</div>
-
-
-<div class="pokemon-card">
-    <a href="pokemon/driplicky">
-        <img src="images/pokesHD/driplicky.png" alt="Driplicky" />
-        <br/>Driplicky
-    </a>
-</div>
-
-<div class="pokemon-card">
-    <a href="pokemon/cloylicky">
-        <img src="images/pokesHD/cloylicky.png" alt="Cloylicky" />
-        <br/>Cloylicky
-    </a>
-</div>
-
-      <div class="pokemon-card">
-        <a href="pokemon/vhysedeer"><img src="images/pokesHD/vhysedeer.png" alt="Vhysedeer" /><br/>Vhysedeer</a>
-      </div>
-       <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
-            <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>
-          
+  <!-- Tab Buttons -->
+  <div class="tab-container">
+    <button class="tab-button active" onclick="switchTab(event, 'Monsai')">MONSAI</button>
+    <button class="tab-button" onclick="switchTab(event, 'Cento')">CENTO</button>
   </div>
 
-</div>
+  <!-- ================= MONSAI TAB ================= -->
+  <div id="Monsai" class="tab-content active-content">
+    
+    <div class="main-content">
+       <i><h1>Monsai PokéDex</h1></i>
+        <!-- Pokémon List -->
+        <div class="pokemon-list">
+          
+          <!-- Row 1 --> 
+          <div class="pokemon-card">
+            <a href="pokemon/maskin"><img src="images/pokesHD/maskin.png" alt="Maskin" /><br/>Maskin</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/maskief"><img src="images/pokesHD/maskief.png" alt="Maskief" /><br/>Maskief</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/bandimask"><img src="images/pokesHD/bandimask.png" alt="Bandimask" /><br/>Bandimask</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/crawfizz"><img src="images/pokesHD/crawfizz.png" alt="Crawfizz" /><br/>Crawfizz</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/crawapix"><img src="images/pokesHD/crawapix.png" alt="Crawapix" /><br/>Crawapix</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/crustadrill"><img src="images/pokesHD/crustadrill.png" alt="Crustadrill" /><br/>Crustadrill</a>
+          </div>
 
-<div class="main-content">
-    <i><h1>Monsai Regional PokéDex</h1></i>
- 
-     <!-- Pokémon List -->
-     <div class="pokemon-list">
-       
-      <!-- Regional Bidoof Line -->
-      <div class="pokemon-card">
-          <a href="pokemon/monsian-bidoof"><img src="images/pokesHD/regionals/bidoofM.png" alt="Monsian Bidoof" /><br/>Monsian Bidoof</a>
-      </div>
-       <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
-     </div>
-</div>
+          <!-- Row 2 -->
+          <div class="pokemon-card">
+            <a href="pokemon/magbeat"><img src="images/pokesHD/magbeat.png" alt="Magbeat" /><br/>Magbeat</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/chordbeat"><img src="images/pokesHD/chordbeat.png" alt="Chordbeat" /><br/>Chordbeat</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/strumbeat"><img src="images/pokesHD/strumbeat.png" alt="Strumbeat" /><br/>Strumbeat</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/bibivire"><img src="images/pokesHD/bibivire.png" alt="Bibivire" /><br/>Bibivire</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/polimend"><img src="images/pokesHD/polimend.png" alt="Polimend" /><br/>Polimend</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/caramellish"><img src="images/pokesHD/caramellish.png" alt="Caramellish" /><br/>Caramellish</a>
+          </div>
 
-<div class="main-content">
-    <i><h1>Monsai Astral PokéDex</h1></i>
- 
-     <!-- Pokémon List -->
-     <div class="pokemon-list">
-       
-      <!-- Row 1 -->
-      <div class="pokemon-card">
-          <a href="pokemon/astral-venusaur"><img src="images/pokesHD/astrals/astral_venusaur.png" alt="Astral Venusaur" /><br/>Astral Venusaur</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-charizard"><img src="images/pokesHD/astrals/astral_charizard.png" alt="Astral Charizard" /><br/>Astral Charizard</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-blastoise"><img src="images/pokesHD/astrals/astral_blastoise.png" alt="Astral Blastoise" /><br/>Astral Blastoise</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-ludicolo"><img src="images/pokesHD/astrals/astral_ludicolo.png" alt="Astral Ludicolo" /><br/>Astral Ludicolo</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-cryogonal"><img src="images/pokesHD/astrals/astral_cryogonal.png" alt="Astral Cryogonal" /><br/>Astral Cryogonal</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-lucario"><img src="images/pokesHD/astrals/astral_lucario.png" alt="Astral Lucario" /><br/>Astral Lucario</a>
-      </div>
-      
-      <!-- Row 2 -->
-      <div class="pokemon-card">
-          <a href="pokemon/astral-forretress"><img src="images/pokesHD/astrals/astral_forretress.png" alt="Astral Forretress" /><br/>Astral Forretress</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-aerodactyl"><img src="images/pokesHD/astrals/astral_aerodactyl.png" alt="Astral Aerodactyl" /><br/>Astral Aerodactyl</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-maractus"><img src="images/pokesHD/astrals/astral_maractus.png" alt="Astral Maractus" /><br/>Astral Maractus</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-munchlax"><img src="images/pokesHD/astrals/astral_munchlax.png" alt="Astral Munchlax" /><br/>Astral Munchlax</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/astral-afflicted-keldeo"><img src="images/pokesHD/astrals/astral_keldeo.png" alt="Astral Keldeo" /><br/>Astral Afflicted Keldeo</a>
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>      
-     </div>
-</div>
+          <!-- Row 3 -->
+          <div class="pokemon-card">
+              <a href="pokemon/searlicky"><img src="images/pokesHD/searlicky.png" alt="Searlicky" /><br/>Searlicky</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/voltlicky"><img src="images/pokesHD/voltlicky.png" alt="Voltlicky" /><br/>Voltlicky</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/driplicky"><img src="images/pokesHD/driplicky.png" alt="Driplicky" /><br/>Driplicky</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/cloylicky"><img src="images/pokesHD/cloylicky.png" alt="Cloylicky" /><br/>Cloylicky</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/maxew"><img src="images/pokesHD/maxew.png" alt="Maxew" /><br/>Maxew</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/elyxure"><img src="images/pokesHD/elyxure.png" alt="Elyxure" /><br/>Elyxure</a>
+          </div>
 
-<div class="main-content">
-    <i><h1>Cento PokéDex - [PokéGems Legacy]</h1></i>
- 
-     <!-- Pokémon List -->
-     <div class="pokemon-list">
-       
-      <!-- Row 4 -->
-      <div class="pokemon-card">
-        <a href="pokemon/quakey"><img src="images/pokes/013quakey.png" alt="Quakey" /><br/>Quakey</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/quakia"><img src="images/pokes/014quakia.png" alt="Quakia" /><br/>Quakia</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/quakiot"><img src="images/pokes/015quakiot.png" alt="Quakiot" /><br/>Quakiot</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/swirlicky"><img src="images/pokes/022swirlicky.png" alt="Swirlicky" /><br/>Swirlicky</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/swolicky"><img src="images/pokes/023swolicky.png" alt="Swolicky" /><br/>Swolicky</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/grounsquatch"><img src="images/pokes/031grounsquatch.png" alt="Grounsquatch" /><br/>Grounsquatch</a>
-      </div>
+          <!-- Row 4 -->
+          <div class="pokemon-card">
+              <a href="pokemon/hexarus"><img src="images/pokesHD/hexarus.png" alt="Hexarus" /><br/>Hexarus</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/vhysedeer"><img src="images/pokesHD/vhysedeer.png" alt="Vhysedeer" /><br/>Vhysedeer</a>
+          </div>
+          <!-- Blanks to fill the rest of row 4 -->
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div> 
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>
+        </div>
+    </div>
 
-      <!-- Row 5 -->
-      <div class="pokemon-card">
-        <a href="pokemon/rollimolli"><img src="images/pokes/040rollimolli.png" alt="Rollimolli" /><br/>Rollimolli</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/rollaslash"><img src="images/pokes/041rollaslash.png" alt="Rollaslash" /><br/>Rollaslash</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/neboy"><img src="images/pokes/042neboy.png" alt="Neboy" /><br/>Neboy</a>
-      </div>
-      <div class="pokemon-card">
-        <a href="pokemon/nebuman"><img src="images/pokes/043nebuman.png" alt="Nebuman" /><br/>Nebuman</a>
-      </div>
-       <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
-     </div>
-</div>
+    <div class="main-content">
+        <i><h1>Monsai Regional PokéDex</h1></i>
+         <!-- Pokémon List -->
+         <div class="pokemon-list">
+          
+          <!-- Regional Row -->
+          <div class="pokemon-card">
+              <a href="pokemon/monsian-bidoof"><img src="images/pokesHD/regionals/bidoofM.png" alt="Monsian Bidoof" /><br/>Monsian Bidoof</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/monsian-meowth"><img src="images/pokesHD/regionals/meowthM.png" alt="Monsian Meowth" /><br/>Monsian Meowth</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/monsian-persian"><img src="images/pokesHD/regionals/persianM.png" alt="Monsian Persian" /><br/>Monsian Persian</a>
+          </div>
+          <!-- Blanks to fill out the row -->
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div> 
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div> 
+         </div>
+    </div>
 
-<div class="main-content">
-    <i><h1>Burst PokéDex - [PokéGems Legacy - Burst Evolution]</h1></i>
- 
-     <!-- Pokémon List -->
-     <div class="pokemon-list">
-       
-      <!-- Row 1 -->
-      <div class="pokemon-card">
-          <a href="pokemon/burstledian"><img src="images/pokesHD/bursts/bledian.png" alt="Burst Ledian" /><br/>Burst Ledian</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstkrookodile"><img src="images/pokesHD/bursts/bkrookodile.png" alt="Burst Krookodile" /><br/>Burst Krookodile</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstpikachu"><img src="images/pokesHD/bursts/bpikachu.png" alt="Burst Pikachu" /><br/>Burst Pikachu</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstflygon"><img src="images/pokesHD/bursts/bflygon.png" alt="Burst Flygon" /><br/>Burst Flygon</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/bursttorkoal"><img src="images/pokesHD/bursts/btorkoal.png" alt="Burst Torkoal" /><br/>Burst Torkoal</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstfloatzel"><img src="images/pokesHD/bursts/bfloatzel.png" alt="Burst Floatzel" /><br/>Burst Floatzel</a>
-      </div>
+    <div class="main-content">
+        <i><h1>Monsai Astral PokéDex</h1></i>
+         <!-- Pokémon List -->
+         <div class="pokemon-list">
+          <!-- Row 1 -->
+          <div class="pokemon-card">
+              <a href="pokemon/astral-venusaur"><img src="images/pokesHD/astrals/astral_venusaur.png" alt="Astral Venusaur" /><br/>Astral Venusaur</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-charizard"><img src="images/pokesHD/astrals/astral_charizard.png" alt="Astral Charizard" /><br/>Astral Charizard</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-blastoise"><img src="images/pokesHD/astrals/astral_blastoise.png" alt="Astral Blastoise" /><br/>Astral Blastoise</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-ludicolo"><img src="images/pokesHD/astrals/astral_ludicolo.png" alt="Astral Ludicolo" /><br/>Astral Ludicolo</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-cryogonal"><img src="images/pokesHD/astrals/astral_cryogonal.png" alt="Astral Cryogonal" /><br/>Astral Cryogonal</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-lucario"><img src="images/pokesHD/astrals/astral_lucario.png" alt="Astral Lucario" /><br/>Astral Lucario</a>
+          </div>
+          
+          <!-- Row 2 -->
+          <div class="pokemon-card">
+              <a href="pokemon/astral-forretress"><img src="images/pokesHD/astrals/astral_forretress.png" alt="Astral Forretress" /><br/>Astral Forretress</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-aerodactyl"><img src="images/pokesHD/astrals/astral_aerodactyl.png" alt="Astral Aerodactyl" /><br/>Astral Aerodactyl</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-maractus"><img src="images/pokesHD/astrals/astral_maractus.png" alt="Astral Maractus" /><br/>Astral Maractus</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-munchlax"><img src="images/pokesHD/astrals/astral_munchlax.png" alt="Astral Munchlax" /><br/>Astral Munchlax</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/astral-afflicted-keldeo"><img src="images/pokesHD/astrals/astral_keldeo.png" alt="Astral Keldeo" /><br/>Astral Afflicted Keldeo</a>
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>      
+         </div>
+    </div>
+  </div>
 
-      <!-- Row 2 -->
-      <div class="pokemon-card">
-          <a href="pokemon/burstscovillain"><img src="images/pokesHD/bursts/bscovillain.png" alt="Burst Scovillain" /><br/>Burst Scovillain</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/bursttauros"><img src="images/pokesHD/bursts/btauros.png" alt="Burst Tauros" /><br/>Burst Tauros</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstpoliwrath"><img src="images/pokesHD/bursts/bpoliwrath.png" alt="Burst Poliwrath" /><br/>Burst Poliwrath</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/bursteevee"><img src="images/pokesHD/bursts/beevee.png" alt="Burst Eevee" /><br/>Burst Eevee</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstslowking"><img src="images/pokesHD/bursts/bslowking.png" alt="Burst Slowking" /><br/>Burst Slowking</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstmarowak"><img src="images/pokesHD/bursts/bmarowak.png" alt="Burst Marowak" /><br/>Burst Marowak</a>
-      </div>
+  <!-- ================= CENTO TAB ================= -->
+  <div id="Cento" class="tab-content">
+    <div class="main-content">
+        <i><h1>Cento PokéDex</h1></i>
+         <!-- Pokémon List -->
+         <div class="pokemon-list">
+          <!-- Row 4 -->
+          <div class="pokemon-card">
+            <a href="pokemon/quakey"><img src="images/pokes/013quakey.png" alt="Quakey" /><br/>Quakey</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/quakia"><img src="images/pokes/014quakia.png" alt="Quakia" /><br/>Quakia</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/quakiot"><img src="images/pokes/015quakiot.png" alt="Quakiot" /><br/>Quakiot</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/swirlicky"><img src="images/pokes/022swirlicky.png" alt="Swirlicky" /><br/>Swirlicky</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/swolicky"><img src="images/pokes/023swolicky.png" alt="Swolicky" /><br/>Swolicky</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/grounsquatch"><img src="images/pokes/031grounsquatch.png" alt="Grounsquatch" /><br/>Grounsquatch</a>
+          </div>
 
-      <!-- Row 3 -->
-      <div class="pokemon-card">
-          <a href="pokemon/burstsunflora"><img src="images/pokesHD/bursts/bsunflora.png" alt="Burst Sunflora" /><br/>Burst Sunflora</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstswoobat"><img src="images/pokesHD/bursts/bswoobat.png" alt="Burst Swoobat" /><br/>Burst Swoobat</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstswalot"><img src="images/pokesHD/bursts/bswalot.png" alt="Burst Swalot" /><br/>Burst Swalot</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstcacturne"><img src="images/pokesHD/bursts/bcacturne.png" alt="Burst Cacturne" /><br/>Burst Cacturne</a>
-      </div>
-      <div class="pokemon-card">
-          <a href="pokemon/burstgrounsquatch"><img src="images/pokesHD/bursts/bgrounsquatch.png" alt="Burst Grounsquatch" /><br/>Burst Grounsquatch</a>
-      </div>
-      <div class="pokemon-card">
-          <img src="images/pokesHD/invis.png" alt="Blank" />
-      </div> 
+          <!-- Row 5 -->
+          <div class="pokemon-card">
+            <a href="pokemon/rollimolli"><img src="images/pokes/040rollimolli.png" alt="Rollimolli" /><br/>Rollimolli</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/rollaslash"><img src="images/pokes/041rollaslash.png" alt="Rollaslash" /><br/>Rollaslash</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/neboy"><img src="images/pokes/042neboy.png" alt="Neboy" /><br/>Neboy</a>
+          </div>
+          <div class="pokemon-card">
+            <a href="pokemon/nebuman"><img src="images/pokes/043nebuman.png" alt="Nebuman" /><br/>Nebuman</a>
+          </div>
+           <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div> 
+         </div>
+    </div>
 
-     </div>
-</div>
-     <!-- Footer -->
+    <div class="main-content">
+        <i><h1>Cento Burst PokéDex</h1></i>
+         <!-- Pokémon List -->
+         <div class="pokemon-list">
+          <!-- Row 1 -->
+          <div class="pokemon-card">
+              <a href="pokemon/burstledian"><img src="images/pokesHD/bursts/bledian.png" alt="Burst Ledian" /><br/>Burst Ledian</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstkrookodile"><img src="images/pokesHD/bursts/bkrookodile.png" alt="Burst Krookodile" /><br/>Burst Krookodile</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstpikachu"><img src="images/pokesHD/bursts/bpikachu.png" alt="Burst Pikachu" /><br/>Burst Pikachu</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstflygon"><img src="images/pokesHD/bursts/bflygon.png" alt="Burst Flygon" /><br/>Burst Flygon</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/bursttorkoal"><img src="images/pokesHD/bursts/btorkoal.png" alt="Burst Torkoal" /><br/>Burst Torkoal</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstfloatzel"><img src="images/pokesHD/bursts/bfloatzel.png" alt="Burst Floatzel" /><br/>Burst Floatzel</a>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="pokemon-card">
+              <a href="pokemon/burstscovillain"><img src="images/pokesHD/bursts/bscovillain.png" alt="Burst Scovillain" /><br/>Burst Scovillain</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/bursttauros"><img src="images/pokesHD/bursts/btauros.png" alt="Burst Tauros" /><br/>Burst Tauros</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstpoliwrath"><img src="images/pokesHD/bursts/bpoliwrath.png" alt="Burst Poliwrath" /><br/>Burst Poliwrath</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/bursteevee"><img src="images/pokesHD/bursts/beevee.png" alt="Burst Eevee" /><br/>Burst Eevee</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstslowking"><img src="images/pokesHD/bursts/bslowking.png" alt="Burst Slowking" /><br/>Burst Slowking</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstmarowak"><img src="images/pokesHD/bursts/bmarowak.png" alt="Burst Marowak" /><br/>Burst Marowak</a>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="pokemon-card">
+              <a href="pokemon/burstsunflora"><img src="images/pokesHD/bursts/bsunflora.png" alt="Burst Sunflora" /><br/>Burst Sunflora</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstswoobat"><img src="images/pokesHD/bursts/bswoobat.png" alt="Burst Swoobat" /><br/>Burst Swoobat</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstswalot"><img src="images/pokesHD/bursts/bswalot.png" alt="Burst Swalot" /><br/>Burst Swalot</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstcacturne"><img src="images/pokesHD/bursts/bcacturne.png" alt="Burst Cacturne" /><br/>Burst Cacturne</a>
+          </div>
+          <div class="pokemon-card">
+              <a href="pokemon/burstgrounsquatch"><img src="images/pokesHD/bursts/bgrounsquatch.png" alt="Burst Grounsquatch" /><br/>Burst Grounsquatch</a>
+          </div>
+          <div class="pokemon-card">
+              <img src="images/pokesHD/invis.png" alt="Blank" />
+          </div> 
+         </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 PokéFrontiers. All rights reserved.</p>
   </footer>   
 
+  <!-- Tab Script -->
+  <script>
+    function switchTab(evt, tabName) {
+      // Hide all elements with class="tab-content"
+      var i, tabcontent, tabbuttons;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active-content");
+      }
+
+      // Remove the class "active" from all elements with class="tab-button"
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).classList.add("active-content");
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
 </body>
 </html>

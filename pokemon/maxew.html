@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFrontiers Wiki - Maxew</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+    <nav class="navbar"><div class="logo"><a href="/"><img src="../images/logo.png" alt="PokeFrontiers Logo" /></a></div><ul class="nav-links"><li><a href="../pokemon">Pokémon</a></li><li><a href="../characters">Characters</a></li><li><a href="../misc">Misc.</a></li></ul></nav>
+    <div class="pokemon-entry">
+        <h1 class="pokemon-name">Maxew</h1>
+        <h3 class="pokemon-desc">The Convergent Tusk Pokémon</h3>
+        <div class="pokemon-artwork"><img id="pokemon-artwork" src="../images/pokesHD/maxew.png" alt="Maxew Artwork"></div>
+        <div class="pokemon-types"><div class="type bug"></div><div class="type dragon"></div></div>
+        <div class="pokemon-container">
+            <div class="pokedex-description">
+                <h2>Pokédex Entry</h2>
+                <i><p>A species that evolved to closely resemble Axew. It scuttles through the pines of the Monsian Forest using its sharp mandibles.</p></i>
+            </div>
+            <div class="pokemon-stats">
+                <div class="pokemon-stat" id="stat-hp"><div class="stat-labels"><span>HP</span><span class="stat-value">46</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-atk"><div class="stat-labels"><span>Attack</span><span class="stat-value">80</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-def"><div class="stat-labels"><span>Defense</span><span class="stat-value">60</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-spatk"><div class="stat-labels"><span>Special Attack</span><span class="stat-value">30</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-spdef"><div class="stat-labels"><span>Special Defense</span><span class="stat-value">40</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+                <div class="pokemon-stat" id="stat-speed"><div class="stat-labels"><span>Speed</span><span class="stat-value">64</span></div><div class="stat-bar-container"><div class="stat-bar"></div></div></div>
+            </div>
+        </div>
+
+        <div class="abilities-location-container">
+            <div class="pokemon-evolutions">
+                <h2>Evolutions</h2>
+                <div class="evolution-chain">
+                    <div class="evolution-stage">
+                        <a href="../pokemon/maxew"><img src="../images/pokesHD/maxew.png" alt="Maxew"><p>Stage 1</p></a>
+                    </div>
+                    <div class="evolution-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="evolution-stage">
+                        <a href="../pokemon/elyxure"><img src="../images/pokesHD/elyxure.png" alt="Elyxure"><p>Stage 2</p></a>
+                    </div>
+                    <div class="evolution-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="evolution-stage">
+                        <a href="../pokemon/hexorus"><img src="../images/pokesHD/hexarus.png" alt="Hexorus"><p>Stage 3</p></a>
+                    </div>
+                </div>
+                <i><p>Maxew evolves at level 38.</p></i>
+            </div>
+            <div class="pokemon-abilities">
+                <h2>Abilities</h2>
+                <ul><li>Hyper Cutter</li><li>Overcoat</li><li>Rivalry (Hidden)</li></ul>
+            </div>
+            <div class="pokemon-location">
+                <h2>Location Data</h2>
+                <p>Monsian Forest</p>
+            </div>
+        </div>
+
+        <div class="move-list">
+            <span class="move-label">MOVES</span>
+            <button class="move-toggle"><i class="fas fa-chevron-down"></i></button>
+            <div class="move-options">
+                <div class="move-category">
+                    <h3>Level-Up Moves</h3>
+                    <ul><li>1:pounce</li><li>1:stringshot</li><li>3:bugbite</li><li>6:falseswipe</li><li>9:fellstinger</li><li>12:taunt</li><li>15:slash</li><li>18:dragonclaw</li><li>21:camouflage</li><li>24:xscissor</li><li>27:breakingswipe</li><li>30:dragondance</li><li>33:focusenergy</li><li>36:bugbuzz</li><li>39:swordsdance</li><li>42:outrage</li><li>45:stickyweb</li><li>48:gigaimpact</li></ul>
+                </div>
+                <div class="move-category">
+                    <h3>TR/TM Moves</h3>
+                    <ul><li>tm:protect</li><li>tm:rest</li><li>tm:sleeptalk</li><li>tm:substitute</li><li>tm:facade</li><li>tm:swordsdance</li><li>tm:dragondance</li><li>tm:xscissor</li><li>tm:dragonclaw</li><li>tm:breakingswipe</li><li>tm:pounce</li><li>tm:leechlife</li><li>tm:aerialace</li><li>tm:shadowclaw</li><li>tm:brickbreak</li><li>tm:rocktomb</li><li>tm:taunt</li><li>tm:falseswipe</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 PokéFrontiers. All rights reserved.</p></footer>
+    <script>
+        document.querySelector('.move-toggle').addEventListener('click', function() { document.querySelector('.move-options').classList.toggle('active'); });
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = { hp:46, atk:80, def:60, spatk:30, spdef:40, speed:64 };
+            const maxStat = 255;
+            Object.entries(stats).forEach(([key, value]) => { const bar = document.querySelector(`#stat-${key} .stat-bar`); if(bar) bar.style.width = `${(value / maxStat) * 100}%`; });
+        });
+    </script>
+</body>
+</html>
